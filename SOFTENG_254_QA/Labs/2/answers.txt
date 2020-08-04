@@ -1,6 +1,18 @@
+Become familiar with the following concepts for JUnit:
+
+Fixture
+Test Runner
+Test suite
+Test case
+Static import (in Java)
+
 Play around with @Before and @After. What happens if you have two methods with the same annotation? Does the order matter?
 Order does not matter. No guarantee as to which one is called first and which is called second.
 
 
 Try putting @Ignore before different methods. Does it behave the same for @Test compared with @After or @Before? Does it matter what order it is (before @Test or after it)?
-It just ignores that method, does not matter whether it is directly before or after @Test.
+It just ignores that method, does not matter whether it is directly before or after @Test. Only works on @Test.
+
+
+The class in this case is nothing more than a placeholder, and so has nothing in it. Play around with the result. Does the order of the annotations matter? Can you leave one annotation out? Can you put anything in the class, and if so what happens?
+Order of classes to run does matter. Order of annotations does not matter either. Can't leave either annotation out. You can put something in the class, nothing happens.
