@@ -2,44 +2,52 @@
     The sorting program to use for Operating Systems Assignment 1 2020
     written by Robert Sheehan
 
-    Modified by: put your name here
-    UPI: put your login here
+    Modified by: Aiden Burgess
+    UPI: abur970
 
     By submitting a program you are claiming that you and only you have made
     adjustments and additions to this code.
  */
 
-#include <stdio.h> 
-#include <stdlib.h> 
+#include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
 #include <sys/resource.h>
 #include <stdbool.h>
 #include <sys/times.h>
+#include <pthread.h>
 
-#define SIZE    10
+#define SIZE 10
 
-struct block {
+struct block
+{
     int size;
     int *data;
 };
 
-void print_data(struct block my_data) {
+void print_data(struct block my_data)
+{
     for (int i = 0; i < my_data.size; ++i)
         printf("%d ", my_data.data[i]);
     printf("\n");
 }
 
 /* Split the shared array around the pivot, return pivot index. */
-int split_on_pivot(struct block my_data) {
+int split_on_pivot(struct block my_data)
+{
     int right = my_data.size - 1;
     int left = 0;
     int pivot = my_data.data[right];
-    while (left < right) {
+    while (left < right)
+    {
         int value = my_data.data[right - 1];
-        if (value > pivot) {
+        if (value > pivot)
+        {
             my_data.data[right--] = value;
-        } else {
+        }
+        else
+        {
             my_data.data[right - 1] = my_data.data[left];
             my_data.data[left++] = value;
         }
@@ -49,7 +57,8 @@ int split_on_pivot(struct block my_data) {
 }
 
 /* Quick sort the data. */
-void quick_sort(struct block my_data) {
+void quick_sort_left(struct block my_data)
+{
     if (my_data.size < 2)
         return;
     int pivot_pos = split_on_pivot(my_data);
@@ -61,14 +70,55 @@ void quick_sort(struct block my_data) {
     right_side.size = my_data.size - pivot_pos - 1;
     right_side.data = my_data.data + pivot_pos + 1;
 
-    quick_sort(left_side);
-    quick_sort(right_side);
+    quick_sort_left(left_side);
+    quick_sort_left(right_side);
+}
+
+/* Quick sort the data. */
+void *quick_sort_right(void *addr)
+{
+    struct block *my_data = (struct block *)addr;
+    if (my_data->size < 2)
+        return;
+    int pivot_pos = split_on_pivot(*my_data);
+
+    struct block left_side, right_side;
+
+    left_side.size = pivot_pos;
+    left_side.data = my_data->data;
+    right_side.size = my_data->size - pivot_pos - 1;
+    right_side.data = my_data->data + pivot_pos + 1;
+
+    quick_sort_right(&left_side);
+    quick_sort_right(&right_side);
+}
+
+/* Quick sort the data. */
+void quick_sort(struct block my_data)
+{
+    if (my_data.size < 2)
+        return;
+    int pivot_pos = split_on_pivot(my_data);
+
+    struct block left, right;
+
+    left.size = pivot_pos;
+    left.data = my_data.data;
+    right.size = my_data.size - pivot_pos - 1;
+    right.data = my_data.data + pivot_pos + 1;
+
+    pthread_t t1;
+    pthread_create(&t1, NULL, *quick_sort_right, &right);
+    quick_sort_left(left);
+    pthread_join(t1, NULL);
 }
 
 /* Check to see if the data is sorted. */
-bool is_sorted(struct block my_data) {
+bool is_sorted(struct block my_data)
+{
     bool sorted = true;
-    for (int i = 0; i < my_data.size - 1; i++) {
+    for (int i = 0; i < my_data.size - 1; i++)
+    {
         if (my_data.data[i] > my_data.data[i + 1])
             sorted = false;
     }
@@ -76,25 +126,32 @@ bool is_sorted(struct block my_data) {
 }
 
 /* Fill the array with random data. */
-void produce_random_data(struct block my_data) {
+void produce_random_data(struct block my_data)
+{
     srand(1); // the same random data seed every time
-    for (int i = 0; i < my_data.size; i++) {
+    for (int i = 0; i < my_data.size; i++)
+    {
         my_data.data[i] = rand() % 1000;
     }
 }
 
-int main(int argc, char *argv[]) {
-	long size;
+int main(int argc, char *argv[])
+{
+    long size;
 
-	if (argc < 2) {
-		size = SIZE;
-	} else {
-		size = atol(argv[1]);
-	}
+    if (argc < 2)
+    {
+        size = SIZE;
+    }
+    else
+    {
+        size = atol(argv[1]);
+    }
     struct block start_block;
     start_block.size = size;
     start_block.data = (int *)calloc(size, sizeof(int));
-    if (start_block.data == NULL) {
+    if (start_block.data == NULL)
+    {
         printf("Problem allocating memory.\n");
         exit(EXIT_FAILURE);
     }
