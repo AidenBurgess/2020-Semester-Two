@@ -2,15 +2,11 @@ Most often failed jars are badK and badM, which check that whitespace following 
 of text with linewidth of 1.
 
 Many students did not make sure the error message was correct. This is incorrect because an IUT could throw the wrong
-exception and the test cases would not detect this fault.
+exception and the test cases would not detect this fault. (Although no one lost marks for this)
 
 Many students did not explain the test case and had javadocs like "Tests the case where input is null". Instead something like "In the case where the input is null,
-the IUT should throw a IOException with the text..."
+the IUT should throw a IOException with the message..."
+
+Instead of putting a timeout with every @Test, you can setup a global timeout at the top using @Rule
 
 Some students used single line comments instead of multi-line comments. Javadocs requires the use of multi-line comments.
-
-1. Copy runTests.sh into parent folder of "text"
-2. Copy bad jars, good jar, junit-4.13, and hamcrest into the parent folder of "text"
-3. Copy TestFlushLeft.java into "text" folder
-4. Open parent folder in command line (bash).
-5. Run ./runTests.sh OR ./runTests.sh quiet

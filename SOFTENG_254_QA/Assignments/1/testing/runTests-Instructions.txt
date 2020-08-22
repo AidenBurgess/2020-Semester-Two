@@ -1,0 +1,5 @@
+1. Copy runTests.sh into parent folder of "text"
+2. Copy bad jars, good jar, junit-4.13, and hamcrest into the parent folder of "text"
+3. Copy TestFlushLeft.java into "text" folder
+4. Open parent folder in command line (bash).
+5. Run ./runTests.sh OR ./runTests.sh quiet

@@ -1,0 +1,14 @@
+What is a "launcher" in Eclipse?
+A set of java classes in an eclipse plugin that performs launching
+Can change run configs etc...
+
+How many different kinds of launchers are provided in the standard Java setup in Eclipse?
+Debugger, Standard Runner, (Maybe junit runner)
+
+How is JUnit added to the classpath in Eclipse?
+Added to the java build path as a library
+
+What does the Eclipse project concept provide with respect to writing, testing, debugging, and executing programs?
+Error checking, syntax highlighting, intelli-sense, one click-running, debugging functionality, provides some libraries
+plugins for customisation
+

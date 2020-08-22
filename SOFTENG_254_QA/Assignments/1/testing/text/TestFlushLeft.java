@@ -1,221 +1,402 @@
-package text; // DO NOT CHANGE THIS OR YOU WILL GET ZERO
+package text;  // DO NOT CHANGE THIS OR YOU WILL GET ZERO
+
+import static org.junit.Assert.assertEquals;
+import org.junit.rules.Timeout;
 
 import static org.junit.Assert.fail;
-import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
+import java.util.Arrays;
 import java.util.List;
 
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
 /**
  * SOFTENG 254 Assignment 1 submission template
  *
- * Author: (name, username)
+ * Author: (Josh Lim, jlim322)
  **/
 
 public class TestFlushLeft {// DO NOT CHANGE THE CLASS NAME OR YOU WILL GET ZERO
+	private List<String> outputList;
+	private List<String> expectedList;
+	@Before
+	public void setup() {
+		if (outputList!=null) {
+			outputList.clear();
+		}
+		if (expectedList!=null) {
+			expectedList.clear();
+		}
+	}
 
-    @Test
-    public void testLeadingSpace() throws Exception {
-        String[] expected = { "Test" };
-        runTest(10, " Test", expected, false);
-    }
+	@Rule
+	public Timeout timeoutRule=Timeout.seconds(2);
 
-    @Test
-    public void testLeadingNewLine() throws Exception {
-        String[] expected = { "Test" };
-        runTest(10, "\nTest", expected, false);
-    }
+	
+	/**
+	 * ====================================================================================================
+	 * Testing normal input (include spaces/white spaces)
+	 * ====================================================================================================
+	 */
+	
+	/**
+	 * Explanation:
+	 * Normal test to ensure hyphen is added to a string longer than the line width and also
+	 * the string is split correctly
+	 */
+	@Test
+	public void testWithoutSpaceMinWidth() {
+		outputList=Formatter.flushLeftText("abc", 2);
+		expectedList=Arrays.asList("a-", "bc");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Normal test to ensure no hyphen is added to a string when it is not supposed to
+	 * also the string is split correctly
+	 */
+	@Test
+	public void testSpacedMinWidth() {
+		outputList=Formatter.flushLeftText("ab c d", 2);
+		expectedList=Arrays.asList("ab", "c", "d");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Normal test to ensure no hyphen is added to a string when it is not supposed to
+	 * also the string is split correctly when multiple space are added.
+	 */
+	@Test
+	public void testMultipleSpacedMinWidth() {
+		outputList=Formatter.flushLeftText("ab\nc \t \t d \n \t e", 2);
+		expectedList=Arrays.asList("ab", "c", "d", "e");
+		assertEquals(expectedList, outputList);
+	}
 
-    @Test
-    public void testLongWordOverflow() throws Exception {
-        String[] expected = { "Looo-", "ng" };
-        runTest(5, "Looong", expected, false);
-    }
+	/**
+	 * Explanation:
+	 * Test if string is split correctly when width is longer and able to hold multiple words
+	 */
+	@Test
+	public void testLongWidthWithNoHyphenAdded() {
+		outputList=Formatter.flushLeftText("abcd ef", 6);
+		expectedList=Arrays.asList("abcd", "ef");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if string is split correctly with spaces when width is longer and able to hold multiple words
+	 */
+	@Test
+	public void testLongWidthWithSpacesButNoHyphenAdded() {
+		outputList=Formatter.flushLeftText("abcd \n \t \n \t e", 6);
+		expectedList=Arrays.asList("abcd", "e");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if string is split correctly when width is longer and able to hold multiple words.
+	 * This input is different from before as one of the output holds 2 words.
+	 */
+	@Test
+	public void testLongWidthWithHyphensAdded() {
+		outputList=Formatter.flushLeftText("abcdefg hi jk", 6);
+		expectedList=Arrays.asList("abcde-", "fg hi", "jk");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if string is split correctly when width is longer and must hold multiple words with lots
+	 * of spaces.
+	 */
+	@Test
+	public void testLongWidthWithMultipleWhiteSpaces() {
+		outputList=Formatter.flushLeftText("a \t b \t c \t d", 6);
+		expectedList=Arrays.asList("a b c", "d");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if string is split correctly when width is longer and must hold multiple words with normal
+	 * spacing
+	 */
+	@Test
+	public void testLongWidthWithSpaces() {
+		outputList=Formatter.flushLeftText("a b c d", 6);
+		expectedList=Arrays.asList("a b c", "d");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Not considering line width, breaking string with only white spaces (new lines)
+	 */
+	@Test
+	public void testMultipleWhitepacesWithNewLine() {
+		outputList=Formatter.flushLeftText("ab \n\n\t cd \t e \t\t f  g", 50);
+		expectedList=Arrays.asList("ab", "cd e f g");
+		assertEquals(expectedList, outputList);
+	}
 
-    @Test
-    public void testLongWordOverflowWithHyphen() throws Exception {
-        String[] expected = { "Loo-", "ong" };
-        runTest(5, "Loo-ong", expected, false);
-    }
+	/**
+	 * Explanation:
+	 * Make sure no empty string or white space is added at the end and at the front
+	 */
+	@Test
+	public void testMostlyWhitespacesAtStartAndEnd() {
+		outputList=Formatter.flushLeftText("   \t\t\n\n ab c  \t\t\n\n", 4);
+		expectedList=Arrays.asList("ab c");
+		assertEquals(expectedList, outputList);
+	}
+	
+	
+	/**
+	 * ====================================================================================================
+	 * Testing input with hyphens
+	 * ====================================================================================================
+	 */
 
-    /**
-     * Leading white space should not appear in the output.
-     */
-    @Test
-    public void testA() throws Exception {
-        String[] expected = { "abc def" };
-        runTest(10, "  abc def", expected, false);
-    }
+	/**
+	 * Explanation:
+	 * Test if hyphens are ignored when no characters are present around it.
+	 * The 'a' is there to make sure something is being output
+	 */
+	@Test
+	public void testHyphensTreatedAsWord() {
+		outputList=Formatter.flushLeftText("- -- a-", 6);
+		expectedList=Arrays.asList("- --", "a-");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if extra hyphen is added when it is not needed
+	 */
+	@Test
+	public void testExtraHyphensAddedWhenNotNeeded() {
+		outputList=Formatter.flushLeftText("a-b", 2);
+		expectedList=Arrays.asList("a-", "b");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if hyphens are ignored when it is part of a word
+	 */
+	@Test
+	public void testHyphensAsPartOfAWord() {
+		outputList=Formatter.flushLeftText("a- ----b c--- d e ", 6);
+		expectedList=Arrays.asList("a- ---", "-b c--", "- d e");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if hyphens are ignored with normal input without splitting
+	 */
+	@Test
+	public void testNormalInputWithHyphensNoSplit() {
+		outputList=Formatter.flushLeftText("a--bc", 5);
+		expectedList=Arrays.asList("a--bc");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if hyphens are ignored with normal input and if extra hyphen is added
+	 */
+	@Test
+	public void testNormalInputWithHyphensSplit() {
+		outputList=Formatter.flushLeftText("a--bc", 4);
+		expectedList=Arrays.asList("a--", "bc");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if hyphens are ignored and treated as white space with normal input
+	 */
+	@Test
+	public void testNormalInputWithHyphensAndSpacedWords() {
+		outputList=Formatter.flushLeftText("a-- b", 4);
+		expectedList=Arrays.asList("a--", "b");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if all hyphens are being output when it is a single character. Line width in this case
+	 * fits all the hyphens given
+	 */
+	@Test
+	public void testSingleLineHyphensOnly() {
+		outputList=Formatter.flushLeftText(" - -", 3);
+		expectedList=Arrays.asList("- -");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if all hyphens are being output and split correctly when it is treated as 2 words.
+	 * Line width in this case force the hyphens to break into 2 parts.
+	 */
+	@Test
+	public void testSpacedHyphensOnly() {
+		outputList=Formatter.flushLeftText("- --", 3);
+		expectedList=Arrays.asList("- -", "-");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Test if all hyphens are being output and split correctly when it is treated as a word
+	 */
+	@Test
+	public void testBreakingHyphensOnly() {
+		outputList=Formatter.flushLeftText("-----", 3);
+		expectedList=Arrays.asList("---", "--");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Check if every hyphen is being output with line width of 1 without space
+	 */
+	@Test
+	public void testAllHyphensAndLineWidth1WithNoSpace() {
+		outputList=Formatter.flushLeftText("-----", 1);
+		expectedList=Arrays.asList("-", "-", "-", "-", "-");
+		assertEquals(expectedList, outputList);
+	}
+	
+	/**
+	 * Explanation:
+	 * Check if every hyphen is being output with line width of 1 with space
+	 */
+	@Test
+	public void testAllHyphensAndLineWidth1WithSpace() {
+		outputList=Formatter.flushLeftText("--- -- - -", 1);
+		expectedList=Arrays.asList("-", "-", "-", "-", "-", "-", "-");
+		assertEquals(expectedList, outputList);
+	}
+	
+	
+	/**
+	 * ====================================================================================================
+	 * Testing exceptions
+	 * ====================================================================================================
+	 */
+	
+	/**
+	 * Explanation:
+	 * Some implementation may start looping the string before checking the length of the string.
+	 * This will obviously throw an index out of bound exception.
+	 */
+	@Test
+	public void testEmptyStringWithWidth() {
+		try {
+			outputList=Formatter.flushLeftText("", 2);
+			expectedList=Arrays.asList("");
+			assertEquals(expectedList, outputList);
+		} catch(StringIndexOutOfBoundsException e) {
+			fail("Not supposed to have string index out of bound");
+		}
+	}
 
-    /**
-     * When a word is hyphenated, the hyphen should be in the last position on the
-     * line
-     */
-    @Test
-    public void testB() throws Exception {
-        String[] expected = { "abcdefghi-", "jklm" };
-        runTest(10, "abcdefghijklm", expected, false);
-    }
+	/**
+	 * Explanation:
+	 * Some implementation may throw illegal argument exception as soon as the input line width is 0.
+	 * However, this will work as the length of the string is also 0. Any exception thrown will fail the
+	 * test.
+	 */
+	@Test
+	public void testEmptyStringWith0Width() {
+		try {
+			outputList=Formatter.flushLeftText("", 0);
+			expectedList=Arrays.asList("");
+			assertEquals(expectedList, outputList);
+		} catch(IllegalArgumentException e) {
+			fail("Not an illegal argument");
+		} catch(StringIndexOutOfBoundsException e) {
+			fail("Not supposed to have string index out of bound");
+		}
+	}
+	
+	/**
+	 * Explanation:
+	 * A few new line and tab have been thrown in to test only 1 empty string is being output.
+	 * Line width is 0 to test if the implementation would throw exception
+	 */
+	@Test
+	public void testOnlyWhitespaces() {
+		try {
+			outputList=Formatter.flushLeftText("        \n\n  \n   \t         \t", 0);
+			expectedList=Arrays.asList("");
+			assertEquals(expectedList, outputList);
+		} catch(IllegalArgumentException e) {
+			fail("Not supposed to throw exception");
+		}
+	}
 
-    /**
-     * Multiple adjacent spaces between words should be reduced to a single space
-     */
-    @Test
-    public void testC() throws Exception {
-        String[] expected = { "ab cd" };
-        runTest(10, "ab  cd", expected, false);
-    }
+	/**
+	 * Explanation:
+	 * Exception should be thrown as negative line width
+	 */
+	@Test
+	public void testExceptionConstraintsSatisfactionNegativeWidth() {
+		try {
+			Formatter.flushLeftText("abcde", -3);
+			fail("Fail to throw exception");
+		} catch(IllegalArgumentException e) {
+			assertEquals(e.getMessage(), "Constraints cannot be satisfied");
+		}
+	}
 
-    /**
-     * The text can be split at a hyphen in the last position on the line, and if so
-     * no further hyphens should be added.
-     */
-    @Test
-    public void testD() throws Exception {
-        String[] expected = { "abcdefghi-", "jklm" };
-        runTest(10, "abcdefghi-jklm", expected, false);
-    }
+	/**
+	 * Explanation:
+	 * Exception should be thrown because line width is 1 and string(no space) length is longer
+	 */
+	@Test
+	public void testExceptionConstraintsSatisfactionWidth1() {
+		try {
+			Formatter.flushLeftText("abc", 1);
+			fail("Fail to throw exception");
+		} catch(IllegalArgumentException e) {
+			assertEquals(e.getMessage(), "Constraints cannot be satisfied");
+		}
+	}
 
-    /**
-     * When there is a single new line, the text must be split at that point.
-     */
-    @Test
-    public void testE() throws Exception {
-        String[] expected = { "a b c", "d" };
-        runTest(10, "a b c\nd", expected, false);
-    }
+	/**
+	 * Explanation:
+	 * Test if exception is thrown because of the line width, and/or because of the "-b"
+	 */
+	@Test
+	public void testPassWithWidth1() {
+		try {
+			Formatter.flushLeftText("a -b c", 1);
+		} catch(IllegalArgumentException e) {
+			fail("Not an illegal argument");
+		}
+	}
 
-    /**
-     * The last character in the output can be at the last position of a line when
-     * there are multiple words.
-     */
-    @Test
-    public void testF() throws Exception {
-        String[] expected = { "a b c d ef" };
-        runTest(10, "a b c d ef", expected, false); // exactly 10
-    }
-
-    /**
-     * If the word does not contain hyphens and is 2 characters or longer then it
-     * will not fit on a line of width 1, that is, the constraints cannot be
-     * satisfied.
-     */
-    @Test(timeout = 1000)
-    public void testG() throws Exception {
-        String[] expected = { "Constraints cannot be satisfied" };
-        runTest(1, "abcde", expected, true);
-    }
-
-    /**
-     * An input that is the empty string produces a single (empty) line as output.
-     */
-    @Test
-    public void testH() throws Exception {
-        String[] expected = { "" };
-        runTest(10, "", expected, false);
-    }
-
-    /**
-     * A line can be split at any hyphen, the hyphen must appear in the output, so
-     * an input that is all hyphens can fit with a linewidth of 1.
-     */
-    @Test
-    public void testI() throws Exception {
-        String[] expected = { "-", "-", "-", "-", "-", "-", "-" };
-        runTest(1, "-------", expected, false);
-    }
-
-    /**
-     * An input that is the empty string will fit in a line of width zero.
-     */
-    @Test
-    public void testJ() throws Exception {
-        String[] expected = { "" };
-        runTest(0, "", expected, false);
-    }
-
-    /**
-     * Whitespace following a newline is removed
-     */
-    @Test
-    public void testK() throws Exception {
-        String[] expected = { "a b c", "d" };
-        runTest(10, "a b c\n d", expected, false);
-    }
-
-    /**
-     * Words that are the same length as the linewidth should fit on a line, that
-     * is, not split.
-     */
-    @Test
-    public void testL() throws Exception {
-        String[] expected = { "aaaa", "bbbb", "cccc", "dddd", "eeee", "ff" };
-        runTest(4, "aaaa bbbb cccc dddd eeee ff", expected, false);
-    }
-
-    /**
-     * Printable characters following a hyphen can be moved to the next line, and if
-     * there is only one that will fit on a line of width 1.
-     */
-    @Test
-    public void testM() throws Exception {
-        String[] expected = { "-", "a" };
-        runTest(1, "-a", expected, false);
-    }
-
-    /**
-     * When a tab separates two words it is replaced by a space.
-     */
-    @Test
-    public void testN() throws Exception {
-        String[] expected = { "a b c d", "efg h" };
-        runTest(10, "a b\tc d efg h", expected, false);
-    }
-
-    /**
-     * A null text is not a valid input.
-     */
-    @Test
-    public void testO() throws Exception {
-        runTest(10, null, new String[] { "Invalid text (null)" }, true);
-    }
-
-    /*
-     * Some helper methods to make the tests easier to understand
-     */
-
-    private void runTest(int width, String input, String[] expected, boolean exception) throws Exception {
-        try {
-            List<String> actual = Formatter.flushLeftText(input, width);
-            if (exception) {
-                fail("Did not throw exception");
-            } else {
-                assertListsEquals("", expected, actual);
-            }
-        } catch (IllegalArgumentException ex) {
-            // Only legal IllegalArgumentException is if there is exactly one expected value
-            // and that's
-            // the message we're supposed to get
-            if (expected.length != 1 || !expected[0].equals(ex.getMessage())) {
-                throw ex;
-            }
-        }
-    }
-
-    private static <T> void assertListsEquals(String msg, T[] expected, List<T> actual) {
-        for (int i = 0; i < expected.length; i++) {
-            T e = expected[i];
-            T a = null;
-            if (i < actual.size()) {
-                a = actual.get(i);
-            } else {
-                fail("actual has too few elements. expected " + expected.length + " but got " + actual.size());
-            }
-            assertEquals("position " + i, e, a);
-        }
-        if (expected.length < actual.size()) {
-            fail("actual has too many elements. expected " + expected.length + " but got " + actual.size() + " "
-                    + actual);
-        }
-    }
+	/**
+	 * Explanation:
+	 * Null pointer exception should be thrown even though the line width is negative
+	 */
+	@Test
+	public void testExceptionNullInput() {
+		try {
+			Formatter.flushLeftText(null, -1);
+			fail("Fail to throw exception");
+		} catch(IllegalArgumentException e) {
+			assertEquals(e.getMessage(), "Invalid text (null)");
+		}
+	}
 }
