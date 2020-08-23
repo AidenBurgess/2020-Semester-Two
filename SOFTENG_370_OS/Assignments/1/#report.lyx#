@@ -344,8 +344,53 @@ Size 1000
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted49.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted50.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 Size 10000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted51.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted53.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted52.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -355,6 +400,24 @@ Size 100000
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted46.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted54.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted55.png
 
 \end_inset
 
@@ -374,12 +437,26 @@ Size 1000000
 
 \end_layout
 
-\begin_layout Subsection*
-Size 5000000
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted56.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset Graphics
+	filename pasted57.png
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 5000000
 \end_layout
 
 \end_body

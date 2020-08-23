@@ -173,9 +173,349 @@ Time taken:
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section*
 \begin_inset Graphics
 	filename pasted2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Step Two
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted5.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted6.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No speedup, as the thread is being run on the same process.
+ In fact, slightly slower as we now have to switch between threads on the
+ same process which introduces overhead.
+\end_layout
+
+\begin_layout Section*
+Step 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted7.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted8.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted9.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted11.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted10.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Step 4
+\end_layout
+
+\begin_layout Section*
+Step 5
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted12.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted13.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Step 6
+\end_layout
+
+\begin_layout Standard
+Make a graph of this shit
+\end_layout
+
+\begin_layout Standard
+Did not see much difference between 5 and 10, so increased increment
+\end_layout
+
+\begin_layout Subsection*
+Size 2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted43.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 5
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted14.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted15.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted16.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 10
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted17.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted18.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted19.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 100
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted20.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted21.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted22.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 1000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted41.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted42.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 10000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted39.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted40.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 100000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted37.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted38.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 1000000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted35.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted36.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 5000000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted44.png
 
 \end_inset
 

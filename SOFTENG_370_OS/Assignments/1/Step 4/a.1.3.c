@@ -20,6 +20,11 @@
 
 #define SIZE 10
 
+static pthread_t t1;
+static pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
+static bool busy = false;
+static pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
+
 struct block
 {
     int size;
@@ -57,45 +62,10 @@ int split_on_pivot(struct block my_data)
 }
 
 /* Quick sort the data. */
-void quick_sort_left(struct block my_data)
+void *quick_sort(void *addr)
 {
-    if (my_data.size < 2)
-        return;
-    int pivot_pos = split_on_pivot(my_data);
+    struct block my_data = *(struct block *)addr;
 
-    struct block left_side, right_side;
-
-    left_side.size = pivot_pos;
-    left_side.data = my_data.data;
-    right_side.size = my_data.size - pivot_pos - 1;
-    right_side.data = my_data.data + pivot_pos + 1;
-
-    quick_sort_left(left_side);
-    quick_sort_left(right_side);
-}
-
-/* Quick sort the data. */
-void *quick_sort_right(void *addr)
-{
-    struct block *my_data = (struct block *)addr;
-    if (my_data->size < 2)
-        return;
-    int pivot_pos = split_on_pivot(*my_data);
-
-    struct block left_side, right_side;
-
-    left_side.size = pivot_pos;
-    left_side.data = my_data->data;
-    right_side.size = my_data->size - pivot_pos - 1;
-    right_side.data = my_data->data + pivot_pos + 1;
-
-    quick_sort_right(&left_side);
-    quick_sort_right(&right_side);
-}
-
-/* Quick sort the data. */
-void quick_sort(struct block my_data)
-{
     if (my_data.size < 2)
         return;
     int pivot_pos = split_on_pivot(my_data);
@@ -107,10 +77,60 @@ void quick_sort(struct block my_data)
     right.size = my_data.size - pivot_pos - 1;
     right.data = my_data.data + pivot_pos + 1;
 
-    pthread_t t1;
+    // We are ready to distribute
+    pthread_cond_signal(&cond);
+
+    // Check to see if other thread is busy
+    if (busy)
+    {
+        // Other thread is busy
+        quick_sort(&right);
+    }
+    else
+    {
+        // Other thread is available
+        quick_sort_then_wait(&right);
+    }
+
+    quick_sort(&left);
+}
+
+/* Quick sort the data. */
+void *quick_sort_right(void *addr)
+{
+    struct block my_data = *(struct block *)addr;
+    if (my_data.size < 2)
+        return;
+    int pivot_pos = split_on_pivot(my_data);
+
+    struct block left_side, right_side;
+
+    left_side.size = pivot_pos;
+    left_side.data = my_data.data;
+    right_side.size = my_data.size - pivot_pos - 1;
+    right_side.data = my_data.data + pivot_pos + 1;
+
+    // Wait on a condition variable
+    pthread_cond_wait(&cond, &lock);
+
+    quick_sort(&left_side);
+    quick_sort(&right_side);
+}
+
+void quick_sort_then_wait(struct block *right)
+{
+    pthread_mutex_lock(&lock);
+    busy = true;
+    pthread_mutex_unlock(&lock);
+    // Sort everything
     pthread_create(&t1, NULL, *quick_sort_right, &right);
-    quick_sort_left(left);
-    pthread_join(t1, NULL);
+    pthread_mutex_lock(&lock);
+    busy = false;
+    pthread_mutex_unlock(&lock);
+    // Wait for a signal
+    pthread_mutex_lock(&lock);
+    pthread_cond_wait(&cond, &lock);
+    pthread_mutex_unlock(&lock);
 }
 
 /* Check to see if the data is sorted. */
@@ -164,7 +184,7 @@ int main(int argc, char *argv[])
     struct tms start_times, finish_times;
     times(&start_times);
     printf("start time in clock ticks: %ld\n", start_times.tms_utime);
-    quick_sort(start_block);
+    quick_sort(&start_block);
     times(&finish_times);
     printf("finish time in clock ticks: %ld\n", finish_times.tms_utime);
 
@@ -172,6 +192,7 @@ int main(int argc, char *argv[])
         print_data(start_block);
 
     printf(is_sorted(start_block) ? "sorted\n" : "not sorted\n");
+
     free(start_block.data);
     exit(EXIT_SUCCESS);
 }
