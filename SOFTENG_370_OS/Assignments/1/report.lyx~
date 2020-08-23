@@ -319,106 +319,16 @@ Did not see much difference between 5 and 10, so increased increment
 Size 2
 \end_layout
 
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted43.png
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 Size 5
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted14.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted15.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted16.png
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection*
 Size 10
 \end_layout
 
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted17.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted18.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted19.png
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection*
 Size 100
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted20.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted21.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted22.png
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection*
@@ -427,7 +337,7 @@ Size 1000
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted41.png
+	filename pasted48.png
 
 \end_inset
 
@@ -436,7 +346,16 @@ Size 1000
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted42.png
+	filename pasted49.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted50.png
 
 \end_inset
 
@@ -449,7 +368,7 @@ Size 10000
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted39.png
+	filename pasted51.png
 
 \end_inset
 
@@ -458,7 +377,16 @@ Size 10000
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted40.png
+	filename pasted53.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted52.png
 
 \end_inset
 
@@ -471,7 +399,7 @@ Size 100000
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted37.png
+	filename pasted46.png
 
 \end_inset
 
@@ -480,7 +408,16 @@ Size 100000
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted38.png
+	filename pasted54.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted55.png
 
 \end_inset
 
@@ -493,7 +430,7 @@ Size 1000000
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted35.png
+	filename pasted47.png
 
 \end_inset
 
@@ -502,7 +439,16 @@ Size 1000000
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted36.png
+	filename pasted56.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted57.png
 
 \end_inset
 
@@ -515,7 +461,7 @@ Size 5000000
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename pasted44.png
+	filename pasted58.png
 
 \end_inset
 

@@ -21,7 +21,7 @@
 #include <sys/mman.h>
 
 #define SIZE 10
-#define SPLIT_SIZE 5000000
+#define SPLIT_SIZE 50000
 
 struct block
 {

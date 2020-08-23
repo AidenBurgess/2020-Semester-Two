@@ -14,20 +14,14 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/resource.h>
+#include <sys/wait.h>
 #include <stdbool.h>
 #include <sys/times.h>
 #include <pthread.h>
+#include <sys/mman.h>
 
 #define SIZE 10
-
-static pthread_t t1;
-static pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
-static pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
-
-static struct block sharedState;
-static bool mainFree = false;
-static bool childFree = true;
-static bool sortCompleted = false;
+#define SPLIT_SIZE 100
 
 struct block
 {
@@ -65,9 +59,9 @@ int split_on_pivot(struct block my_data)
     return right;
 }
 
-void *quick_sort_normal(void *addr)
+/* Quick sort the data. */
+void quick_sort_left(struct block my_data)
 {
-    struct block my_data = *(struct block *)addr;
     if (my_data.size < 2)
         return;
     int pivot_pos = split_on_pivot(my_data);
@@ -79,62 +73,66 @@ void *quick_sort_normal(void *addr)
     right_side.size = my_data.size - pivot_pos - 1;
     right_side.data = my_data.data + pivot_pos + 1;
 
-    quick_sort_normal(&left_side);
-    quick_sort_normal(&right_side);
+    quick_sort_left(left_side);
+    quick_sort_left(right_side);
 }
 
 /* Quick sort the data. */
-void *quick_sort(void *addr)
+void *quick_sort_right(void *addr)
 {
-    struct block my_data = *(struct block *)addr;
+    struct block *my_data = (struct block *)addr;
+    if (my_data->size < 2)
+        return;
+    int pivot_pos = split_on_pivot(*my_data);
 
+    struct block left_side, right_side;
+
+    left_side.size = pivot_pos;
+    left_side.data = my_data->data;
+    right_side.size = my_data->size - pivot_pos - 1;
+    right_side.data = my_data->data + pivot_pos + 1;
+
+    quick_sort_right(&left_side);
+    quick_sort_right(&right_side);
+}
+
+/* Quick sort the data. */
+void quick_sort(struct block my_data)
+{
     if (my_data.size < 2)
         return;
     int pivot_pos = split_on_pivot(my_data);
 
-    struct block left, right;
-    left.size = pivot_pos;
-    left.data = my_data.data;
-    right.size = my_data.size - pivot_pos - 1;
-    right.data = my_data.data + pivot_pos + 1;
+    struct block left_side, right_side;
 
-    pthread_mutex_lock(&lock);
-    if (childFree)
+    left_side.size = pivot_pos;
+    left_side.data = my_data.data;
+    right_side.size = my_data.size - pivot_pos - 1;
+    right_side.data = my_data.data + pivot_pos + 1;
+
+    if (right_side.size > SPLIT_SIZE)
     {
-        sharedState = right;
-        childFree = false;
-        // puts("sending sig");
-        pthread_cond_signal(&cond);
-        pthread_mutex_unlock(&lock);
+        int my_pipe[2];
+        pipe(my_pipe);
+
+        pid_t child_pid = fork();
+
+        if (child_pid != 0)
+        { // the parent
+            quick_sort(left_side);
+            wait(NULL);
+        }
+        else
+        { // the child
+            quick_sort(right_side);
+            exit(0);
+        }
     }
     else
     {
-        pthread_mutex_unlock(&lock);
-        quick_sort(&right);
+        quick_sort(left_side);
+        quick_sort(right_side);
     }
-    quick_sort(&left);
-}
-
-void *child_thread(void *addr)
-{
-    puts("Starting loop");
-    pthread_mutex_lock(&lock);
-    struct block temp;
-    do
-    {
-        while (childFree)
-        {
-            pthread_cond_wait(&cond, &lock);
-        }
-        puts("Child is processing");
-        temp.data = sharedState.data;
-        temp.size = sharedState.size;
-        quick_sort_normal(&temp);
-
-        childFree = true;
-    } while (!sortCompleted);
-    pthread_mutex_unlock(&lock);
-    exit(0);
 }
 
 /* Check to see if the data is sorted. */
@@ -173,7 +171,8 @@ int main(int argc, char *argv[])
     }
     struct block start_block;
     start_block.size = size;
-    start_block.data = (int *)calloc(size, sizeof(int));
+    start_block.data = mmap(NULL, sizeof(int) * size, PROT_READ | PROT_WRITE, MAP_ANONYMOUS | MAP_SHARED, -1, 0);
+
     if (start_block.data == NULL)
     {
         printf("Problem allocating memory.\n");
@@ -188,20 +187,7 @@ int main(int argc, char *argv[])
     struct tms start_times, finish_times;
     times(&start_times);
     printf("start time in clock ticks: %ld\n", start_times.tms_utime);
-
-    pthread_create(&t1, NULL, *child_thread, NULL);
-    quick_sort(&start_block);
-
-    pthread_mutex_lock(&lock);
-    sortCompleted = true;
-    childFree = false;
-    pthread_cond_signal(&cond);
-
-    pthread_mutex_unlock(&lock);
-
-    puts("we have exited");
-    pthread_join(t1, NULL);
-
+    quick_sort(start_block);
     times(&finish_times);
     printf("finish time in clock ticks: %ld\n", finish_times.tms_utime);
 
@@ -209,7 +195,5 @@ int main(int argc, char *argv[])
         print_data(start_block);
 
     printf(is_sorted(start_block) ? "sorted\n" : "not sorted\n");
-
-    free(start_block.data);
     exit(EXIT_SUCCESS);
 }

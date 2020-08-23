@@ -316,19 +316,78 @@ Did not see much difference between 5 and 10, so increased increment
 \end_layout
 
 \begin_layout Subsection*
-Size 2
+Size 5
 \end_layout
 
-\begin_layout Subsection*
-Size 5
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted67.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted66.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted68.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
 Size 10
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted63.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted64.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted65.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection*
 Size 100
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted60.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted61.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted62.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -342,10 +401,43 @@ Size 1000
 \end_inset
 
 
+\begin_inset Graphics
+	filename pasted49.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted50.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
 Size 10000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted51.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted53.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted52.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -355,6 +447,43 @@ Size 100000
 \begin_layout Standard
 \begin_inset Graphics
 	filename pasted46.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted54.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted55.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 500000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted70.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted71.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted72.png
 
 \end_inset
 
@@ -372,6 +501,18 @@ Size 1000000
 \end_inset
 
 
+\begin_inset Graphics
+	filename pasted56.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted57.png
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -379,6 +520,151 @@ Size 5000000
 \end_layout
 
 \begin_layout Standard
+\begin_inset Graphics
+	filename pasted58.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted59.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted69.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Step 6
+\end_layout
+
+\begin_layout Standard
+Make a graph of this shit
+\end_layout
+
+\begin_layout Subsection*
+Size 5
+\end_layout
+
+\begin_layout Subsection*
+Size 10
+\end_layout
+
+\begin_layout Subsection*
+Size 100
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted82.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted83.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 1000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted79.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted80.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted81.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 10000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted76.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted77.png
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pasted78.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 100000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted75.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 500000
+\end_layout
+
+\begin_layout Subsection*
+Size 1000000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted74.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+Size 5000000
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted73.png
+
+\end_inset
+
 
 \end_layout
 
