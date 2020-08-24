@@ -1326,7 +1326,7 @@ Step three htop
 \end_layout
 
 \begin_layout Section*
-Step Four
+Step 4
 \end_layout
 
 \begin_layout Standard
@@ -1339,7 +1339,7 @@ I found this implementation to be the hardest to program, and the speeds
 \end_layout
 
 \begin_layout Section*
-Step Five
+Step 5
 \end_layout
 
 \begin_layout Standard
@@ -1391,7 +1391,7 @@ Step three htop
 \end_layout
 
 \begin_layout Section*
-Step Six
+Step 6
 \end_layout
 
 \begin_layout Standard
@@ -1399,23 +1399,17 @@ Initially, I tested minimum size values of 5 and 10.
  After finding that there was negligible difference between these values,
  I increased my step size to a factor of ten.
  Three measurements were taken for the following sizes and then averaged
- (Fig 5): 5, 10, 100, 1000, 10,000, 100,000, 1,000,000, 5,000,000.
- The graph is flat from 5-100,000, and then there is a steep increase until
- 5,000,000.
- The speed of 5,000,000 is expected as this is essentially the same situation
- as in step five.
- Therefore, I chose my optimal size as 100,000.
- With this size value, I observed 95 processes created for the program on
- sytem monitor.
+ (Fig 5a.): 5, 10, 100, 1000, 10,000, 100,000, 1,000,000, 5,000,000.
 \end_layout
 
 \begin_layout Standard
-The speed when optimised is significantly faster than all previous steps
- at 39.2 seconds.
- The reason why increasing the amount of processes does not result in a
- greater amount of performance is the limit of CPU cores on my machine.
- Only twelve processes can be running at any given time, so decreasing the
- split size should not have a great impact on speed.
+Did not see much difference between 5 and 10, so increased increment
+\end_layout
+
+\begin_layout Standard
+On system monitor, I observed 95 processes created for the program with
+ a minimum size value of 100,000.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1423,7 +1417,7 @@ The speed when optimised is significantly faster than all previous steps
 placement h
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1431,12 +1425,6 @@ status open
 \begin_inset Graphics
 	filename C:/Users/aiden/Downloads/Average Time (s) vs Split Size (1).png
 	scale 30
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted96.png
 
 \end_inset
 
@@ -1461,7 +1449,7 @@ Step six split size testing
 \end_layout
 
 \begin_layout Section*
-Step Seven
+Step 7
 \end_layout
 
 \begin_layout Standard
