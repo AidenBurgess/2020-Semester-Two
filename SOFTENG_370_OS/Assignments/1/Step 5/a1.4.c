@@ -86,7 +86,7 @@ void *quick_sort_right(void *addr)
 {
     struct block *my_data = (struct block *)addr;
     if (my_data->size < 2)
-        return;
+        return NULL;
     int pivot_pos = split_on_pivot(*my_data);
 
     struct block left_side, right_side;

@@ -7,8 +7,8 @@
 \textclass article
 \begin_preamble
 % Variables to change every new document
-\newcommand{\hmwkClass}{SOFTENG 351} % Course/class
-\newcommand{\hmwkNumber}{2} % Assignment number
+\newcommand{\hmwkClass}{SOFTENG 370} % Course/class
+\newcommand{\hmwkNumber}{1} % Assignment number
 
 % Constants to set once
 \newcommand{\hmwkAuthorName}{Aiden Burgess} % Your name
@@ -157,20 +157,89 @@ start
 \end_layout
 
 \begin_layout Section*
-Step One
+Questions to Answer
+\end_layout
+
+\begin_layout Subsection*
+1.
 \end_layout
 
 \begin_layout Standard
-Time taken:
+I ran the assignment on my Windows Laptop using WSL2 - Ubuntu 16.0.4 LTS.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename pasted1.png
+Linux LAPTOP-M7BM40VA 4.19.104-microsoft-standard #1 SMP Wed Feb 19 06:37:35
+ UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+\end_layout
 
+\begin_layout Standard
+12GB RAM, 12 Cores CPU @ 2.6 GHz
+\end_layout
+
+\begin_layout Subsection*
+2.
+\end_layout
+
+\begin_layout Standard
+The number of clock ticks is dependent on the shortest time period recognised.
+ The real time can vary greatly for the same number of clock ticks because
+ of CPU utilisation.
+\end_layout
+
+\begin_layout Subsection*
+3.
+\end_layout
+
+\begin_layout Standard
+The first two debugging lines are expected, as the main process goes through
+ main().
+ 
+\end_layout
+
+\begin_layout Standard
+In the quick sort function, a fork() call is made.
+\end_layout
+
+\begin_layout Standard
+The faster process sorts the right side of the input, and returns from the
+ quick sort function first and prints the clock ticks.
+ The array is not sorted because the other thread has not finished sorting
+ yet.
+ This is why 
+\begin_inset Quotes eld
 \end_inset
 
+not sorted
+\begin_inset Quotes erd
+\end_inset
 
+ is displayed.
+\end_layout
+
+\begin_layout Standard
+The second process sorts the left side of the input, and returns from the
+ quick sort function and prints the clock ticks again.
+ The array is not sorted because there has been no sharing of information
+ between the two processes.
+ Therefore 
+\begin_inset Quotes eld
+\end_inset
+
+not sorted
+\begin_inset Quotes erd
+\end_inset
+
+ is displayed.
+\end_layout
+
+\begin_layout Standard
+So there are two problems: The processes are not waiting for each other
+ to finish, and there is no information passing between them.
+\end_layout
+
+\begin_layout Section*
+Step One
 \end_layout
 
 \begin_layout Section*
@@ -182,44 +251,17 @@ Time taken:
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted92.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 Step Two
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted3.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted4.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted5.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted6.png
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -239,27 +281,18 @@ Step 3
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Graphics
 	filename pasted8.png
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Graphics
 	filename pasted9.png
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Graphics
 	filename pasted11.png
 
@@ -281,26 +314,17 @@ Step 3
 Step 4
 \end_layout
 
+\begin_layout Standard
+\begin_inset Graphics
+	filename pasted93.png
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 Step 5
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted12.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted13.png
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section*
@@ -315,357 +339,21 @@ Make a graph of this shit
 Did not see much difference between 5 and 10, so increased increment
 \end_layout
 
-\begin_layout Subsection*
-Size 5
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted67.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted66.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted68.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 10
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted63.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted64.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted65.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 100
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted60.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted61.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted62.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 1000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted48.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted49.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted50.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 10000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted51.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted53.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted52.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 100000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted46.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted54.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted55.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 500000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted70.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted71.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted72.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 1000000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted47.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted56.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted57.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 5000000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted58.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted59.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted69.png
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section*
-Step 6
+Step 7
 \end_layout
 
 \begin_layout Standard
 Make a graph of this shit
 \end_layout
 
-\begin_layout Subsection*
-Size 5
-\end_layout
-
-\begin_layout Subsection*
-Size 10
-\end_layout
-
-\begin_layout Subsection*
-Size 100
+\begin_layout Section*
+Bonus Step
 \end_layout
 
 \begin_layout Standard
-\begin_inset Graphics
-	filename pasted82.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted83.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 1000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted79.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted80.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted81.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 10000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted76.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted77.png
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pasted78.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 100000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted75.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 500000
-\end_layout
-
-\begin_layout Subsection*
-Size 1000000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted74.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection*
-Size 5000000
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename pasted73.png
-
-\end_inset
-
-
+Use insertion sort below 16 values, bit cheese but can use -O3 option to
+ compile a fast version
 \end_layout
 
 \end_body
