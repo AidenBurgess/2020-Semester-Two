@@ -2,8 +2,8 @@
     The sorting program to use for Operating Systems Assignment 1 2020
     written by Robert Sheehan
 
-    Modified by: put your name here
-    UPI: put your login here
+    Modified by: Aiden Burgess
+    UPI: abur970
 
     By submitting a program you are claiming that you and only you have made
     adjustments and additions to this code.

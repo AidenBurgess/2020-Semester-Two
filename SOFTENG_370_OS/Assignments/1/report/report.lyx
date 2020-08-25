@@ -32,8 +32,6 @@
 \linespread{1.1} % Line spacing
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-% Required to not count titlepage in page numbering
-\addtocounter {page} {-1}
 
 % Make a simple command for use in document body
 \newcommand{\start}{
@@ -44,7 +42,7 @@
 
 % Set up the header and footer
 \pagestyle{fancy}
-\lhead{\hmwkAuthorName} % Top left header
+\lhead{\hmwkAuthorName - abur970} % Top left header
 \rhead{\hmwkClass:\ Assignment\ \#\hmwkNumber}
 \lfoot{\lastxmark} % Bottom left footer
 \cfoot{} % Bottom center footer
@@ -52,18 +50,6 @@
 \renewcommand\headrulewidth{0.4pt} % Size of the header rule
 \renewcommand\footrulewidth{0.4pt} % Size of the footer rule
 
-% The following 2 commands setup the title page
-\title{
-\vspace{2in}
-\textmd{\textbf{\hmwkClass:\ Assignment\ \#\hmwkNumber}}\\
-\normalsize\vspace{0.1in}\small{ \today }\\
-\vspace{3in}
-}
-
-\author{
-  \textbf{\hmwkAuthorName} \\
-  \texttt{\hmwkUserID \hspace{0.1in}- \hmwkStudentNumber}
-}
 
 % Do not display standard date since we use a custom date
 \date{}
@@ -140,22 +126,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-start
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section*
 Questions to Answer
 \end_layout
@@ -165,16 +135,42 @@ Questions to Answer
 \end_layout
 
 \begin_layout Standard
-I ran the assignment on my Windows Laptop using WSL2 - Ubuntu 16.0.4 LTS.
+I ran the assignment on my Windows Laptop using WSL2 - Ubuntu 16.0.4 LTS 64-bit.
+ My computer has a i7-9750H processor, which has 12 cores @ 2.6 GHz, with
+ virtualization turned on.
+ It also has 16GB ram.
 \end_layout
 
 \begin_layout Standard
-Linux LAPTOP-M7BM40VA 4.19.104-microsoft-standard #1 SMP Wed Feb 19 06:37:35
- UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+Output from 
+\begin_inset Quotes eld
+\end_inset
+
+uname -a
+\begin_inset Quotes erd
+\end_inset
+
+: Linux LAPTOP-M7BM40VA 4.19.104-microsoft-standard #1 SMP 2020 x86_64 x86_64
+ x86_64 GNU/Linux
 \end_layout
 
 \begin_layout Standard
-16GB RAM, 12 Cores CPU @ 2.6 GHz
+Output from 
+\begin_inset Quotes eld
+\end_inset
+
+free
+\begin_inset Quotes erd
+\end_inset
+
+: 
+\begin_inset Graphics
+	filename pasted97.png
+	scale 45
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection*
@@ -307,7 +303,7 @@ status open
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="7">
 <features tabularvalignment="middle">
@@ -324,7 +320,7 @@ status open
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 # Step
 \end_layout
 
@@ -335,7 +331,7 @@ status open
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Measurements (s)
 \end_layout
 
@@ -382,7 +378,7 @@ Measurements (s)
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Avg Time (s)
 \end_layout
 
@@ -395,7 +391,7 @@ Avg Time (s)
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Step 1
 \end_layout
 
@@ -406,7 +402,7 @@ Step 1
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 148
 \end_layout
 
@@ -417,7 +413,7 @@ Step 1
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 157
 \end_layout
 
@@ -428,7 +424,7 @@ Step 1
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 152
 \end_layout
 
@@ -439,7 +435,7 @@ Step 1
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 147
 \end_layout
 
@@ -450,7 +446,7 @@ Step 1
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 146
 \end_layout
 
@@ -461,7 +457,7 @@ Step 1
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 150
 \end_layout
 
@@ -474,7 +470,7 @@ Step 1
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Step 2
 \end_layout
 
@@ -485,7 +481,7 @@ Step 2
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 147
 \end_layout
 
@@ -496,7 +492,7 @@ Step 2
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 153
 \end_layout
 
@@ -507,7 +503,7 @@ Step 2
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 146
 \end_layout
 
@@ -518,7 +514,7 @@ Step 2
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 151
 \end_layout
 
@@ -529,7 +525,7 @@ Step 2
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 149
 \end_layout
 
@@ -540,7 +536,7 @@ Step 2
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 149.2
 \end_layout
 
@@ -553,7 +549,7 @@ Step 2
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Step 3
 \end_layout
 
@@ -564,7 +560,7 @@ Step 3
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 84
 \end_layout
 
@@ -575,7 +571,7 @@ Step 3
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 94
 \end_layout
 
@@ -586,7 +582,7 @@ Step 3
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 101
 \end_layout
 
@@ -597,7 +593,7 @@ Step 3
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 112
 \end_layout
 
@@ -608,7 +604,7 @@ Step 3
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 96
 \end_layout
 
@@ -619,7 +615,7 @@ Step 3
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 97.4
 \end_layout
 
@@ -632,7 +628,7 @@ Step 3
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Step 4
 \end_layout
 
@@ -643,7 +639,7 @@ Step 4
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 145
 \end_layout
 
@@ -654,7 +650,7 @@ Step 4
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 150
 \end_layout
 
@@ -665,7 +661,7 @@ Step 4
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 165
 \end_layout
 
@@ -676,7 +672,7 @@ Step 4
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 158
 \end_layout
 
@@ -687,7 +683,7 @@ Step 4
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 151
 \end_layout
 
@@ -698,7 +694,7 @@ Step 4
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 153.8
 \end_layout
 
@@ -711,7 +707,7 @@ Step 4
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Step 5
 \end_layout
 
@@ -722,7 +718,7 @@ Step 5
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 150
 \end_layout
 
@@ -733,7 +729,7 @@ Step 5
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 146
 \end_layout
 
@@ -744,7 +740,7 @@ Step 5
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 146
 \end_layout
 
@@ -755,7 +751,7 @@ Step 5
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 147
 \end_layout
 
@@ -766,7 +762,7 @@ Step 5
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 153
 \end_layout
 
@@ -777,7 +773,7 @@ Step 5
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 148.4
 \end_layout
 
@@ -790,7 +786,7 @@ Step 5
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Step 6
 \end_layout
 
@@ -801,7 +797,7 @@ Step 6
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 39
 \end_layout
 
@@ -812,7 +808,7 @@ Step 6
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 39
 \end_layout
 
@@ -823,7 +819,7 @@ Step 6
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 39
 \end_layout
 
@@ -834,7 +830,7 @@ Step 6
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 40
 \end_layout
 
@@ -845,7 +841,7 @@ Step 6
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 39
 \end_layout
 
@@ -856,7 +852,7 @@ Step 6
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 39.2
 \end_layout
 
@@ -869,7 +865,7 @@ Step 6
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Step 7
 \end_layout
 
@@ -880,7 +876,7 @@ Step 7
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 38
 \end_layout
 
@@ -891,7 +887,7 @@ Step 7
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 40
 \end_layout
 
@@ -902,7 +898,7 @@ Step 7
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 38
 \end_layout
 
@@ -913,7 +909,7 @@ Step 7
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 38
 \end_layout
 
@@ -924,7 +920,7 @@ Step 7
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 38
 \end_layout
 
@@ -935,7 +931,7 @@ Step 7
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 38.4
 \end_layout
 
@@ -948,7 +944,7 @@ Step 7
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Bonus
 \end_layout
 
@@ -959,7 +955,7 @@ Bonus
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 36
 \end_layout
 
@@ -970,7 +966,7 @@ Bonus
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 38
 \end_layout
 
@@ -981,7 +977,7 @@ Bonus
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 38
 \end_layout
 
@@ -992,7 +988,7 @@ Bonus
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 35
 \end_layout
 
@@ -1003,7 +999,7 @@ Bonus
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 34
 \end_layout
 
@@ -1014,7 +1010,7 @@ Bonus
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 36.2
 \end_layout
 
@@ -1027,7 +1023,7 @@ Bonus
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 Bonus + Opt
 \end_layout
 
@@ -1038,18 +1034,7 @@ Bonus + Opt
 
 \begin_layout Plain Layout
 
-\size tiny
-13
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size tiny
+\size scriptsize
 12
 \end_layout
 
@@ -1060,7 +1045,7 @@ Bonus + Opt
 
 \begin_layout Plain Layout
 
-\size tiny
+\size scriptsize
 12
 \end_layout
 
@@ -1071,8 +1056,8 @@ Bonus + Opt
 
 \begin_layout Plain Layout
 
-\size tiny
-13
+\size scriptsize
+12
 \end_layout
 
 \end_inset
@@ -1082,8 +1067,19 @@ Bonus + Opt
 
 \begin_layout Plain Layout
 
-\size tiny
-14
+\size scriptsize
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+12
 \end_layout
 
 \end_inset
@@ -1093,8 +1089,8 @@ Bonus + Opt
 
 \begin_layout Plain Layout
 
-\size tiny
-12.8
+\size scriptsize
+12
 \end_layout
 
 \end_inset
@@ -1325,7 +1321,7 @@ Step three htop
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection*
 Step Four
 \end_layout
 
@@ -1338,7 +1334,7 @@ I found this implementation to be the hardest to program, and the speeds
  for the threads (very little).
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection*
 Step Five
 \end_layout
 
@@ -1390,11 +1386,64 @@ Step three htop
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Subsection*
 Step Six
 \end_layout
 
 \begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "50col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename C:/Users/aiden/Downloads/Average Time (s) vs Split Size (1).png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Step six split size testing
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "55col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
 Initially, I tested minimum size values of 5 and 10.
  After finding that there was negligible difference between these values,
  I increased my step size to a factor of ten.
@@ -1409,18 +1458,49 @@ Initially, I tested minimum size values of 5 and 10.
  sytem monitor.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
 The speed when optimised is significantly faster than all previous steps
  at 39.2 seconds.
  The reason why increasing the amount of processes does not result in a
  greater amount of performance is the limit of CPU cores on my machine.
  Only twelve processes can be running at any given time, so decreasing the
  split size should not have a great impact on speed.
+ In comparison to step five, all cores were being utilised for the majority
+ of the runtime (Fig 6.), which explains the faster runtime.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status collapsed
@@ -1428,13 +1508,6 @@ status collapsed
 \begin_layout Plain Layout
 \noindent
 \align center
-\begin_inset Graphics
-	filename C:/Users/aiden/Downloads/Average Time (s) vs Split Size (1).png
-	scale 30
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename pasted96.png
 	scale 30
@@ -1461,25 +1534,23 @@ Step six split size testing
 
 \end_layout
 
-\begin_layout Section*
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Step Seven
 \end_layout
 
 \begin_layout Standard
-Going from 6-7 was very easy.
-\end_layout
-
-\begin_layout Standard
-This implementation was the easiest to programme, and required the least
- amount of lines of modification.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement h
-wide false
-sideways false
+\begin_inset Wrap figure
+lines 0
+placement o
+overhang 0col%
+width "50col%"
 status collapsed
 
 \begin_layout Plain Layout
@@ -1487,7 +1558,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename C:/Users/aiden/Downloads/Average Time (s) vs Split Size.png
-	scale 30
+	scale 32
+	BoundingBox 0bp 0bp 500bp 371bp
 
 \end_inset
 
@@ -1509,15 +1581,488 @@ Step seven split size testing
 \end_inset
 
 
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "55col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+This implementation was the easiest to programme, and required the least
+ amount of lines of modification.
+ As shown in Fig 7.
+ the split sizes chosen were the same as in step six, for consistency.
+ The behaviour of split sizes is also similar, as the only difference between
+ step six and this step is the memory passing.
+ The same optimal size of 100,000 was chosen.
+ The performance of this implementation is 38.4 seconds.
+ This difference in comparison to step six could be due to the lower overhead
+ of mmap vs pipes, although this could also be due to variance.
 \end_layout
 
-\begin_layout Section*
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
 Bonus Step
 \end_layout
 
 \begin_layout Standard
-Use insertion sort below 16 values, bit cheese but can use -O3 option to
- compile a fast version
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+From my previous knowledge around TimSort - Python's preferred algorithm
+ for sorting, I knew that using insertion sort below 16 values should be
+ faster than quicksort.
+ With some further research and testing, I decided to add this optimisation
+ to the fastest previous step - step seven.
+ The average time of this implementation is 36.2 seconds.
+ All measurements of this step were the same or faster than all measurements
+ for step seven.
+ Therefore, I can be quite certain that this implementation is faster than
+ all others.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+A further optimisation that can be used to speed up the implementation is
+ the compilation flags 
+\begin_inset Quotes eld
+\end_inset
+
+-O3
+\begin_inset Quotes erd
+\end_inset
+
+ and 
+\begin_inset Quotes eld
+\end_inset
+
+-Ofast
+\begin_inset Quotes erd
+\end_inset
+
+.
+ These tell the compiler to optimise the code further.
+ In my compilation, I used 
+\begin_inset Quotes eld
+\end_inset
+
+-Ofast
+\begin_inset Quotes erd
+\end_inset
+
+ as this provided the greatest performance gain.
+ The performance from this step alone is extremely significant, with a consisten
+t average speed of 12 seconds.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Subsection*
+Ordering Techniques from Slowest to Fastest
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Step number
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Technique
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Average time (s)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Four
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Two threads - reuse extra thread
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+153.8
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+One
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No parallelisation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+150.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Two
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Two threads - no reuse
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+149.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Five
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Two processes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+148.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Three
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Maximum threads
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+97.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Six
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiple processes - piping
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+39.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seven
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiple processes - mmap
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+38.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bonus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiple processes (mmap) + insertion sort
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+36.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bonus + Opt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multiple processes (mmap) + insertion sort + compilation optimisation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+Explanations are in their corresponding step paragraphs.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

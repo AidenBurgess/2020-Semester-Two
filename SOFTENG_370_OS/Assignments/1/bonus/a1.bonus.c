@@ -103,9 +103,6 @@ void quick_sort(struct block my_data)
 
     if (right_side.size > SPLIT_SIZE)
     {
-        int my_pipe[2];
-        pipe(my_pipe);
-
         pid_t child_pid = fork();
 
         if (child_pid != 0)
