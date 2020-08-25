@@ -1,0 +1,29 @@
+What changes occurred to the directory where you ran fitnesse-standalone.jar?
+FitNesseRoot folder added, which contains a bunch of fitnesse files and stuff
+
+What is the content of FitNesseRoot/FrontPage/content.txt and how does it compare to what you see in the browser?
+Looks like a markdown file, all the content matches up with the browser, except for the header and footer
+
+What happens if you add some text (using any text editor, such as Notepad) to the end of FitNesseRoot/FrontPage/content.txt (and refresh the homepage in your browser)?
+It gets automatically added to the FrontPage
+
+
+What happens if you use Stats as the page name? (Not a wikiWord, so no "?" link)
+What happens if you use Lab04? (Not a wikiWord, so no "?" link)
+What happens if you use StatsLab? (A WikiWord!)
+
+Why do you get different behaviour depending on the name of the page you use? (Think WikiWord)
+Some of theme are wiki words, some arent
+
+Has the contents of the FitNesseRoot/FrontPage/content.txt changed?
+Yes! A LabFive.wiki file was created
+
+If you directly edit the file content.txt for your new page using a text editor (not using the web browser) and refresh the page in the web browser, what happens?
+Edited the .wiki file, updates the page
+
+How has the set of buttons at the top changed when you are looking at your new page?
+Edit, Add, Tools => Test, Edit, Add Tools
+
+What happens to the buttons if you use the name StatsMean, or TestMean for the page?
+Without the Test in front, it doesnt have the test button.
+
