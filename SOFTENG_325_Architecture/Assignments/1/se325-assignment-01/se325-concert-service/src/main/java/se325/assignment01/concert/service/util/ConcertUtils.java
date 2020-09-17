@@ -32,6 +32,7 @@ public class ConcertUtils {
             em.getTransaction().begin();
             TypedQuery<Concert> query = em.createQuery("select c from Concert c", Concert.class);
             List<Concert> concerts = query.getResultList();
+            LOGGER.debug(concerts.toString());
 
             // Get all dates for all concerts
             Set<LocalDateTime> allDates = new HashSet<>();
