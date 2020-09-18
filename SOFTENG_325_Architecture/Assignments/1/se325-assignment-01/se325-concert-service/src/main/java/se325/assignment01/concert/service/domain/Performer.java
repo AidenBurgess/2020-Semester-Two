@@ -20,6 +20,19 @@ public class Performer {
     @Column(length = 1000)
     private String blurb;
 
-    @ManyToMany(mappedBy = "performers")
+    @ManyToMany(mappedBy = "performers", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     private Set<Concert> concerts = new HashSet<>();
+
+    @Override
+    public String toString() {
+        String concertsString = "";
+        concerts.forEach(concert -> concertsString.concat(concert.getId().toString()));
+        return "Performer{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", imageName='" + imageName + '\'' +
+                ", genre='" + genre + '\'' +
+                ", concertIds=" + concertsString +
+                '}';
+    }
 }

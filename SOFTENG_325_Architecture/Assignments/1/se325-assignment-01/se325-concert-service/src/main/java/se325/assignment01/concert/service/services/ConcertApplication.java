@@ -1,11 +1,18 @@
 package se325.assignment01.concert.service.services;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
+import se325.assignment01.concert.service.domain.ConcertDate;
+import se325.assignment01.concert.service.domain.Performer;
+import se325.assignment01.concert.service.domain.Seat;
 import se325.assignment01.concert.service.util.ConcertUtils;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -24,6 +31,13 @@ public class ConcertApplication extends Application {
         singletons.add(PersistenceManager.instance());
 
         ConcertUtils.initConcerts();
+
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        TypedQuery<Performer> queryConcertDates = em.createQuery("select p from Performer p ", Performer.class);
+        List<Performer> performers = queryConcertDates.getResultList();
+
+        System.out.println(performers.toString());
+
     }
 
     @Override
