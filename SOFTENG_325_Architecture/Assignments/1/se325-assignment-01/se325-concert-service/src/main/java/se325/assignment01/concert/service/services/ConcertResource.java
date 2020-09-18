@@ -31,6 +31,10 @@ public class ConcertResource {
     @Path("concerts/{concertId}")
     public ConcertDTO getConcertById(@PathParam("concertId") long concertId) {
         Concert concert = ConcertUtils.getConcertById(concertId);
+        if (concert == null) {
+            return null;
+        }
+
         return ConcertMapper.toDto(concert);
     }
 
