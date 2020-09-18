@@ -2,6 +2,7 @@ package se325.assignment01.concert.service.domain;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import javax.persistence.*;
 
@@ -53,6 +54,22 @@ public class Concert {
 
     public Set<Performer> getPerformers() {
         return performers;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Concert concert = (Concert) o;
+        return Objects.equals(id, concert.id) &&
+                Objects.equals(title, concert.title) &&
+                Objects.equals(imageName, concert.imageName) &&
+                Objects.equals(blurb, concert.blurb);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, imageName, blurb);
     }
 
     @Override

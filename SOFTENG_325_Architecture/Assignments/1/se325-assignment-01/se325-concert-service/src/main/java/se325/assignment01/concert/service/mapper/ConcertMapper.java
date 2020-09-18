@@ -16,11 +16,12 @@ public class ConcertMapper {
         ConcertDTO concertDTO = new ConcertDTO(concert.getId(), concert.getTitle(), concert.getImageName(), concert.getBlurb());
         concertDTO.setDates(new ArrayList<>(concert.getDates()));
         // Convert set of performers to list of performerDtos
-        List<PerformerDTO> performersDto = new ArrayList<>();
+        List<PerformerDTO> performersDTO = new ArrayList<>();
+        System.out.println(concert.getPerformers());
         concert.getPerformers().forEach(performer -> {
-            performersDto.add(PerformerMapper.toDto(performer));
+            performersDTO.add(PerformerMapper.toDto(performer));
         });
-        concertDTO.setPerformers(performersDto);
+        concertDTO.setPerformers(performersDTO);
         return concertDTO;
     }
 }
