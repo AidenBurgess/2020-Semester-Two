@@ -23,6 +23,9 @@ public class ConcertResource {
         for (Concert concert : concerts) {
             concertDTOS.add(ConcertMapper.toDto(concert));
         }
+        if (concertDTOS.size() == 0) {
+            throw new NotFoundException("Could not find any concerts");
+        }
         return concertDTOS;
     }
 
@@ -32,7 +35,7 @@ public class ConcertResource {
     public ConcertDTO getConcertById(@PathParam("concertId") long concertId) {
         Concert concert = ConcertUtils.getConcertById(concertId);
         if (concert == null) {
-            return null;
+            throw new NotFoundException("Could not find concert with id " + concertId);
         }
 
         return ConcertMapper.toDto(concert);
