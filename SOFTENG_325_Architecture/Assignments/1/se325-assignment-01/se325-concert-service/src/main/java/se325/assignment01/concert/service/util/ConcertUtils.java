@@ -2,11 +2,11 @@ package se325.assignment01.concert.service.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import se325.assignment01.concert.common.dto.UserDTO;
 import se325.assignment01.concert.service.domain.Concert;
-import se325.assignment01.concert.service.domain.ConcertDate;
 import se325.assignment01.concert.service.domain.Performer;
 import se325.assignment01.concert.service.domain.Seat;
-import se325.assignment01.concert.service.services.ConcertApplication;
+import se325.assignment01.concert.service.domain.User;
 import se325.assignment01.concert.service.services.PersistenceManager;
 
 import javax.persistence.EntityManager;
@@ -15,7 +15,6 @@ import javax.persistence.TypedQuery;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 public class ConcertUtils {
@@ -100,7 +99,14 @@ public class ConcertUtils {
         TypedQuery<Seat> query = em.createQuery("select s from Seat s where s.date = :date", Seat.class)
                 .setParameter("date", date);
         return query.getResultList();
+    }
 
+    public static User getUserFromLogin(String username, String password) throws NoResultException {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        TypedQuery<User> query = em.createQuery("select u from User u where u.username = :username and u.password = :password", User.class)
+                .setParameter("username", username)
+                .setParameter("password", password);
+        return query.getSingleResult();
     }
 
 }

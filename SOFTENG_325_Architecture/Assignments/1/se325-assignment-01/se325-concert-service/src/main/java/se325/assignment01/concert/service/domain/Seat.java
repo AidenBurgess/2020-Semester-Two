@@ -40,6 +40,10 @@ public class Seat implements Serializable {
         this.price = price;
     }
 
+    public boolean isBooked() {
+        return isBooked;
+    }
+
     @Override
     public String toString() {
         return "Seat{" +

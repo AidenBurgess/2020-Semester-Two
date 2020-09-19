@@ -19,9 +19,6 @@ public class Concert {
     private String blurb;
 
     @OneToMany(mappedBy = "concert", cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
-    //@ElementCollection
-    //@CollectionTable(name="CONCERT_DATES", joinColumns = @JoinColumn(name="CONCERT_ID"))
-    //@Column(name="DATE")
     private Set<ConcertDate> dates = new HashSet<>();
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
