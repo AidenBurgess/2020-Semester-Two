@@ -16,6 +16,22 @@ public class ConcertResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("concerts")
+    public List<ConcertDTO> getAllConcerts() {
+        List<Concert> concerts = ConcertUtils.getConcerts();
+        List<ConcertDTO> concertDTOS = new ArrayList<>();
+        for (Concert concert : concerts) {
+            concertDTOS.add(ConcertMapper.toDto(concert));
+        }
+        if (concertDTOS.size() == 0) {
+            throw new NotFoundException("Could not find any concerts");
+        }
+        return concertDTOS;
+    }
+
+    // TODO: Make this more efficient, only need id and title
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("concerts/summaries")
     public List<ConcertDTO> getSummary() {
         List<Concert> concerts = ConcertUtils.getConcerts();
