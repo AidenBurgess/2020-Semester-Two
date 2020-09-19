@@ -18,4 +18,7 @@ public class ConcertDate implements Serializable {
         return date;
     }
 
+    public Concert getConcert() {
+        return concert;
+    }
 }
