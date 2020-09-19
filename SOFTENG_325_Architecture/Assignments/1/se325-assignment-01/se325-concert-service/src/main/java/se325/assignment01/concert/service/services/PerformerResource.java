@@ -5,6 +5,7 @@ import se325.assignment01.concert.service.domain.Performer;
 import se325.assignment01.concert.service.mapper.PerformerMapper;
 import se325.assignment01.concert.service.util.ConcertUtils;
 
+import javax.persistence.NoResultException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
@@ -31,12 +32,12 @@ public class PerformerResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{performerId}")
     public PerformerDTO getConcertById(@PathParam("performerId") long performerId) {
-        Performer performer = ConcertUtils.getPerformerById(performerId);
-        if (performer == null) {
+        try {
+            Performer performer = ConcertUtils.getPerformerById(performerId);
+            return PerformerMapper.toDTO(performer);
+        } catch (NoResultException ex) {
             throw new NotFoundException("Could not find performer with id " + performerId);
         }
-
-        return PerformerMapper.toDTO(performer);
     }
 
 }

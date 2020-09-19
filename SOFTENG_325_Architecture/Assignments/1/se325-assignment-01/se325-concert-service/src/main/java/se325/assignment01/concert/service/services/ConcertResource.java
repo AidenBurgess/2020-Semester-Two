@@ -7,6 +7,7 @@ import se325.assignment01.concert.service.mapper.ConcertMapper;
 import se325.assignment01.concert.service.mapper.ConcertSummaryMapper;
 import se325.assignment01.concert.service.util.ConcertUtils;
 
+import javax.persistence.NoResultException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.ArrayList;
@@ -48,12 +49,12 @@ public class ConcertResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{concertId}")
     public ConcertDTO getConcertById(@PathParam("concertId") long concertId) {
-        Concert concert = ConcertUtils.getConcertById(concertId);
-        if (concert == null) {
+        try {
+            Concert concert = ConcertUtils.getConcertById(concertId);
+            return ConcertMapper.toDTO(concert);
+        } catch (NoResultException ex) {
             throw new NotFoundException("Could not find concert with id " + concertId);
         }
-
-        return ConcertMapper.toDTO(concert);
     }
 
 }

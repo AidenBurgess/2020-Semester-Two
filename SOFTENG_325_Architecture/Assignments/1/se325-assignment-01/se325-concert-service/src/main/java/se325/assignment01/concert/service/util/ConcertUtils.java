@@ -10,6 +10,7 @@ import se325.assignment01.concert.service.services.ConcertApplication;
 import se325.assignment01.concert.service.services.PersistenceManager;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -67,8 +68,8 @@ public class ConcertUtils {
             em.close();
         }
     }
-    
-    public static Concert getConcertById(long id) {
+
+    public static Concert getConcertById(long id) throws NoResultException {
         EntityManager em = PersistenceManager.instance().createEntityManager();
         TypedQuery<Concert> query = em.createQuery("select c from Concert c where c.id = :id", Concert.class)
                 .setParameter("id", id);
@@ -81,7 +82,7 @@ public class ConcertUtils {
         return query.getResultList();
     }
 
-    public static Performer getPerformerById(long id) {
+    public static Performer getPerformerById(long id) throws NoResultException {
         EntityManager em = PersistenceManager.instance().createEntityManager();
         TypedQuery<Performer> query = em.createQuery("select p from Performer p where p.id = :id", Performer.class)
                 .setParameter("id", id);
