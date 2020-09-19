@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se325.assignment01.concert.service.domain.Concert;
 import se325.assignment01.concert.service.domain.ConcertDate;
+import se325.assignment01.concert.service.domain.Performer;
 import se325.assignment01.concert.service.domain.Seat;
 import se325.assignment01.concert.service.services.ConcertApplication;
 import se325.assignment01.concert.service.services.PersistenceManager;
@@ -34,38 +35,31 @@ public class ConcertUtils {
             em.getTransaction().begin();
             TypedQuery<Concert> query = em.createQuery("select c from Concert c", Concert.class);
             List<Concert> concerts = query.getResultList();
-            LOGGER.debug(concerts.toString());
 
             // Get all dates for all concerts
             Set<LocalDateTime> allDates = new HashSet<>();
             for (Concert c : concerts) {
                 Set<LocalDateTime> dates = c.getDates();
-                //LOGGER.debug(dates.toString());
                 allDates.addAll(dates);
             }
             em.getTransaction().commit();
-
-            // Get all concert dates
-            TypedQuery<ConcertDate> queryConcertDates = em.createQuery("select cd from ConcertDate cd", ConcertDate.class);
-            List<ConcertDate> concertDates = queryConcertDates.getResultList();
-            //LOGGER.debug(concertDates.toString());
 
             LOGGER.debug("initConcerts(): There are " + allDates.size() + " concert dates");
 
             // For each concert date, create the seats for that date and persist them.
             int seatCount = 0;
-            for (ConcertDate concertDate : concertDates) {
+            for (LocalDateTime date : allDates) {
 
                 em.getTransaction().begin();
-                Set<Seat> seatsForDate = TheatreLayout.createSeatsFor(concertDate.getDate());
+                Set<Seat> seatsForDate = TheatreLayout.createSeatsFor(date);
                 for (Seat s : seatsForDate) {
+                    em.persist(s);
                     seatCount++;
                 }
-                concertDate.setSeats(seatsForDate);
                 em.getTransaction().commit();
 
                 // Ensures we aren't braking the EM with thousands of seat entities.
-                //em.clear();
+                em.clear();
             }
 
             LOGGER.debug("initConcerts(): Created " + seatCount + " seats!");
@@ -73,13 +67,12 @@ public class ConcertUtils {
             em.close();
         }
     }
-
+    
     public static Concert getConcertById(long id) {
         EntityManager em = PersistenceManager.instance().createEntityManager();
-        TypedQuery<Concert> query = em.createQuery("select c from Concert c", Concert.class);
-        Optional<Concert> matchedConcert = query.getResultStream().filter(concert -> concert.getId().equals(id)).findFirst();
-
-        return matchedConcert.orElse(null);
+        TypedQuery<Concert> query = em.createQuery("select c from Concert c where c.id = :id", Concert.class)
+                .setParameter("id", id);
+        return query.getSingleResult();
     }
 
     public static List<Concert> getConcerts() {
@@ -87,4 +80,26 @@ public class ConcertUtils {
         TypedQuery<Concert> query = em.createQuery("select c from Concert c", Concert.class);
         return query.getResultList();
     }
+
+    public static Performer getPerformerById(long id) {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        TypedQuery<Performer> query = em.createQuery("select p from Performer p where p.id = :id", Performer.class)
+                .setParameter("id", id);
+        return query.getSingleResult();
+    }
+
+    public static List<Performer> getPerformers() {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        TypedQuery<Performer> query = em.createQuery("select c from Performer c", Performer.class);
+        return query.getResultList();
+    }
+
+    public static List<Seat> getSeatsForDay(LocalDateTime date) {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        TypedQuery<Seat> query = em.createQuery("select s from Seat s where s.date = :date", Seat.class)
+                .setParameter("date", date);
+        return query.getResultList();
+
+    }
+
 }

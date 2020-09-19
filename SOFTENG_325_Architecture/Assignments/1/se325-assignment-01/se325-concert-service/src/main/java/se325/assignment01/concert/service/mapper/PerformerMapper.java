@@ -10,7 +10,7 @@ public class PerformerMapper {
         return null;
     }
 
-    public static PerformerDTO toDto(Performer performer) {
+    public static PerformerDTO toDTO(Performer performer) {
         return new PerformerDTO(performer.getId(), performer.getName(), performer.getImageName(), performer.getGenre(), performer.getBlurb());
     }
 

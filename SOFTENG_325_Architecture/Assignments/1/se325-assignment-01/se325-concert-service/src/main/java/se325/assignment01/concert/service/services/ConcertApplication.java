@@ -28,16 +28,11 @@ public class ConcertApplication extends Application {
     public ConcertApplication() {
         classes.add(TestResource.class);
         classes.add(ConcertResource.class);
+        classes.add(PerformerResource.class);
+        classes.add(SeatResource.class);
         singletons.add(PersistenceManager.instance());
 
         ConcertUtils.initConcerts();
-
-        EntityManager em = PersistenceManager.instance().createEntityManager();
-        TypedQuery<Performer> queryConcertDates = em.createQuery("select p from Performer p ", Performer.class);
-        List<Performer> performers = queryConcertDates.getResultList();
-
-        System.out.println(performers.toString());
-
     }
 
     @Override

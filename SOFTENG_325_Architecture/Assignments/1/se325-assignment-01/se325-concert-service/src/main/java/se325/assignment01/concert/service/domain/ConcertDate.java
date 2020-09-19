@@ -16,21 +16,8 @@ public class ConcertDate implements Serializable {
     @Id
     private LocalDateTime date;
 
-    //@OneToMany(mappedBy = "concertDate")
-    @ElementCollection
-    @CollectionTable(name = "CONCERT_DATE_SEATS", joinColumns = {@JoinColumn(name = "CONCERT_ID"), @JoinColumn(name = "DATE")})
-    @Column(name = "SEATS")
-    private Set<Seat> seats = new HashSet<>();
-
     public LocalDateTime getDate() {
         return date;
     }
 
-    public Set<Seat> getSeats() {
-        return seats;
-    }
-
-    public void setSeats(Set<Seat> seats) {
-        this.seats = seats;
-    }
 }
