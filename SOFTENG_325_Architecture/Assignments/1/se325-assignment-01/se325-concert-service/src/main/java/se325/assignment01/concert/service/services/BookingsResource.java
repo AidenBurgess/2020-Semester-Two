@@ -9,7 +9,9 @@ import se325.assignment01.concert.service.util.ConcertUtils;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.NotFoundException;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,6 +31,11 @@ public class BookingsResource {
             throw new NotFoundException();
         }
         return bookingDTOS;
+    }
+
+    @POST
+    public Response addBooking() {
+        return null;
     }
 
 }
