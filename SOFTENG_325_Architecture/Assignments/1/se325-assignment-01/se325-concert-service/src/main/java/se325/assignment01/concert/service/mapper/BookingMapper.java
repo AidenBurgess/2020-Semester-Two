@@ -32,6 +32,7 @@ public class BookingMapper {
 
     public static BookingDTO toDTO(Booking booking) {
         List<Seat> seats = booking.getBookedSeats();
+        // Concert seats to DTO
         List<SeatDTO> seatDTOS = new ArrayList<>();
         for (Seat seat : seats) {
             seatDTOS.add(SeatMapper.toDTO(seat));

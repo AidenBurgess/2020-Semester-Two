@@ -8,14 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConcertMapper {
-    public static Concert toDomainModel(ConcertDTO concertDTO) {
-        return null;
-    }
-
     public static ConcertDTO toDTO(Concert concert) {
         ConcertDTO concertDTO = new ConcertDTO(concert.getId(), concert.getTitle(), concert.getImageName(), concert.getBlurb());
         concertDTO.setDates(new ArrayList<>(concert.getDates()));
-        // Convert set of performers to list of performerDtos
+        // Convert set of performers to list of performerDTOs
         List<PerformerDTO> performersDTO = new ArrayList<>();
         System.out.println(concert.getPerformers());
         concert.getPerformers().forEach(performer -> {

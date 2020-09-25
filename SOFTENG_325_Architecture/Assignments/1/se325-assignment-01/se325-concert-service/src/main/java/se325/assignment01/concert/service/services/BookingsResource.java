@@ -42,6 +42,7 @@ public class BookingsResource {
         if (userId == null) throw new WebApplicationException(Response.Status.UNAUTHORIZED);
 
         Booking booking = ConcertUtils.getBookingById(bookingId);
+        if (booking == null) throw new NotFoundException();
         if (booking.getUser().getId() != Long.parseLong(userId)) {
             throw new WebApplicationException(Response.Status.FORBIDDEN);
         }
