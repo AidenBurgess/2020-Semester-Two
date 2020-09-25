@@ -1,4 +1,4 @@
-import {DEFAULT_NUM_ROWS, DEFAULT_NUM_SEATS_PER_ROW, DEFAULT_PRICING_MODEL, SeatData} from "./seat-data-module.js";
+import {DEFAULT_NUM_SEATS_PER_ROW, DEFAULT_PRICING_MODEL, SeatData} from "./seat-data-module.js";
 
 export const SeatUI = {
 

@@ -2,13 +2,14 @@ package se325.assignment01.concert.service.mapper;
 
 import se325.assignment01.concert.common.dto.BookingDTO;
 import se325.assignment01.concert.common.dto.BookingRequestDTO;
-import se325.assignment01.concert.common.dto.ConcertDTO;
 import se325.assignment01.concert.common.dto.SeatDTO;
-import se325.assignment01.concert.service.domain.*;
+import se325.assignment01.concert.service.domain.Booking;
+import se325.assignment01.concert.service.domain.ConcertDate;
+import se325.assignment01.concert.service.domain.Seat;
+import se325.assignment01.concert.service.domain.User;
 import se325.assignment01.concert.service.util.ConcertUtils;
 
 import javax.ws.rs.BadRequestException;
-import javax.ws.rs.NotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 

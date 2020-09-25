@@ -4,17 +4,17 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import se325.assignment01.concert.common.dto.UserDTO;
 import se325.assignment01.concert.service.domain.User;
-import se325.assignment01.concert.service.mapper.UserMapper;
 import se325.assignment01.concert.service.util.ConcertUtils;
 
 import javax.persistence.NoResultException;
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.CookieParam;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
 import javax.ws.rs.core.Cookie;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
-
-import java.util.UUID;
 
 @Path("concert-service/login")
 public class LoginResource {

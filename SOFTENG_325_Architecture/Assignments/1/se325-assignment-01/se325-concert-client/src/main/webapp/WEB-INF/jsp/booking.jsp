@@ -11,7 +11,6 @@
     <%--<script type="module" src="./js/seatbooking.js"></script>--%>
 
     <script type="module">
-        import {SeatData} from "./js/seat-data-module.js";
         import {SeatUI} from "./js/seat-ui-module.js";
         import {initSeatBookingPage} from "./js/seatbooking.js";
 

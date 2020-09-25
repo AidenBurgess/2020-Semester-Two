@@ -1,10 +1,10 @@
 package se325.assignment01.concert.service.domain;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import javax.persistence.*;
 
 @Entity
 @Table(name = "CONCERTS")

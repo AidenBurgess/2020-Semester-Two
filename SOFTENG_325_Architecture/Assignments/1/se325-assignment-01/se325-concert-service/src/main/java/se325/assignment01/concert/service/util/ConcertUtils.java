@@ -2,7 +2,6 @@ package se325.assignment01.concert.service.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se325.assignment01.concert.common.dto.UserDTO;
 import se325.assignment01.concert.service.domain.*;
 import se325.assignment01.concert.service.services.PersistenceManager;
 

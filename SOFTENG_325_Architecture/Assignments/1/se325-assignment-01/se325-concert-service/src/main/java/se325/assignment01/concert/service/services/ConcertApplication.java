@@ -1,10 +1,9 @@
 package se325.assignment01.concert.service.services;
 
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.core.Application;
-
 import se325.assignment01.concert.service.util.ConcertUtils;
 
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 

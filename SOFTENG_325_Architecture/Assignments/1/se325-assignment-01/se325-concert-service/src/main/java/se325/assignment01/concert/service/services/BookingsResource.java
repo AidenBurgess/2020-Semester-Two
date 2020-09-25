@@ -5,9 +5,6 @@ import org.slf4j.LoggerFactory;
 import se325.assignment01.concert.common.dto.BookingDTO;
 import se325.assignment01.concert.common.dto.BookingRequestDTO;
 import se325.assignment01.concert.service.domain.Booking;
-import se325.assignment01.concert.service.domain.Concert;
-import se325.assignment01.concert.service.domain.ConcertDate;
-import se325.assignment01.concert.service.domain.User;
 import se325.assignment01.concert.service.mapper.BookingMapper;
 import se325.assignment01.concert.service.util.ConcertUtils;
 
@@ -15,7 +12,6 @@ import javax.persistence.EntityExistsException;
 import javax.ws.rs.*;
 import javax.ws.rs.container.ResourceContext;
 import javax.ws.rs.core.*;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;

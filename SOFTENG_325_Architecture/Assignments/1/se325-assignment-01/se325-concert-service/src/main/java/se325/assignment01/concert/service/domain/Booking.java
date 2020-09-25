@@ -2,10 +2,8 @@ package se325.assignment01.concert.service.domain;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
 public class Booking implements Serializable {

@@ -2,7 +2,6 @@ package se325.assignment01.concert.webapp.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import se325.assignment01.concert.webapp.LoginServlet;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

@@ -19,11 +19,11 @@ import java.util.Vector;
 @Path("/concert-service/subscribe")
 public class SubscriptionResource {
 
-    private final List<ConcertInfoSubscription> concertInfoSubscriptions = new Vector<>();
-
+    private static final List<ConcertInfoSubscription> concertInfoSubscriptions = new Vector<>();
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("concertInfo")
     public void addSubscription(
             @CookieParam("auth") String userId,
@@ -42,6 +42,7 @@ public class SubscriptionResource {
         }
 
         concertInfoSubscriptions.add(new ConcertInfoSubscription(sub, concertDate.getDate(), subscriptionInfoDTO.getPercentageBooked()));
+        System.out.println(concertInfoSubscriptions);
     }
 
     public void processBookingChange(ConcertDate concertDate) {
@@ -53,6 +54,7 @@ public class SubscriptionResource {
         System.out.println("bookedseats: " + bookedSeats);
         System.out.println("percentBooked: " + percentBooked);
         System.out.println("size: " + seatsForConcert.size());
+        System.out.println(concertInfoSubscriptions);
 
 
         // Go through each subscription
