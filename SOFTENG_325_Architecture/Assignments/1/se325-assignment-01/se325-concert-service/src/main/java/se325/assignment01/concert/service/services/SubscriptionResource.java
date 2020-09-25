@@ -55,7 +55,7 @@ public class SubscriptionResource {
                 if (sub.getDate().equals(concertDate.getDate()) && percentBooked >= sub.getPercentageBooked()) {
                     // notify with ConcertInfoNotificationDTO
                     sub.getSubscription().resume(new ConcertInfoNotificationDTO(seatsForConcert.size() - bookedSeats));
-                    concertInfoSubscriptions.remove(sub);
+                    iterator.remove();
                 }
             }
         }
