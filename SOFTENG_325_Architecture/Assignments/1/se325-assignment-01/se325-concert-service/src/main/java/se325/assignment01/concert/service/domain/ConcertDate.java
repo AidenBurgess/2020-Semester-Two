@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "CONCERT_DATES")
 public class ConcertDate implements Serializable {
-    @Id
+
     @ManyToOne
     @JoinColumn(nullable = false)
     private Concert concert;

@@ -10,18 +10,36 @@ import java.util.Set;
 @Entity
 public class Booking implements Serializable {
     @Id
+    @GeneratedValue
+    private long id;
+
     @ManyToOne
-    @JoinColumns({@JoinColumn(name = "CONCERT_ID"), @JoinColumn(name = "DATE")})
+    @JoinColumns({@JoinColumn(name = "DATE")})
     private ConcertDate concertDate;
-    @Id
+
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private User user;
+
     @OneToMany
     private List<Seat> bookedSeats;
 
+    public Booking() {
+    }
+
+    public Booking(ConcertDate concertDate, User user, List<Seat> bookedSeats) {
+        this.concertDate = concertDate;
+        this.user = user;
+        this.bookedSeats = bookedSeats;
+    }
+
+
     public ConcertDate getConcertDate() {
         return concertDate;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public User getUser() {
@@ -45,5 +63,15 @@ public class Booking implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(concertDate, user, bookedSeats);
+    }
+
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "id=" + id +
+                ", concertDate=" + concertDate +
+                ", user=" + user +
+                ", bookedSeats=" + bookedSeats +
+                '}';
     }
 }

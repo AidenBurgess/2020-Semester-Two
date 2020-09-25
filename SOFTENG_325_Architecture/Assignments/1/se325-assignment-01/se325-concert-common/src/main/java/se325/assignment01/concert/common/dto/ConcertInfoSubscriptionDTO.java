@@ -1,14 +1,18 @@
 package se325.assignment01.concert.common.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
+import se325.assignment01.concert.common.jackson.LocalDateTimeDeserializer;
+import se325.assignment01.concert.common.jackson.LocalDateTimeSerializer;
 
 import java.time.LocalDateTime;
 
 /**
  * Represents a subscription request to be notified when a particular concert / date's booking ratio goes over
  * a certain amount.
- *
+ * <p>
  * concertId          the id of the concert
  * date               the date of the particular performance
  * percentageBooked   the threshold at which a notification is requested
@@ -16,6 +20,8 @@ import java.time.LocalDateTime;
 public class ConcertInfoSubscriptionDTO {
 
     private long concertId;
+    @JsonSerialize(using = LocalDateTimeSerializer.class)
+    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime date;
     private int percentageBooked;
 

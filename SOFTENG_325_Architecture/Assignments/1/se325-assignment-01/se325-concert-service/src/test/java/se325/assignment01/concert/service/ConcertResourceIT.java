@@ -310,6 +310,11 @@ public class ConcertResourceIT {
                 LocalDateTime.of(2020, 2, 15, 20, 0, 0),
                 "C5", "C6");
 
+        System.out.println(response.getHeaders());
+        System.out.println(response.getStringHeaders());
+
+        System.out.println(response.readEntity(String.class));
+
         // Make sure it worked
         assertEquals(Response.Status.CREATED.getStatusCode(), response.getStatus());
         assertNotNull(response.getLocation());

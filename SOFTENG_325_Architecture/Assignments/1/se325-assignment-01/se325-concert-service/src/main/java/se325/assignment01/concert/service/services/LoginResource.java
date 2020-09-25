@@ -28,7 +28,7 @@ public class LoginResource {
             // Check credentials
             User user = ConcertUtils.getUserFromLogin(userDTO.getUsername(), userDTO.getPassword());
             // setup cookie for user
-            NewCookie cookie = makeCookie(clientId);
+            NewCookie cookie = makeCookie(clientId, user.getId());
 
             // Return cookie to user
             LOGGER.info(userDTO.getUsername() + " successfully signed in!");
@@ -54,11 +54,11 @@ public class LoginResource {
      * method returns null as there's no need to return a NewCookie in the HTTP
      * response message.
      */
-    private NewCookie makeCookie(Cookie clientId) {
+    private NewCookie makeCookie(Cookie clientId, long userId) {
         NewCookie newCookie = null;
 
         if (clientId == null) {
-            newCookie = new NewCookie("auth", UUID.randomUUID().toString());
+            newCookie = new NewCookie("auth", Long.toString(userId));
             LOGGER.info("Generated cookie: " + newCookie.getValue());
         }
 

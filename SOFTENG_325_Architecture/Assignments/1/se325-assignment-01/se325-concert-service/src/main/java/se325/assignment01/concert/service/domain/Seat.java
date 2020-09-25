@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 public class Seat implements Serializable {
@@ -42,6 +43,22 @@ public class Seat implements Serializable {
 
     public boolean isBooked() {
         return isBooked;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Seat seat = (Seat) o;
+        return isBooked == seat.isBooked &&
+                Objects.equals(label, seat.label) &&
+                Objects.equals(date, seat.date) &&
+                Objects.equals(price, seat.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(label, date, isBooked, price);
     }
 
     @Override

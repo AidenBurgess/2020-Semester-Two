@@ -106,10 +106,41 @@ public class ConcertUtils {
         return query.getSingleResult();
     }
 
+    public static User getUserById(String userId) {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        return em.find(User.class, Long.parseLong(userId));
+    }
+
     public static List<Booking> getBookings() {
         EntityManager em = PersistenceManager.instance().createEntityManager();
         TypedQuery<Booking> query = em.createQuery("select b from Booking b", Booking.class);
         return query.getResultList();
     }
 
+    public static ConcertDate getConcertDateByDate(LocalDateTime date) {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        ConcertDate concertDate = em.find(ConcertDate.class, date);
+        return concertDate;
+    }
+
+    public static List<Seat> getSeatsFromLabels(List<String> seatLabels, LocalDateTime date) {
+        Set<String> seatLabelsSet = new HashSet<>(seatLabels);
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        TypedQuery<Seat> query = em.createQuery("select s from Seat s where s.date = :date and s.label in :seatLabels", Seat.class)
+                .setParameter("date", date)
+                .setParameter("seatLabels", seatLabelsSet);
+        return query.getResultList();
+    }
+
+    public static void persistBooking(Booking booking) {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(booking);
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+
+    }
 }

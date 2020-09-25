@@ -25,7 +25,7 @@ public class SeatResource {
     @Path("{dateParam}")
     public List<SeatDTO> getSeatsForDate(
             @PathParam("dateParam") LocalDateTimeParam dateParam,
-            @QueryParam("status") BookingStatus bookingStatus
+            @DefaultValue("Any") @QueryParam("status") BookingStatus bookingStatus
     ) {
         LocalDateTime date = dateParam.getLocalDateTime();
         List<Seat> seats = ConcertUtils.getSeatsForDay(date);
