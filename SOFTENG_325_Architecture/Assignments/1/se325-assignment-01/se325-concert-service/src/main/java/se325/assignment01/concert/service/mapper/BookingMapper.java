@@ -24,7 +24,6 @@ public class BookingMapper {
         if (seats.size() != bookingRequestDTO.getSeatLabels().size()) {
             throw new BadRequestException();
         }
-        System.out.println(seats);
 
         return new Booking(concertDate, user, seats);
     }

@@ -6,6 +6,7 @@ import se325.assignment01.concert.common.dto.UserDTO;
 import se325.assignment01.concert.service.domain.*;
 import se325.assignment01.concert.service.services.PersistenceManager;
 
+import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
@@ -111,10 +112,16 @@ public class ConcertUtils {
         return em.find(User.class, Long.parseLong(userId));
     }
 
-    public static List<Booking> getBookings() {
+    public static List<Booking> getBookings(String userId) {
         EntityManager em = PersistenceManager.instance().createEntityManager();
-        TypedQuery<Booking> query = em.createQuery("select b from Booking b", Booking.class);
+        TypedQuery<Booking> query = em.createQuery("select b from Booking b where b.user.id = :id", Booking.class)
+                .setParameter("id", Long.parseLong(userId));
         return query.getResultList();
+    }
+
+    public static Booking getBookingById(String bookingId) {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        return em.find(Booking.class, Long.parseLong(bookingId));
     }
 
     public static ConcertDate getConcertDateByDate(LocalDateTime date) {
@@ -134,13 +141,25 @@ public class ConcertUtils {
 
     public static void persistBooking(Booking booking) {
         EntityManager em = PersistenceManager.instance().createEntityManager();
+        System.out.println("before: " + booking);
         try {
             em.getTransaction().begin();
+            for (Seat seat : booking.getBookedSeats()) {
+                if (seat.isBooked()) {
+                    em.getTransaction().setRollbackOnly();
+                    throw new EntityExistsException();
+                }
+                seat.setBooked(true);
+                em.merge(seat);
+            }
             em.persist(booking);
             em.getTransaction().commit();
         } finally {
             em.close();
         }
+
+        System.out.println("after: " + booking);
+
 
     }
 }

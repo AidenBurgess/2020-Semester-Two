@@ -45,10 +45,10 @@ public class SeatResource {
                     break;
             }
         }
-        if (seatDTOS.size() == 0) {
-            LOGGER.info("Could not find " + BookingStatus.Unbooked + " seats for date: " + date.toString());
+/*        if (seatDTOS.size() == 0) {
+            LOGGER.info("Could not find " + bookingStatus + " seats for date: " + date.toString());
             throw new NotFoundException();
-        }
+        }*/
 
         return seatDTOS;
     }

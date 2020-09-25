@@ -55,12 +55,8 @@ public class LoginResource {
      * response message.
      */
     private NewCookie makeCookie(Cookie clientId, long userId) {
-        NewCookie newCookie = null;
-
-        if (clientId == null) {
-            newCookie = new NewCookie("auth", Long.toString(userId));
-            LOGGER.info("Generated cookie: " + newCookie.getValue());
-        }
+        NewCookie newCookie = new NewCookie("auth", Long.toString(userId));
+        LOGGER.info("Generated cookie: " + newCookie.getValue());
 
         return newCookie;
     }

@@ -45,6 +45,10 @@ public class Seat implements Serializable {
         return isBooked;
     }
 
+    public void setBooked(boolean booked) {
+        isBooked = booked;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

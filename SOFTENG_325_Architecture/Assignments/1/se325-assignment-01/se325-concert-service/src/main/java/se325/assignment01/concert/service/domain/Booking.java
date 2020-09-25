@@ -21,7 +21,7 @@ public class Booking implements Serializable {
     @JoinColumn(name = "USER_ID")
     private User user;
 
-    @OneToMany
+    @OneToMany()
     private List<Seat> bookedSeats;
 
     public Booking() {
