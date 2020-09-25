@@ -30,7 +30,6 @@ public class SeatResource {
         LocalDateTime date = dateParam.getLocalDateTime();
         List<Seat> seats = ConcertUtils.getSeatsForDay(date);
         List<SeatDTO> seatDTOS = new ArrayList<>();
-        LOGGER.debug(bookingStatus.toString());
         for (Seat seat : seats) {
             // TODO: Can move this logic into DB step
             switch (bookingStatus) {

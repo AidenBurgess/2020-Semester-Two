@@ -138,7 +138,6 @@ public class ConcertUtils {
 
     public static void persistBooking(Booking booking) {
         EntityManager em = PersistenceManager.instance().createEntityManager();
-        System.out.println("before: " + booking);
         try {
             em.getTransaction().begin();
             for (Seat seat : booking.getBookedSeats()) {
@@ -154,9 +153,5 @@ public class ConcertUtils {
         } finally {
             em.close();
         }
-
-        System.out.println("after: " + booking);
-
-
     }
 }

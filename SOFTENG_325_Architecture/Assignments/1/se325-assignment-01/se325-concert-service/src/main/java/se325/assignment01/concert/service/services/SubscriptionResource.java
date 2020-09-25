@@ -45,25 +45,30 @@ public class SubscriptionResource {
     }
 
     public void processBookingChange(ConcertDate concertDate) {
+        System.out.println("processBookingChange() called");
         // find out percentage booked
         List<Seat> seatsForConcert = ConcertUtils.getSeatsForDay(concertDate.getDate());
         int bookedSeats = (int) seatsForConcert.stream().filter(Seat::isBooked).count();
-        long percentBooked = bookedSeats / seatsForConcert.size();
+        float percentBooked = (bookedSeats * 100.0f) / seatsForConcert.size();
+        System.out.println("bookedseats: " + bookedSeats);
+        System.out.println("percentBooked: " + percentBooked);
+        System.out.println("size: " + seatsForConcert.size());
+
 
         // Go through each subscription
         synchronized (concertInfoSubscriptions) {
             for (ConcertInfoSubscription sub : concertInfoSubscriptions) {
+                System.out.println("checking: " + sub.toString());
+
                 // Check if they are subscribed to current concertdate
-                if (sub.getDate().equals(concertDate.getDate())) {
+                if (sub.getDate().equals(concertDate.getDate()) && percentBooked >= sub.getPercentageBooked()) {
                     // check if bookings is enough to notify
-                    if (percentBooked >= sub.getPercentageBooked()) {
-                        // notify with ConcertInfoNotificationDTO
-                        sub.getSubscription().resume(new ConcertInfoNotificationDTO(seatsForConcert.size() - bookedSeats));
-                    }
+                    // notify with ConcertInfoNotificationDTO
+                    System.out.println("releasing subscription");
+                    sub.getSubscription().resume(new ConcertInfoNotificationDTO(seatsForConcert.size() - bookedSeats));
                 }
             }
         }
-
-
     }
+
 }

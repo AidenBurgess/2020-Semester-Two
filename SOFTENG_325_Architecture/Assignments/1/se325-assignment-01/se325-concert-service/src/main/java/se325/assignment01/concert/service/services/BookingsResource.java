@@ -31,13 +31,8 @@ public class BookingsResource {
         if (userId == null) {
             throw new WebApplicationException(Response.Status.UNAUTHORIZED);
         }
-        LOGGER.debug("userId: " + userId);
         List<Booking> bookings = ConcertUtils.getBookings(userId);
         List<BookingDTO> bookingDTOS = new ArrayList<>();
-/*        if (bookings.size() == 0) {
-            LOGGER.info("Could not find any bookings");
-            throw new NotFoundException();
-        }*/
 
         for (Booking booking : bookings) {
             bookingDTOS.add(BookingMapper.toDTO(booking));
@@ -54,7 +49,6 @@ public class BookingsResource {
             throw new WebApplicationException(Response.Status.UNAUTHORIZED);
         }
         Booking booking = ConcertUtils.getBookingById(bookingId);
-        LOGGER.debug("USERID: " + booking.getUser().getId());
         if (booking.getUser().getId() != Long.parseLong(userId)) {
             throw new WebApplicationException(Response.Status.FORBIDDEN);
         }
@@ -74,18 +68,12 @@ public class BookingsResource {
             throw new WebApplicationException(Response.Status.UNAUTHORIZED);
         }
 
-        LOGGER.debug("userId: " + userId);
-
         Booking booking = BookingMapper.toDomainModel(bookingRequestDTO, userId);
         try {
             ConcertUtils.persistBooking(booking);
         } catch (EntityExistsException ex) {
             throw new ForbiddenException();
         }
-        // Change persistBooking to also change boolean of Seat(isBooked)
-
-        LOGGER.debug("bookings: " + ConcertUtils.getBookings(userId).toString());
-        LOGGER.debug("seats: " + ConcertUtils.getSeatsForDay(booking.getConcertDate().getDate()));
 
         UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
         uriBuilder.path(Long.toString(booking.getId()));
