@@ -13,6 +13,7 @@ import javax.ws.rs.container.AsyncResponse;
 import javax.ws.rs.container.Suspended;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Vector;
 
@@ -25,49 +26,36 @@ public class SubscriptionResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("concertInfo")
-    public void addSubscription(
+    public void addConcertInfoSubscription(
             @CookieParam("auth") String userId,
-            ConcertInfoSubscriptionDTO subscriptionInfoDTO,
-            @Suspended AsyncResponse sub
+            @Suspended AsyncResponse sub,
+            ConcertInfoSubscriptionDTO subInfoDTO
     ) {
-        if (userId == null) {
-            throw new WebApplicationException(Response.Status.UNAUTHORIZED);
-        }
+        if (userId == null) throw new WebApplicationException(Response.Status.UNAUTHORIZED);
 
-        Concert concert = ConcertUtils.getConcertById(subscriptionInfoDTO.getConcertId());
-        ConcertDate concertDate = ConcertUtils.getConcertDateByDate(subscriptionInfoDTO.getDate());
+        Concert concert = ConcertUtils.getConcertById(subInfoDTO.getConcertId());
+        ConcertDate concertDate = ConcertUtils.getConcertDateByDate(subInfoDTO.getDate());
 
-        if (concert == null || concertDate == null) {
-            throw new BadRequestException();
-        }
+        if (concert == null || concertDate == null) throw new BadRequestException();
 
-        concertInfoSubscriptions.add(new ConcertInfoSubscription(sub, concertDate.getDate(), subscriptionInfoDTO.getPercentageBooked()));
-        System.out.println(concertInfoSubscriptions);
+        concertInfoSubscriptions.add(new ConcertInfoSubscription(sub, concertDate.getDate(), subInfoDTO.getPercentageBooked()));
     }
 
     public void processBookingChange(ConcertDate concertDate) {
-        System.out.println("processBookingChange() called");
-        // find out percentage booked
+        // find out seat statistics
         List<Seat> seatsForConcert = ConcertUtils.getSeatsForDay(concertDate.getDate());
         int bookedSeats = (int) seatsForConcert.stream().filter(Seat::isBooked).count();
         float percentBooked = (bookedSeats * 100.0f) / seatsForConcert.size();
-        System.out.println("bookedseats: " + bookedSeats);
-        System.out.println("percentBooked: " + percentBooked);
-        System.out.println("size: " + seatsForConcert.size());
-        System.out.println(concertInfoSubscriptions);
-
 
         // Go through each subscription
         synchronized (concertInfoSubscriptions) {
-            for (ConcertInfoSubscription sub : concertInfoSubscriptions) {
-                System.out.println("checking: " + sub.toString());
-
-                // Check if they are subscribed to current concertdate
+            for (Iterator<ConcertInfoSubscription> iterator = concertInfoSubscriptions.iterator(); iterator.hasNext(); ) {
+                ConcertInfoSubscription sub = iterator.next();
+                // Check if they match concert, date, and have percentage high enough to trigger notification
                 if (sub.getDate().equals(concertDate.getDate()) && percentBooked >= sub.getPercentageBooked()) {
-                    // check if bookings is enough to notify
                     // notify with ConcertInfoNotificationDTO
-                    System.out.println("releasing subscription");
                     sub.getSubscription().resume(new ConcertInfoNotificationDTO(seatsForConcert.size() - bookedSeats));
+                    concertInfoSubscriptions.remove(sub);
                 }
             }
         }

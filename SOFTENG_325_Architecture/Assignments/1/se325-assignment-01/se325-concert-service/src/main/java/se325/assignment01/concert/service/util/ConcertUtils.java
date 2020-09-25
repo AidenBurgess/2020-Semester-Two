@@ -65,22 +65,25 @@ public class ConcertUtils {
         }
     }
 
-    public static Concert getConcertById(long id) {
-        EntityManager em = PersistenceManager.instance().createEntityManager();
-        return em.find(Concert.class, id);
-    }
-
     public static List<Concert> getConcerts() {
         EntityManager em = PersistenceManager.instance().createEntityManager();
         TypedQuery<Concert> query = em.createQuery("select c from Concert c", Concert.class);
         return query.getResultList();
     }
 
-    public static Performer getPerformerById(long id) throws NoResultException {
+    public static Concert getConcertById(long id) {
         EntityManager em = PersistenceManager.instance().createEntityManager();
-        TypedQuery<Performer> query = em.createQuery("select p from Performer p where p.id = :id", Performer.class)
-                .setParameter("id", id);
-        return query.getSingleResult();
+        return em.find(Concert.class, id);
+    }
+
+    public static ConcertDate getConcertDateByDate(LocalDateTime date) {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        return em.find(ConcertDate.class, date);
+    }
+
+    public static Performer getPerformerById(long id) {
+        EntityManager em = PersistenceManager.instance().createEntityManager();
+        return em.find(Performer.class, id);
     }
 
     public static List<Performer> getPerformers() {
@@ -109,7 +112,7 @@ public class ConcertUtils {
         return em.find(User.class, Long.parseLong(userId));
     }
 
-    public static List<Booking> getBookings(String userId) {
+    public static List<Booking> getBookingsForUser(String userId) {
         EntityManager em = PersistenceManager.instance().createEntityManager();
         TypedQuery<Booking> query = em.createQuery("select b from Booking b where b.user.id = :id", Booking.class)
                 .setParameter("id", Long.parseLong(userId));
@@ -119,11 +122,6 @@ public class ConcertUtils {
     public static Booking getBookingById(String bookingId) {
         EntityManager em = PersistenceManager.instance().createEntityManager();
         return em.find(Booking.class, Long.parseLong(bookingId));
-    }
-
-    public static ConcertDate getConcertDateByDate(LocalDateTime date) {
-        EntityManager em = PersistenceManager.instance().createEntityManager();
-        return em.find(ConcertDate.class, date);
     }
 
     public static List<Seat> getSeatsFromLabels(List<String> seatLabels, LocalDateTime date) {
@@ -141,9 +139,11 @@ public class ConcertUtils {
             em.getTransaction().begin();
             for (Seat seat : booking.getBookedSeats()) {
                 if (seat.isBooked()) {
+                    // Seat is already booked, abort transaction
                     em.getTransaction().setRollbackOnly();
                     throw new EntityExistsException();
                 }
+                // Book seat and update DB
                 seat.setBooked(true);
                 em.merge(seat);
             }

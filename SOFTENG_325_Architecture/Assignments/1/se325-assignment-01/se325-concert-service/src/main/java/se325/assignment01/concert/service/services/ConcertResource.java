@@ -19,13 +19,13 @@ public class ConcertResource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<ConcertDTO> getAllConcerts() {
         List<Concert> concerts = ConcertUtils.getConcerts();
+        // Convert concerts to DTO
         List<ConcertDTO> concertDTOS = new ArrayList<>();
         for (Concert concert : concerts) {
             concertDTOS.add(ConcertMapper.toDTO(concert));
         }
-        if (concertDTOS.size() == 0) {
-            throw new NotFoundException("Could not find any concerts");
-        }
+
+        if (concertDTOS.size() == 0) throw new NotFoundException("Could not find any concerts");
         return concertDTOS;
     }
 
@@ -34,13 +34,13 @@ public class ConcertResource {
     @Path("summaries")
     public List<ConcertSummaryDTO> getSummary() {
         List<Concert> concerts = ConcertUtils.getConcerts();
+        // Convert concerts to concertSummary DTO
         List<ConcertSummaryDTO> concertSummaryDTOS = new ArrayList<>();
         for (Concert concert : concerts) {
             concertSummaryDTOS.add(ConcertSummaryMapper.toDTO(concert));
         }
-        if (concertSummaryDTOS.size() == 0) {
-            throw new NotFoundException("Could not find any concerts");
-        }
+
+        if (concertSummaryDTOS.size() == 0) throw new NotFoundException("Could not find any concerts");
         return concertSummaryDTOS;
     }
 
@@ -49,9 +49,8 @@ public class ConcertResource {
     @Path("{concertId}")
     public ConcertDTO getConcertById(@PathParam("concertId") long concertId) {
         Concert concert = ConcertUtils.getConcertById(concertId);
-        if (concert == null) {
-            throw new NotFoundException("Could not find concert with id " + concertId);
-        }
+
+        if (concert == null) throw new NotFoundException("Could not find concert with id " + concertId);
         return ConcertMapper.toDTO(concert);
 
     }

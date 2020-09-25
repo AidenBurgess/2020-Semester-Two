@@ -28,36 +28,19 @@ public class LoginResource {
             // Check credentials
             User user = ConcertUtils.getUserFromLogin(userDTO.getUsername(), userDTO.getPassword());
             // setup cookie for user
-            NewCookie cookie = makeCookie(clientId, user.getId());
-
+            NewCookie cookie = makeCookie(user.getId());
             // Return cookie to user
             LOGGER.info(userDTO.getUsername() + " successfully signed in!");
-            LOGGER.debug(cookie.toString());
             return Response.ok().cookie(cookie).build();
         } catch (NoResultException ex) {
-            //Response.Status.UNAUTHORIZED.getStatusCode();
+            // User not found, so unauthorized
             return Response.status(Response.Status.UNAUTHORIZED).build();
-            //throw new NotFoundException("Could not find user for given credentials");
         }
     }
 
-    /**
-     * Helper method that can be called from every service method to generate a
-     * NewCookie instance, if necessary, based on the clientId parameter.
-     *
-     * @param clientId the Cookie whose name is Config.CLIENT_COOKIE, extracted
-     *                 from a HTTP request message. This can be null if there was no cookie
-     *                 named Config.CLIENT_COOKIE present in the HTTP request message.
-     * @return a NewCookie object, with a generated UUID value, if the clientId
-     * parameter is null. If the clientId parameter is non-null (i.e. the HTTP
-     * request message contained a cookie named Config.CLIENT_COOKIE), this
-     * method returns null as there's no need to return a NewCookie in the HTTP
-     * response message.
-     */
-    private NewCookie makeCookie(Cookie clientId, long userId) {
+    private NewCookie makeCookie(long userId) {
         NewCookie newCookie = new NewCookie("auth", Long.toString(userId));
         LOGGER.info("Generated cookie: " + newCookie.getValue());
-
         return newCookie;
     }
 }

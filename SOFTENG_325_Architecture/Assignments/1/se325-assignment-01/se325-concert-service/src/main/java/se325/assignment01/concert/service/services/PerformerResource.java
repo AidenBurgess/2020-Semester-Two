@@ -18,13 +18,14 @@ public class PerformerResource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<PerformerDTO> getAllPerformers() {
         List<Performer> performers = ConcertUtils.getPerformers();
+        // Convert all performers to DTO
         List<PerformerDTO> performerDTOS = new ArrayList<>();
         for (Performer performer : performers) {
             performerDTOS.add(PerformerMapper.toDTO(performer));
         }
-        if (performerDTOS.size() == 0) {
-            throw new NotFoundException("Could not find any performers");
-        }
+
+        if (performerDTOS.size() == 0) throw new NotFoundException("Could not find any performers");
+
         return performerDTOS;
     }
 
@@ -32,12 +33,10 @@ public class PerformerResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{performerId}")
     public PerformerDTO getConcertById(@PathParam("performerId") long performerId) {
-        try {
-            Performer performer = ConcertUtils.getPerformerById(performerId);
-            return PerformerMapper.toDTO(performer);
-        } catch (NoResultException ex) {
-            throw new NotFoundException("Could not find performer with id " + performerId);
-        }
-    }
+        Performer performer = ConcertUtils.getPerformerById(performerId);
 
+        if (performer == null) throw new NotFoundException("Could not find performer with id " + performerId);
+
+        return PerformerMapper.toDTO(performer);
+    }
 }

@@ -12,7 +12,6 @@ import javax.persistence.EntityExistsException;
 import javax.ws.rs.*;
 import javax.ws.rs.container.ResourceContext;
 import javax.ws.rs.core.*;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,13 +22,12 @@ public class BookingsResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<BookingDTO> getAllBookings(@CookieParam("auth") String userId) {
-        LOGGER.debug("getAllBookings entered");
-        if (userId == null) {
-            throw new WebApplicationException(Response.Status.UNAUTHORIZED);
-        }
-        List<Booking> bookings = ConcertUtils.getBookings(userId);
-        List<BookingDTO> bookingDTOS = new ArrayList<>();
+        // Confirm auth cookie present
+        if (userId == null) throw new WebApplicationException(Response.Status.UNAUTHORIZED);
 
+        List<Booking> bookings = ConcertUtils.getBookingsForUser(userId);
+        // Convert all bookings to DTO
+        List<BookingDTO> bookingDTOS = new ArrayList<>();
         for (Booking booking : bookings) {
             bookingDTOS.add(BookingMapper.toDTO(booking));
         }
@@ -40,10 +38,9 @@ public class BookingsResource {
     @Path("{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public BookingDTO getBookingById(@CookieParam("auth") String userId, @PathParam("id") String bookingId) {
-        LOGGER.debug("getBookingById entered");
-        if (userId == null) {
-            throw new WebApplicationException(Response.Status.UNAUTHORIZED);
-        }
+        // Confirm auth cookie present
+        if (userId == null) throw new WebApplicationException(Response.Status.UNAUTHORIZED);
+
         Booking booking = ConcertUtils.getBookingById(bookingId);
         if (booking.getUser().getId() != Long.parseLong(userId)) {
             throw new WebApplicationException(Response.Status.FORBIDDEN);
@@ -57,26 +54,23 @@ public class BookingsResource {
                                BookingRequestDTO bookingRequestDTO,
                                @Context UriInfo uriInfo,
                                @Context ResourceContext resourceContext
-    ) throws URISyntaxException {
-        LOGGER.debug("addBooking entered");
-
-        if (userId == null) {
-            throw new WebApplicationException(Response.Status.UNAUTHORIZED);
-        }
+    ) {
+        // Confirm auth cookie present
+        if (userId == null) throw new WebApplicationException(Response.Status.UNAUTHORIZED);
 
         Booking booking = BookingMapper.toDomainModel(bookingRequestDTO, userId);
         try {
             ConcertUtils.persistBooking(booking);
         } catch (EntityExistsException ex) {
+            // Seat already booked
             throw new ForbiddenException();
         }
-
-        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
-        uriBuilder.path(Long.toString(booking.getId()));
-
         // Notify subscriptions a new booking has been made
         resourceContext.getResource(SubscriptionResource.class).processBookingChange(booking.getConcertDate());
-
+        // Build location of booking resource
+        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
+        uriBuilder.path(Long.toString(booking.getId()));
+        LOGGER.info("New booking successfully created.");
         return Response.created(uriBuilder.build()).build();
     }
 
