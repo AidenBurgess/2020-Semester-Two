@@ -66,11 +66,9 @@ public class ConcertUtils {
         }
     }
 
-    public static Concert getConcertById(long id) throws NoResultException {
+    public static Concert getConcertById(long id) {
         EntityManager em = PersistenceManager.instance().createEntityManager();
-        TypedQuery<Concert> query = em.createQuery("select c from Concert c where c.id = :id", Concert.class)
-                .setParameter("id", id);
-        return query.getSingleResult();
+        return em.find(Concert.class, id);
     }
 
     public static List<Concert> getConcerts() {
@@ -126,8 +124,7 @@ public class ConcertUtils {
 
     public static ConcertDate getConcertDateByDate(LocalDateTime date) {
         EntityManager em = PersistenceManager.instance().createEntityManager();
-        ConcertDate concertDate = em.find(ConcertDate.class, date);
-        return concertDate;
+        return em.find(ConcertDate.class, date);
     }
 
     public static List<Seat> getSeatsFromLabels(List<String> seatLabels, LocalDateTime date) {

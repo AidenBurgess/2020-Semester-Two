@@ -49,12 +49,12 @@ public class ConcertResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{concertId}")
     public ConcertDTO getConcertById(@PathParam("concertId") long concertId) {
-        try {
-            Concert concert = ConcertUtils.getConcertById(concertId);
-            return ConcertMapper.toDTO(concert);
-        } catch (NoResultException ex) {
+        Concert concert = ConcertUtils.getConcertById(concertId);
+        if (concert == null) {
             throw new NotFoundException("Could not find concert with id " + concertId);
         }
+        return ConcertMapper.toDTO(concert);
+
     }
 
 }

@@ -13,6 +13,7 @@ import se325.assignment01.concert.service.util.ConcertUtils;
 
 import javax.persistence.EntityExistsException;
 import javax.ws.rs.*;
+import javax.ws.rs.container.ResourceContext;
 import javax.ws.rs.core.*;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -64,7 +65,9 @@ public class BookingsResource {
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addBooking(@CookieParam("auth") String userId,
                                BookingRequestDTO bookingRequestDTO,
-                               @Context UriInfo uriInfo) throws URISyntaxException {
+                               @Context UriInfo uriInfo,
+                               @Context ResourceContext resourceContext
+    ) throws URISyntaxException {
         LOGGER.debug("addBooking entered");
 
         if (userId == null) {
@@ -86,6 +89,10 @@ public class BookingsResource {
 
         UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
         uriBuilder.path(Long.toString(booking.getId()));
+
+        // Notify subscriptions a new booking has been made
+        resourceContext.getResource(SubscriptionResource.class).processBookingChange(booking.getConcertDate());
+
         return Response.created(uriBuilder.build()).build();
     }
 
