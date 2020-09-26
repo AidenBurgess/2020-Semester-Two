@@ -179,6 +179,10 @@ Identify (implicit and explicit) uses of lazy loading and eager fetching
  the context of this web service?
 \end_layout
 
+\begin_layout Standard
+Booking lazy loads ConcertDate and User
+\end_layout
+
 \begin_layout Subsection
 How have you made an effort to remove the possibility of issues arising
  from concurrent access, such as double-bookings?
@@ -191,11 +195,8 @@ Single transaction to book all seats at once, increment seats version, so
 
 \begin_layout Standard
 Ensure seat versions have not changed at commit time.
- If they have changed then fail
-\end_layout
-
-\begin_layout Standard
-using em.lock(seat, LockModeType.Optimistic)
+ If they have changed then fail the entire transaction.
+ This is the default behaviour of JPA as each Seat has a verison attribute.
 \end_layout
 
 \begin_layout Subsection
