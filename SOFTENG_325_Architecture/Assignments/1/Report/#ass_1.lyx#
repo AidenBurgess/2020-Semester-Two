@@ -180,7 +180,19 @@ Identify (implicit and explicit) uses of lazy loading and eager fetching
 \end_layout
 
 \begin_layout Standard
-Booking lazy loads ConcertDate and User
+Booking lazy loads ConcertDate, User, and bookedSeats
+\end_layout
+
+\begin_layout Standard
+Concert eager fetches dates and performers
+\end_layout
+
+\begin_layout Standard
+ConcertDate lazy loads concert
+\end_layout
+
+\begin_layout Standard
+Performer eager fetches concerts
 \end_layout
 
 \begin_layout Subsection
@@ -199,6 +211,10 @@ Ensure seat versions have not changed at commit time.
  This is the default behaviour of JPA as each Seat has a verison attribute.
 \end_layout
 
+\begin_layout Standard
+Subscriptions are iterated through synchronized
+\end_layout
+
 \begin_layout Subsection
 How would you extend your web service to add support for the following new
  features?:
@@ -207,6 +223,11 @@ How would you extend your web service to add support for the following new
 \begin_layout Subsection
 Support for different ticket prices per concert (currently ticket prices
  are identical for each concert)
+\end_layout
+
+\begin_layout Standard
+Add ticket price field to Seat, which is determined when the seats are initialis
+ed for a new concert date
 \end_layout
 
 \begin_layout Subsection
