@@ -2,6 +2,7 @@ package se325.assignment01.concert.service.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Version;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -15,6 +16,9 @@ public class Seat implements Serializable {
     private LocalDateTime date;
     private boolean isBooked;
     private BigDecimal price;
+
+    @Version
+    private int version;
 
     public Seat() {
     }

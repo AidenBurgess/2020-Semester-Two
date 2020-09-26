@@ -5,10 +5,7 @@ import org.slf4j.LoggerFactory;
 import se325.assignment01.concert.service.domain.*;
 import se325.assignment01.concert.service.services.PersistenceManager;
 
-import javax.persistence.EntityExistsException;
-import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
-import javax.persistence.TypedQuery;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
@@ -149,6 +146,9 @@ public class ConcertUtils {
             }
             em.persist(booking);
             em.getTransaction().commit();
+        } catch (OptimisticLockException ex) {
+            // If locking of seats fails, rollback transaction
+            em.getTransaction().setRollbackOnly();
         } finally {
             em.close();
         }
