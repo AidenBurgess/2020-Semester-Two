@@ -202,7 +202,7 @@ Resources split into classes
 \begin_layout Standard
 Resources split into different classes, so more functionality can be added
  later on.
- And it is easier to build upon
+ And it is easier to build upon existing resources
 \end_layout
 
 \begin_layout Standard
@@ -216,15 +216,23 @@ Identify (implicit and explicit) uses of lazy loading and eager fetching
 \end_layout
 
 \begin_layout Standard
-Booking lazy loads ConcertDate, User, and bookedSeats
+Concert lazy loads performers and dates, as when concert summaries are retrieved
+, all the performers and dates will be retrieved, without being used.
+ These have been further optimised to user FetchMode.SUBSELECT, avoiding
+ the n+1 problem, as when retrieving performers and dates, we need all of
+ them.
 \end_layout
 
 \begin_layout Standard
-Concert eager fetches dates and performers
+Booking also uses FetchMode.SUBSELECT to retrieve the seats for a booking,
+ as currently, when retrieving a booking, we always need all the seats.
+ The ConcertDate and User are lazy loaded, as these are not always needed,
+ and there is no n+1 problem as these are single values.
 \end_layout
 
 \begin_layout Standard
-ConcertDate lazy loads concert
+ConcertDate lazy loads Concert, as often we only need to retrieve the date,
+ which increases our performance.
 \end_layout
 
 \begin_layout Standard
@@ -274,7 +282,20 @@ Support for multiple venues (currently all concerts are assumed to be at
 \end_layout
 
 \begin_layout Standard
-make concertId an @ID in the Seat class
+Currently the web service relies on only one concert allowed per date.
+ With multiple venues, it is assumed that there may be multiple concerts
+ per day.
+ To accomodate this change, a Venue class should be introduced, which stores
+ information about a venue, such as the id, name, and description.
+ A venue field will be added to the Concert class.
+ Concert will be made an id attribute of ConcertDate, as there can be more
+ than one concert per date.
+ A venue DTO class will be added, and concertDTO will be modified.
+ Some retrieval queries will be modified in the ConcertUtils class.
+\end_layout
+
+\begin_layout Standard
+A VenueResource class will be added to support endpoints regarding venues.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -282,6 +303,17 @@ Support for "held" seats (where, after a user selects their seats, they
  are reserved for a period of time to allow the user time to pay.
  If the user cancels payment, or the time period elapses, the seats are
  automatically released, able to be booked again by other users).
+\end_layout
+
+\begin_layout Standard
+The bookingStatus enum will be extended with a HELD value.
+ Endpoints will be added to the BookingResource to support reserving and
+ paying for a booking.
+ In order to ensure no double bookings, the seats will be labeled as booked,
+ until either a user cancels or the time is exceeded.
+ To support the periodic removal of reservations, a timer can be set up
+ to trigger at a set interval, checking a list of reservations to confirm
+ if their time period has elapsed.
 \end_layout
 
 \end_body

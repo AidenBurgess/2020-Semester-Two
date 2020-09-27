@@ -4,7 +4,7 @@ import se325.assignment01.concert.common.dto.ConcertInfoNotificationDTO;
 import se325.assignment01.concert.common.dto.ConcertInfoSubscriptionDTO;
 import se325.assignment01.concert.service.domain.Concert;
 import se325.assignment01.concert.service.domain.ConcertDate;
-import se325.assignment01.concert.service.domain.ConcertInfoSubscription;
+import se325.assignment01.concert.service.util.ConcertInfoSubscription;
 import se325.assignment01.concert.service.domain.Seat;
 import se325.assignment01.concert.service.util.ConcertUtils;
 

@@ -21,9 +21,6 @@ public class Performer {
     @Column(length = 1000)
     private String blurb;
 
-    @ManyToMany(mappedBy = "performers", fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
-    private Set<Concert> concerts = new HashSet<>();
-
     public Long getId() {
         return id;
     }
@@ -84,9 +81,7 @@ public class Performer {
     @Override
     public String toString() {
         String concertsString = "";
-        for (Concert concert : concerts) {
-            concertsString = concertsString.concat(concert.getId().toString());
-        }
+
         return "Performer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +

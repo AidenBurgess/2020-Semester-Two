@@ -1,5 +1,8 @@
 package se325.assignment01.concert.service.domain;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -18,10 +21,12 @@ public class Concert {
     @Column(length = 1000)
     private String blurb;
 
-    @OneToMany(mappedBy = "concert", cascade = CascadeType.PERSIST, orphanRemoval = true, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "concert", cascade = CascadeType.PERSIST, orphanRemoval = true)
+    @Fetch(FetchMode.SUBSELECT)
     private Set<ConcertDate> dates = new HashSet<>();
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @Fetch(FetchMode.SUBSELECT)
     @JoinTable(name = "CONCERT_PERFORMER", joinColumns = @JoinColumn(name = "CONCERT_ID"), inverseJoinColumns = @JoinColumn(name = "PERFORMER_ID"))
     private Set<Performer> performers = new HashSet<>();
 

@@ -1,5 +1,8 @@
 package se325.assignment01.concert.service.domain;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -20,6 +23,7 @@ public class Booking implements Serializable {
     private User user;
 
     @OneToMany
+    @Fetch(FetchMode.SUBSELECT)
     private List<Seat> bookedSeats;
 
     public Booking() {
