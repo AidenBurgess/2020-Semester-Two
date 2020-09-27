@@ -192,7 +192,8 @@ RESTful Architecture
 \end_layout
 
 \begin_layout Standard
-Follows restful architecture, HTTP methods allows us to perform optimisations
+The web service uses a RESTful architecture, which allows us to perform
+ optimisations
 \end_layout
 
 \begin_layout Subsubsection*
@@ -202,7 +203,7 @@ Resources split into classes
 \begin_layout Standard
 Resources split into different classes, so more functionality can be added
  later on.
- And it is easier to build upon
+ And it is easier to build upon existing resources
 \end_layout
 
 \begin_layout Standard
@@ -216,21 +217,23 @@ Identify (implicit and explicit) uses of lazy loading and eager fetching
 \end_layout
 
 \begin_layout Standard
-Booking lazy loads ConcertDate, User, and bookedSeats
+Concert lazy loads performers and dates, as when concert summaries are retrieved
+, all the performers and dates will be retrieved, without being used.
+ These have been further optimised to user FetchMode.SUBSELECT, avoiding
+ the n+1 problem, as when retrieving performers and dates, we need all of
+ them.
 \end_layout
 
 \begin_layout Standard
-Concert lazy loads performers, as when concert summaries are retrieved,
- all the performers will be retrieved, without being used.
- In contrast, dates are eager fetched
+Booking also uses FetchMode.SUBSELECT to retrieve the seats for a booking,
+ as currently, when retrieving a booking, we always need all the seats.
+ The ConcertDate and User are lazy loaded, as these are not always needed,
+ and there is no n+1 problem as these are single values.
 \end_layout
 
 \begin_layout Standard
-ConcertDate lazy loads concert
-\end_layout
-
-\begin_layout Standard
-Performer eager fetches concerts
+ConcertDate lazy loads Concert, as often we only need to retrieve the date,
+ which increases our performance.
 \end_layout
 
 \begin_layout Subsection*

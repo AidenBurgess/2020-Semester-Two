@@ -170,43 +170,25 @@ Scalability - How have you made an effort to improve the scalability of
  your web service?
 \end_layout
 
-\begin_layout Subsubsection*
-Stateless
-\end_layout
-
 \begin_layout Standard
 The web service does not hold any information about client sessions.
  Instead, it provides cookies to the client which they may use for authenticatio
 n.
  These cookies are obtained through the login service, and used when retrieiving
  user-specific information, or performing changes to the database.
-\end_layout
-
-\begin_layout Standard
-This allows the web service to be easily replicated.
+ This allows the web service to be easily replicated.
  Each replicated server acts identically to handling the requests.
 \end_layout
 
-\begin_layout Subsubsection*
-RESTful Architecture
+\begin_layout Standard
+The web service uses a RESTful architecture, which allows us to perform
+ optimisations due to the use of HTTP methods.
 \end_layout
 
 \begin_layout Standard
-Follows restful architecture, HTTP methods allows us to perform optimisations
-\end_layout
-
-\begin_layout Subsubsection*
-Resources split into classes
-\end_layout
-
-\begin_layout Standard
-Resources split into different classes, so more functionality can be added
- later on.
- And it is easier to build upon existing resources
-\end_layout
-
-\begin_layout Standard
-SQL statements are all held reusable from ConcertUtils
+Resources are split into different classes, which allows more functionality
+ can be added later on.
+ It is also easier to expand functionality of existing resources.
 \end_layout
 
 \begin_layout Subsection*
@@ -241,18 +223,24 @@ How have you made an effort to remove the possibility of issues arising
 \end_layout
 
 \begin_layout Standard
-Single transaction to book all seats at once, increment seats version, so
- no two transactions can commit a change to the same seat at a time
+A single transaction is used to book all seats at once, so if an error is
+ found - such as a seat already being booked - the entire transaction is
+ rolled back.
+ This conforms to the requirement that either all seats are booked or no
+ seats are booked.
 \end_layout
 
 \begin_layout Standard
-Ensure seat versions have not changed at commit time.
- If they have changed then fail the entire transaction.
- This is the default behaviour of JPA as each Seat has a verison attribute.
+The Seat domain class has a @Version attribute.
+ By default, JPA will perform optimistic locking when a change to an entity
+ with a version attribute is detected.
+ This ensures seat versions have not changed at commit time.
+ If they have changed then the full transaction is rolled back.
 \end_layout
 
 \begin_layout Standard
-Subscriptions are iterated through synchronized
+Subscriptions are iterated through a synchronized() block, which prevents
+ issues from concurrent access of bookings.
 \end_layout
 
 \begin_layout Subsection*

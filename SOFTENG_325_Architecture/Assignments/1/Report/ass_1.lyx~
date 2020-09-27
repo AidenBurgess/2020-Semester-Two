@@ -170,43 +170,25 @@ Scalability - How have you made an effort to improve the scalability of
  your web service?
 \end_layout
 
-\begin_layout Subsubsection*
-Stateless
-\end_layout
-
 \begin_layout Standard
 The web service does not hold any information about client sessions.
  Instead, it provides cookies to the client which they may use for authenticatio
 n.
  These cookies are obtained through the login service, and used when retrieiving
  user-specific information, or performing changes to the database.
-\end_layout
-
-\begin_layout Standard
-This allows the web service to be easily replicated.
+ This allows the web service to be easily replicated.
  Each replicated server acts identically to handling the requests.
 \end_layout
 
-\begin_layout Subsubsection*
-RESTful Architecture
+\begin_layout Standard
+The web service uses a RESTful architecture, which allows us to perform
+ optimisations due to the use of HTTP methods.
 \end_layout
 
 \begin_layout Standard
-Follows restful architecture, HTTP methods allows us to perform optimisations
-\end_layout
-
-\begin_layout Subsubsection*
-Resources split into classes
-\end_layout
-
-\begin_layout Standard
-Resources split into different classes, so more functionality can be added
- later on.
- And it is easier to build upon existing resources
-\end_layout
-
-\begin_layout Standard
-SQL statements are all held reusable from ConcertUtils
+Resources are split into different classes, which allows more functionality
+ can be added later on.
+ It is also easier to expand functionality of existing resources.
 \end_layout
 
 \begin_layout Subsection*
@@ -233,10 +215,6 @@ Booking also uses FetchMode.SUBSELECT to retrieve the seats for a booking,
 \begin_layout Standard
 ConcertDate lazy loads Concert, as often we only need to retrieve the date,
  which increases our performance.
-\end_layout
-
-\begin_layout Standard
-Performer eager fetches concerts
 \end_layout
 
 \begin_layout Subsection*
