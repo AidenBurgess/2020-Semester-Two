@@ -165,12 +165,12 @@ start
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection*
 Scalability - How have you made an effort to improve the scalability of
  your web service?
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection*
 Stateless
 \end_layout
 
@@ -187,7 +187,7 @@ This allows the web service to be easily replicated.
  Each replicated server acts identically to handling the requests.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection*
 RESTful Architecture
 \end_layout
 
@@ -195,7 +195,7 @@ RESTful Architecture
 Follows restful architecture, HTTP methods allows us to perform optimisations
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection*
 Resources split into classes
 \end_layout
 
@@ -205,7 +205,11 @@ Resources split into different classes, so more functionality can be added
  And it is easier to build upon
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+SQL statements are all held reusable from ConcertUtils
+\end_layout
+
+\begin_layout Subsection*
 Identify (implicit and explicit) uses of lazy loading and eager fetching
  within your web service, and justify why those uses are appropriate in
  the context of this web service?
@@ -227,7 +231,7 @@ ConcertDate lazy loads concert
 Performer eager fetches concerts
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 How have you made an effort to remove the possibility of issues arising
  from concurrent access, such as double-bookings?
 \end_layout
@@ -247,27 +251,33 @@ Ensure seat versions have not changed at commit time.
 Subscriptions are iterated through synchronized
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsection*
 How would you extend your web service to add support for the following new
  features?
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection*
 Support for different ticket prices per concert (currently ticket prices
  are identical for each concert)
 \end_layout
 
 \begin_layout Standard
 Add ticket price field to Seat, which is determined when the seats are initialis
-ed for a new concert date
+ed for a new concert date.
+ This field should also be added to the seatDTO class, as the client might
+ need such information.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection*
 Support for multiple venues (currently all concerts are assumed to be at
  the same venue with an identical seat layout)
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+make concertId an @ID in the Seat class
+\end_layout
+
+\begin_layout Subsubsection*
 Support for "held" seats (where, after a user selects their seats, they
  are reserved for a period of time to allow the user time to pay.
  If the user cancels payment, or the time period elapses, the seats are
