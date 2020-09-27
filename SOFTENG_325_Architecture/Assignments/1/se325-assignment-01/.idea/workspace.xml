@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="assignment-01-concert-client:war" />
+      <artifact name="assignment-01-concert-service:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="61cf7eb1-c575-401d-9304-19a4b0342697" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Report/ass_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.1.4\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1hc3giTjQXmbYd1xV9CqhzDz5wt" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager" selected="JUnit.ConcertResourceIT">
+    <configuration name="ConcertResourceIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment-01-concert-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se325.assignment01.concert.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se325.assignment01.concert.service" />
+      <option name="MAIN_CLASS_NAME" value="se325.assignment01.concert.service.ConcertResourceIT" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConcertResourceIT.testAttemptDoubleBooking_OverlappingSeats" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment-01-concert-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se325.assignment01.concert.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se325.assignment01.concert.service" />
+      <option name="MAIN_CLASS_NAME" value="se325.assignment01.concert.service.ConcertResourceIT" />
+      <option name="METHOD_NAME" value="testAttemptDoubleBooking_OverlappingSeats" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConcertResourceIT.testBadSubscription_NonexistentConcert" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment-01-concert-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se325.assignment01.concert.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se325.assignment01.concert.service" />
+      <option name="MAIN_CLASS_NAME" value="se325.assignment01.concert.service.ConcertResourceIT" />
+      <option name="METHOD_NAME" value="testBadSubscription_NonexistentConcert" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConcertResourceIT.testSubscription" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment-01-concert-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se325.assignment01.concert.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se325.assignment01.concert.service" />
+      <option name="MAIN_CLASS_NAME" value="se325.assignment01.concert.service.ConcertResourceIT" />
+      <option name="METHOD_NAME" value="testSubscription" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConcertResourceIT.testUnauthorizedSubscription" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="assignment-01-concert-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se325.assignment01.concert.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se325.assignment01.concert.service" />
+      <option name="MAIN_CLASS_NAME" value="se325.assignment01.concert.service.ConcertResourceIT" />
+      <option name="METHOD_NAME" value="testUnauthorizedSubscription" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Server" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.58" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="assignment-01-concert-client:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/concert-webapp" />
+          </settings>
+        </artifact>
+        <artifact name="assignment-01-concert-service:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_assignment-01-concert" />
+        <option name="HTTP_PORT" value="10000" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51071" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="assignment-01-concert-client:war" />
+          <artifact name="assignment-01-concert-service:war" />
+        </option>
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.ConcertResourceIT" />
+      <item itemvalue="JUnit.ConcertResourceIT.testAttemptDoubleBooking_OverlappingSeats" />
+      <item itemvalue="JUnit.ConcertResourceIT.testUnauthorizedSubscription" />
+      <item itemvalue="JUnit.ConcertResourceIT.testBadSubscription_NonexistentConcert" />
+      <item itemvalue="JUnit.ConcertResourceIT.testSubscription" />
+      <item itemvalue="Tomcat Server.Server" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ConcertResourceIT" />
+        <item itemvalue="JUnit.ConcertResourceIT.testSubscription" />
+        <item itemvalue="JUnit.ConcertResourceIT.testBadSubscription_NonexistentConcert" />
+        <item itemvalue="JUnit.ConcertResourceIT.testUnauthorizedSubscription" />
+        <item itemvalue="JUnit.ConcertResourceIT.testAttemptDoubleBooking_OverlappingSeats" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="61cf7eb1-c575-401d-9304-19a4b0342697" name="Default Changelist" comment="" />
+      <created>1600296666793</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600296666793</updated>
+      <workItem from="1600296670125" duration="17134000" />
+      <workItem from="1600384835959" duration="802000" />
+      <workItem from="1600385658663" duration="165000" />
+      <workItem from="1600385858606" duration="15333000" />
+      <workItem from="1600461849335" duration="24595000" />
+      <workItem from="1600573266430" duration="609000" />
+      <workItem from="1600655842391" duration="25000" />
+      <workItem from="1600655940151" duration="718000" />
+      <workItem from="1600748709599" duration="8000" />
+      <workItem from="1600998797982" duration="28140000" />
+      <workItem from="1601073489004" duration="2386000" />
+      <workItem from="1601161911668" duration="1147000" />
+      <workItem from="1601186410078" duration="5692000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="859" y="385" width="671" height="309" key="#Assign_Data_Sources" timestamp="1600466798548">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="859" y="385" width="671" height="309" key="#Assign_Data_Sources/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1600466798548" />
+    <state x="552" y="180" key="#Plugins" timestamp="1600385643729">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="552" y="180" key="#Plugins/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1600385643729" />
+    <state x="349" y="375" key="#SQL_Dialects" timestamp="1600315948436">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="349" y="375" key="#SQL_Dialects/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1600315948436" />
+    <state x="738" y="433" key="#Tomcat_Server" timestamp="1600314327131">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="738" y="433" key="#Tomcat_Server/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1600314327131" />
+    <state x="414" y="194" width="1092" height="801" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601019907085">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="414" y="194" width="1092" height="801" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601019907085" />
+    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1601017783812">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="92" y="92" width="1736" height="896" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601017783812" />
+    <state x="765" y="255" key="#com.intellij.ide.util.MemberChooser" timestamp="1601027920938">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="765" y="255" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601027920938" />
+    <state x="739" y="292" key="FileChooserDialogImpl" timestamp="1600314325002">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="739" y="292" key="FileChooserDialogImpl/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1600314325002" />
+    <state width="1877" height="382" key="GridCell.Tab.0.bottom" timestamp="1601198736381">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="382" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736381" />
+    <state width="1877" height="382" key="GridCell.Tab.0.center" timestamp="1601198736380">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="382" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736380" />
+    <state width="1877" height="382" key="GridCell.Tab.0.left" timestamp="1601198736380">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="382" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736380" />
+    <state width="1877" height="382" key="GridCell.Tab.0.right" timestamp="1601198736381">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="382" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736381" />
+    <state width="1534" height="452" key="GridCell.Tab.1.bottom" timestamp="1601198736365">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="452" key="GridCell.Tab.1.bottom/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736365" />
+    <state width="1534" height="452" key="GridCell.Tab.1.center" timestamp="1601198736364">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="452" key="GridCell.Tab.1.center/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736364" />
+    <state width="1534" height="452" key="GridCell.Tab.1.left" timestamp="1601198736364">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="452" key="GridCell.Tab.1.left/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736364" />
+    <state width="1534" height="452" key="GridCell.Tab.1.right" timestamp="1601198736364">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="452" key="GridCell.Tab.1.right/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736364" />
+    <state width="1534" height="452" key="GridCell.Tab.2.bottom" timestamp="1601198736367">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="452" key="GridCell.Tab.2.bottom/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736367" />
+    <state width="1534" height="452" key="GridCell.Tab.2.center" timestamp="1601198736367">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="452" key="GridCell.Tab.2.center/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736367" />
+    <state width="1534" height="452" key="GridCell.Tab.2.left" timestamp="1601198736366">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="452" key="GridCell.Tab.2.left/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736366" />
+    <state width="1534" height="452" key="GridCell.Tab.2.right" timestamp="1601198736367">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="452" key="GridCell.Tab.2.right/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601198736367" />
+    <state width="1534" height="394" key="GridCell.Tab.3.bottom" timestamp="1601034857705">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="394" key="GridCell.Tab.3.bottom/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601034857705" />
+    <state width="1534" height="394" key="GridCell.Tab.3.center" timestamp="1601034857704">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="394" key="GridCell.Tab.3.center/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601034857704" />
+    <state width="1534" height="394" key="GridCell.Tab.3.left" timestamp="1601034857704">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="394" key="GridCell.Tab.3.left/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601034857704" />
+    <state width="1534" height="394" key="GridCell.Tab.3.right" timestamp="1601034857705">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1534" height="394" key="GridCell.Tab.3.right/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601034857705" />
+    <state x="461" y="184" key="SettingsEditor" timestamp="1601024733343">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="184" key="SettingsEditor/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601024733343" />
+    <state x="703" y="346" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1600502000059">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="703" y="346" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1600502000059" />
+    <state x="445" y="324" width="1491" height="586" key="dock-window-1" timestamp="1600387828504">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="445" y="324" width="1491" height="586" key="dock-window-1/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1600387828504" />
+    <state x="690" y="290" key="extract.method.dialog" timestamp="1600473443522">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="690" y="290" key="extract.method.dialog/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1600473443522" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1601030571646">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/1920.0.1536.864/-1920.0.1920.1080@0.0.1920.1080" timestamp="1601030571646" />
+  </component>
+</project>
