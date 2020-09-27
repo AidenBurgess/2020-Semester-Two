@@ -165,12 +165,48 @@ start
 
 \end_layout
 
+\begin_layout Section
+Scalability - How have you made an effort to improve the scalability of
+ your web service?
+\end_layout
+
 \begin_layout Subsection
-How have you made an effort to improve the scalability of your web service?
+Stateless
 \end_layout
 
 \begin_layout Standard
-Stateless
+The web service does not hold any information about client sessions.
+ Instead, it provides cookies to the client which they may use for authenticatio
+n.
+ These cookies are obtained through the login service, and used when retrieiving
+ user-specific information, or performing changes to the database.
+\end_layout
+
+\begin_layout Standard
+This allows the web service to be easily replicated.
+ Each replicated server acts identically to handling the requests.
+\end_layout
+
+\begin_layout Subsection
+RESTful Architecture
+\end_layout
+
+\begin_layout Standard
+Follows restful architecture, HTTP methods allows us to perform optimisations
+\end_layout
+
+\begin_layout Subsection
+Resources split into classes
+\end_layout
+
+\begin_layout Standard
+Resources split into different classes, so more functionality can be added
+ later on.
+ And it is easier to build upon
+\end_layout
+
+\begin_layout Standard
+SQL statements are all held reusable from ConcertUtils
 \end_layout
 
 \begin_layout Subsection
@@ -217,7 +253,7 @@ Subscriptions are iterated through synchronized
 
 \begin_layout Subsection
 How would you extend your web service to add support for the following new
- features?:
+ features?
 \end_layout
 
 \begin_layout Subsection
@@ -233,6 +269,10 @@ ed for a new concert date
 \begin_layout Subsection
 Support for multiple venues (currently all concerts are assumed to be at
  the same venue with an identical seat layout)
+\end_layout
+
+\begin_layout Standard
+make concertId an @ID in the Seat class
 \end_layout
 
 \begin_layout Subsection

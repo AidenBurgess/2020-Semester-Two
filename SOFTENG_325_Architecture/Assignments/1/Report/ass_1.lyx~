@@ -165,8 +165,113 @@ start
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Section
+Scalability - How have you made an effort to improve the scalability of
+ your web service?
+\end_layout
 
+\begin_layout Subsection
+Stateless
+\end_layout
+
+\begin_layout Standard
+The web service does not hold any information about client sessions.
+ Instead, it provides cookies to the client which they may use for authenticatio
+n.
+ These cookies are obtained through the login service, and used when retrieiving
+ user-specific information, or performing changes to the database.
+\end_layout
+
+\begin_layout Standard
+This allows the web service to be easily replicated.
+ Each replicated server acts identically to handling the requests.
+\end_layout
+
+\begin_layout Subsection
+RESTful Architecture
+\end_layout
+
+\begin_layout Standard
+Follows restful architecture, HTTP methods allows us to perform optimisations
+\end_layout
+
+\begin_layout Subsection
+Resources split into classes
+\end_layout
+
+\begin_layout Standard
+Resources split into different classes, so more functionality can be added
+ later on.
+ And it is easier to build upon
+\end_layout
+
+\begin_layout Subsection
+Identify (implicit and explicit) uses of lazy loading and eager fetching
+ within your web service, and justify why those uses are appropriate in
+ the context of this web service?
+\end_layout
+
+\begin_layout Standard
+Booking lazy loads ConcertDate, User, and bookedSeats
+\end_layout
+
+\begin_layout Standard
+Concert eager fetches dates and performers
+\end_layout
+
+\begin_layout Standard
+ConcertDate lazy loads concert
+\end_layout
+
+\begin_layout Standard
+Performer eager fetches concerts
+\end_layout
+
+\begin_layout Subsection
+How have you made an effort to remove the possibility of issues arising
+ from concurrent access, such as double-bookings?
+\end_layout
+
+\begin_layout Standard
+Single transaction to book all seats at once, increment seats version, so
+ no two transactions can commit a change to the same seat at a time
+\end_layout
+
+\begin_layout Standard
+Ensure seat versions have not changed at commit time.
+ If they have changed then fail the entire transaction.
+ This is the default behaviour of JPA as each Seat has a verison attribute.
+\end_layout
+
+\begin_layout Standard
+Subscriptions are iterated through synchronized
+\end_layout
+
+\begin_layout Subsection
+How would you extend your web service to add support for the following new
+ features?
+\end_layout
+
+\begin_layout Subsection
+Support for different ticket prices per concert (currently ticket prices
+ are identical for each concert)
+\end_layout
+
+\begin_layout Standard
+Add ticket price field to Seat, which is determined when the seats are initialis
+ed for a new concert date
+\end_layout
+
+\begin_layout Subsection
+Support for multiple venues (currently all concerts are assumed to be at
+ the same venue with an identical seat layout)
+\end_layout
+
+\begin_layout Subsection
+Support for "held" seats (where, after a user selects their seats, they
+ are reserved for a period of time to allow the user time to pay.
+ If the user cancels payment, or the time period elapses, the seats are
+ automatically released, able to be booked again by other users).
 \end_layout
 
 \end_body
