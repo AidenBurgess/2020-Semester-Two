@@ -1,0 +1,39 @@
+too much shit in main, it has all the students, courses, registrations, marks professors
+Main handles GUI as well. Choices are delegated to StudentMgr, CourseMgr, CourseRegistrationMgr, MarkMgr
+GUi handled with double nested do while loop
+
+
+
+FILEMgr is 1163 lines long, and handles loading for all the files, insane
+
+Every class handles reading input and writing output themselves
+
+As a result, all the output text is separated into different files
+
+Error handling done through ValidationMgr class
+
+Each Mgr class has a base class which it creates
+
+StudentMgr adds a student by calling .add() on the Main.students static field 🤢
+
+HelpInfoMgr displays the -h messages, unsure if this needs to be refactored somehow 
+
+Course is a big boi and super indented
+
+Domain/Storage classes: Professor, Student, Course, CourseRegistration, Group, MainComponent, Mark,
+
+LabGroup, LectureGroup, TutorialGroup extend Group but don't do anything further
+
+CourseWorkComponent is the only abstract class, MainComponent and SubComponent extend this class
+
+Student is generating studentId atm, shouldnt be their responsibility
+
+
+Lots of do while loops for some reason that are huge
+
+
+Mgr classes are generally way too big and have lots of responsibilities (input, output, saving, etc..)
+
+Could definitely use some builders in the house
+
+Methods are generally way too long, should watch "Clean Code" by Uncle Bob
