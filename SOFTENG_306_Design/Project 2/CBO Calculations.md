@@ -77,7 +77,49 @@ Total: 3
 
 Total: 9
 
-## StudentMgr
+## StudentMgr*
 
-- 
+- ValidationMgr
+- Student
+- HelpInfoMgr
+- FILEMgr
+- Main
+
+Total: 5
+
+## SubComponent
+
+- Mark*
+- CourseMgr*
+- FILEMgr*
+- MainComponent
+- MarkMgr*
+
+Total: 5
+
+## TutorialGroup
+
+- CourseMgr*
+- Course
+- CourseRegistration
+- CourseRegistrationMgr*
+- FILEMgr*
+
+Total: 5
+
+## ValidationMgr*
+
+- HelpInfoMgr*
+- Student
+- Main*
+- Course
+- Professor
+- CourseRegistration
+- CourseRegistrationMgr*
+- CourseMgr*
+- MarkMgr*
+- ProfessorMgr*
+- StudentMgr*
+
+Total: 11
 
