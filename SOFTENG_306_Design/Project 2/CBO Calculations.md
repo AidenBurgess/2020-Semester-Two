@@ -1,5 +1,17 @@
 # CBO Calculations
 
+## MainComponent
+
+- SubComponent
+- Course
+- CourseMgr*
+- CourseRegistrationMgr*
+- FILEMgr*
+- Mark
+- MarkMgr*
+
+Total: 7
+
 ## Mark
 
 - Student
@@ -7,30 +19,55 @@
 - CourseworkComponent
 - MainComponent
 - SubComponent
-- FILEMgr * static
-- Main * static
-- MarkMgr * static
+- FILEMgr*
+- Main*
+- MarkMgr*
 
 8 in total
 
-## Professor
+## MarkMgr*
 
-- ValidationMgr * static
+- CourseworkComponent
+- MainComponent
+- SubComponent
+- Mark
+- FILEMgr
+- ValidationMgr
 - Course
-- CourseMgr * static
-- CourseRegistrationMgr * static
-- FILEMgr * static
-- Main * static
-- ProfessorMgr * static
-- HelpInfoMgr * static
+- Student
+- Main
+- CourseRegistrationMgr
 
 Total: 8
+
+## Professor
+
+- ValidationMgr*
+- Course
+- CourseMgr*
+- CourseRegistrationMgr*
+- FILEMgr*
+- Main* 
+- ProfessorMgr*
+- HelpInfoMgr*
+
+Total: 8
+
+## ProfessorMgr*
+
+- ValidationMgr
+- Professor
+- HelpInfoMgr
+
+Total: 3
+
+??? ProfessorMgr isnt used by anything???
 
 ## Student
 
 - Mark
 - CourseRegistration
-- CourseRegistrationMgr * static
+- CourseRegistrationMgr*
 - FILEMgr*
 - HelpInfoMgr*
 - Main*
@@ -39,3 +76,8 @@ Total: 8
 - ValidationMgr*
 
 Total: 9
+
+## StudentMgr
+
+- 
+
