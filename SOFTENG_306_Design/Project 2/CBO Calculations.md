@@ -123,3 +123,51 @@ Total: 5
 
 Total: 11
 
+---
+
+# Checking Max's Stuff
+
+## Course
+
+- Professor
+- LectureGroup
+- TutorialGroup
+- LabGroup
+- MainComponent
+- Main
+- CourseRegistration
+- CourseRegistrationMgr
+- FILEMgr
+- HelpInfoMgr
+- Mark
+- MarkMgr
+- ValidationMgr
+
+Total: 13
+
+## CourseMgr
+
+- ValidationMgr
+- HelpInfoMgr
+- LectureGroup
+- TutorialGroup
+- LabGroup
+- Professor
+- Course
+- FILEMgr
+- Main
+- MainComponent
+- SubComponent
+
+Total: 11
+
+## CourseRegistration
+
+- Student
+- Course
+- CourseRegistrationMgr
+- FILEMgr
+- Main
+- ValidationMgr
+
+Total: 6

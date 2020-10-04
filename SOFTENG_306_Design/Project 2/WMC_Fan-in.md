@@ -420,3 +420,364 @@ Total: 2
 
 Total: 5 + 1 + 1 + 1 = 8
 
+# Checking Max's Work
+
+## Course
+
+- ```java
+  public Course(String courseID, String courseName, Professor profInCharge, int vacancies, int totalSeats, ArrayList<LectureGroup> lectureGroups, int AU, String courseDepartment, String courseType, int lecWeeklyHour)
+  ```
+
+  - FILEMgr
+    loadCourses()
+
+- ```java
+  public Course(String courseID, String courseName, Professor profInCharge, int vacancies, int totalSeats, ArrayList<LectureGroup> lectureGroups, ArrayList<TutorialGroup> tutorialGroups, ArrayList<LabGroup> labGroups, int AU, String courseDepartment, String courseType, int lecWeeklyHour, int tutWeeklyHour, int labWeeklyHour)
+  ```
+
+  - CourseMgr
+    addCourse()
+
+- ```java
+  public String getCourseID()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+    enterCourseWorkComponentWeightage(Course)
+    printCourses()
+  - CourseRegistrationMgr
+    registerCourse()
+    printStudents()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+    writeCourseRegistrationIntoFile(CourseRegistration)
+    loadCourseRegistration()
+    updateStudentMarks(Mark)
+    loadStudentMarks()
+    backUpMarks(ArrayList<Mark>)
+  - HelpInfoMgr
+    printAllCourses()
+    printCourseInDepartment(String)
+  - MarkMgr
+    setCourseWorkMark(boolean)
+    printCourseStatistics()
+    printStudentTranscript()
+  - ValidationMgr
+    checkCourseExists(String)
+    checkCourseRegistrationExists(String, String)
+
+- ```java
+  public String getCourseName() 
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+    enterCourseWorkComponentWeightage(Course)
+    printCourses()
+  - CourseRegistrationMgr
+    registerCourse()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+  - MarkMgr
+    printCourseStatistics()
+    printStudentTranscript()
+
+- ```java
+  public int getAU()
+  ```
+
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+  - MarkMgr
+    printCourseStatistics()
+    printStudentTranscript()
+
+- ```java
+  public Professor getProfInCharge()
+  ```
+
+  - CourseMgr
+    printCourses()
+  - CourseRegistrationMgr
+    registerCourse()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getVacancies()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - CourseRegistrationMgr
+    registerCourse()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+  - MarkMgr
+    printCourseStatistics()
+
+- ```JAVA
+  public int getTotalSeats()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+  - MarkMgr
+    printCourseStatistics()
+
+- ```JAVA
+  public String getCourseDepartment()
+  ```
+
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+  - HelpInfoMgr
+    printCourseInDepartment(String)
+
+- ```java
+  public String getCourseType()
+  ```
+
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getLecWeeklyHour()
+  ```
+
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getTutWeeklyHour()
+  ```
+
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getLabWeeklyHour()
+  ```
+
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public ArrayList<LectureGroup> getLectureGroups()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - CourseRegistrationMgr
+    registerCourse()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public ArrayList<TutorialGroup> getTutorialGroups()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - CourseRegistrationMgr
+    registerCourse()
+    printStudents()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public ArrayList<LabGroup> getLabGroups()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - CourseRegistrationMgr
+    registerCourse()
+    printStudents()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public ArrayList<MainComponent> getMainComponents()
+  ```
+
+  - CourseMgr
+    enterCourseWorkComponentWeightage(Course)
+  - CourseRegistrationMgr
+    registerCourse()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+  - MarkMgr
+    initializeMark(Student, Course)
+    printCourseStatistics()
+
+- ```java
+  public void setVacancies(int vacancies)
+  ```
+
+  - FILEMgr
+    loadCourses()
+
+- ```java
+  public void enrolledIn()
+  ```
+
+  - registerCourse()
+    CourseRegistrationMgr
+
+- ```java
+  public void setTutorialGroups(ArrayList<TutorialGroup> tutorialGroups)
+  ```
+
+  - FILEMgr
+    loadCourses()
+
+- ```java
+  public void setLabGroups(ArrayList<LabGroup> labGroups)
+  ```
+
+  - loadCourses()
+    FILEMgr
+
+- ```java
+  public void setMainComponents(ArrayList<MainComponent> mainComponents)
+  ```
+
+  - CourseMgr
+    enterCourseWorkComponentWeightage(Course)
+  - FILEMgr
+    loadCourses()
+
+- ```java
+  public void setTutWeeklyHour(int tutWeeklyHour)
+  ```
+
+  - loadCourses()
+    FILEMgr
+
+- ```java
+  public void setLabWeeklyHour(int labWeeklyHour)
+  ```
+
+  - loadCourses()
+    FILEMgr
+
+  Total: 1+1+19+8+4+4+5+4+3+2+2+2+2+4+5+5+6+1+1+1+1+2+1+1 = 85
+
+  ## CourseMgr
+
+- ```java
+  public static void addCourse()
+  ```
+
+  - main(String[])
+    Main
+
+- ```java
+  public static void checkAvailableSlots()
+  ```
+
+  - main(String[])
+    Main
+
+- ```java
+  public static void enterCourseWorkComponentWeightage(Course currentCourse)
+  ```
+
+  - CourseMgr
+    addCourse()
+  - Main
+    main(String[])
+
+- ```java
+  public static void printCourses()
+  ```
+
+  - addCourse()
+    CourseMgr
+
+  Total: 5
+
+  ## CourseRegistration
+
+- ```java
+  public CourseRegistration(Student student, Course course, String lectureGroup, String tutorialGroup, String labGroup)
+  ```
+
+  - CourseRegistrationMgr
+    registerCourse()
+  - FILEMgr
+    loadCourseRegistration()
+
+- ```java
+  public Student getStudent()
+  ```
+
+  - CourseRegistrationMgr
+    printStudents()
+  - FILEMgr
+    writeCourseRegistrationIntoFile(CourseRegistration)
+  - ValidationMgr
+    checkCourseRegistrationExists(String, String)
+
+- ```java
+  public Course getCourse()
+  ```
+
+  - CourseRegistrationMgr
+    printStudents()
+  - FILEMgr
+    writeCourseRegistrationIntoFile(CourseRegistration)
+  - ValidationMgr
+    checkCourseRegistrationExists(String, String)
+
+- ```java
+  public String getLectureGroup()
+  ```
+
+  - CourseRegistration (inner class)
+  - CourseRegistrationMgr
+    printStudents()
+  - FILEMgr
+    writeCourseRegistrationIntoFile(CourseRegistration)
+
+- ```java
+  public String getTutorialGroup()
+  ```
+
+  - CourseRegistration (inner class)
+  - CourseRegistrationMgr
+    printStudents()
+  - FILEMgr
+    writeCourseRegistrationIntoFile(CourseRegistration)
+
+- ```java
+  public String getLabGroup()
+  ```
+
+  - CourseRegistration (inner class)
+  - CourseRegistrationMgr
+    printStudents()
+  - FILEMgr
+    writeCourseRegistrationIntoFile(CourseRegistration)
+
+Total: 2+3+3+3+3+3 = 17
+
