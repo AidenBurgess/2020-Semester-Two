@@ -95,7 +95,7 @@ Total: 3 + 11 + 0 = 14
 
   - MarkMgr.setCourseWorkMark()
 
-Total: 2 + 4 + 5 + 6 + 4 + 1 = 22
+Total: 2 + 4 + 5 + 6 + 4 + 1 + 1= 2
 
 ## MarkMgr*
 
@@ -336,7 +336,7 @@ Total: 0
   - Student
     Student(String)
 
-Total: 1 + 1 + 15 + 5 + 2 + 2 + 2 + 2 + 1 + 1 +2 + 1 + 2 + 1 = 38
+Total: 1 + 1 + 15 + 5 + 2 + 2 + 2 + 2 + 1 + 1 +2 + 2 + 1 + 2 + 1 = 40
 
 ## StudentMgr*
 
@@ -417,8 +417,94 @@ Total: 2
 
   - addStudent()
     StudentMgr
+  
+- ```java
+  public static boolean checkValidProfIDInput(String profID)
+  ```
 
-Total: 5 + 1 + 1 + 1 = 8
+  - addProfessor()
+    ProfessorMgr
+
+- ```java
+  public static boolean checkValidPersonNameInput(String personName)
+  ```
+
+  - addProfessor()
+    ProfessorMgr
+
+- ```java
+  public static boolean checkValidGroupNameInput(String groupName)
+  ```
+
+  - addCourse()
+    CourseMgr
+
+- ```java
+  public static Student checkStudentExists(String studentID)
+  ```
+
+  - StudentMgr
+    addStudent()
+  - ValidationMgr
+    checkStudentExists()
+
+- ```java
+  public static Student checkStudentExists()
+  ```
+
+  - CourseRegistrationMgr
+    registerCourse()
+  - MarkMgr
+    setCourseWorkMark(boolean)
+    printStudentTranscript()
+
+- ```java
+  public static Course checkCourseExists()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+    enterCourseWorkComponentWeightage(Course)
+  - CourseRegistrationMgr
+    registerCourse()
+    printStudents()
+  - MarkMgr
+    setCourseWorkMark(boolean)
+    printCourseStatistics()
+
+- ```java
+  public static String checkCourseDepartmentExists()
+  ```
+
+  - registerCourse()
+    CourseRegistrationMgr
+
+- ```java
+  public static Course checkCourseExists(String courseID)
+  ```
+
+  - CourseMgr
+    addCourse()
+  - ValidationMgr
+    checkCourseExists()
+
+- ```java
+  public static Professor checkProfExists(String profID)
+  ```
+
+  - CourseMgr
+    addCourse()
+  - ProfessorMgr
+    addProfessor()
+
+- ```java
+  public static CourseRegistration checkCourseRegistrationExists(String studentID, String courseID)
+  ```
+
+  - CourseRegistrationMgr
+    registerCourse()
+
+Total: 5 + 1 + 1 + 1 +1+1+1+2+3+61+2+2+1= 28
 
 # Checking Max's Work
 

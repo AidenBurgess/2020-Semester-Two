@@ -5,10 +5,10 @@
 - SubComponent
 - Course
 - CourseMgr*
-- CourseRegistrationMgr*
 - FILEMgr*
 - Mark
 - MarkMgr*
+- CourseworkComponent
 
 Total: 7
 
@@ -22,8 +22,9 @@ Total: 7
 - FILEMgr*
 - Main*
 - MarkMgr*
+- CourseRegistrationMgr
 
-8 in total
+Total: 9
 
 ## MarkMgr*
 
@@ -38,7 +39,7 @@ Total: 7
 - Main
 - CourseRegistrationMgr
 
-Total: 8
+Total: 10
 
 ## Professor
 
@@ -94,16 +95,17 @@ Total: 5
 - FILEMgr*
 - MainComponent
 - MarkMgr*
+- CourseworkComponent
 
-Total: 5
+Total: 6
 
 ## TutorialGroup
 
 - CourseMgr*
 - Course
-- CourseRegistration
 - CourseRegistrationMgr*
 - FILEMgr*
+- Group
 
 Total: 5
 
@@ -142,8 +144,9 @@ Total: 11
 - Mark
 - MarkMgr
 - ValidationMgr
+- CourseMgr
 
-Total: 13
+Total: 14
 
 ## CourseMgr
 
@@ -158,6 +161,7 @@ Total: 13
 - Main
 - MainComponent
 - SubComponent
+- CourseworkComponent
 
 Total: 11
 
@@ -171,3 +175,44 @@ Total: 11
 - ValidationMgr
 
 Total: 6
+
+## FILEMgr
+
+- Student
+- Group
+- LectureGroup
+- TutorialGroup
+- LabGroup
+- MainComponent
+- SubComponent
+- CourseworkComponent
+- Course
+- Professor
+- CourseRegistration
+- Mark
+- MarkMgr
+- CourseMgr
+- CourseRegistrationMgr
+- Main
+- StudentMgr
+
+Total: 17
+
+## CourseRegistrationMgr
+
+- ValidationMgr
+- Course
+- Group
+- LectureGroup
+- TutorialGroup
+- LabGroup
+- HelpInfoMgr
+- MarkMgr
+- Mark
+- Main
+- FILEMgr
+- Student
+- CourseRegistration
+
+Total: 13
+
