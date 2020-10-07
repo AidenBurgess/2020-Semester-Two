@@ -34,6 +34,30 @@ class A2Fuse2(LoggingMixIn):
         else:
             raise FuseOSError(ENOENT)
 
+    def chmod(self, *args):
+        return self.all_src("chmod", *args)
+
+    def chown(self, *args):
+        return self.all_src("chown", *args)
+
+    def rename(self, *args):
+        return self.all_src("rename", *args)
+    
+    def mkdir(self, *args):
+        return self.all_src("mkdir", *args)
+
+    def rmdir(self, *args):
+        return self.all_src("rmdir", *args)
+
+    def flush(self, *args):
+        return self.all_src("flush", *args)
+
+    def release(self, *args):
+        return self.all_src("release", *args)
+    
+    def truncate(self, path, length, fh=None):
+        return self.all_src("truncate", *args)
+
     def getattr(self, *args):
         return self.all_src("getattr", *args)
 
