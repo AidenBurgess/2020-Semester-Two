@@ -55,7 +55,7 @@ class A2Fuse2(LoggingMixIn):
     def release(self, *args):
         return self.all_src("release", *args)
     
-    def truncate(self, path, length, fh=None):
+    def truncate(self, *args):
         return self.all_src("truncate", *args)
 
     def getattr(self, *args):
@@ -71,8 +71,19 @@ class A2Fuse2(LoggingMixIn):
         return self.mem.create(path, mode)
 
     def write(self, path, data, offset, fh):
-        data = "".join(map(chr, data))
-        return self.all_src("write", path, data, offset, fh)
+        try:
+            return self.pass1.write(path, data, offset, fh)
+        except:
+            pass
+        try:
+            return self.pass2.write(path, data, offset, fh)
+        except:
+            pass
+        try:
+            data = data.decode("utf-8")
+            return self.mem.write(path, data, offset, fh)
+        except:
+            raise FuseOSError(ENOENT)
 
     def read(self, path, size, offset, fh):
         res = self.all_src("read", path, size, offset, fh)

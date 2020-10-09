@@ -867,3 +867,261 @@ Total: 5 + 1 + 1 + 1 +1+1+1+2+3+61+2+2+1= 28
 
 Total: 2+3+3+3+3+3 = 17
 
+## CourseworkComponent - New
+
+- ```java
+  public CourseworkComponent(String componentName, int componentWeight
+  ```
+
+  - MainComponent
+    - constructor
+  - SubComponent
+    - constructor
+
+- ```java
+  public String getComponentName()
+  ```
+
+  - MarkMgr
+
+    printCourseStatistics()
+    computeMark(ArrayList<Mark>, String)
+
+- ```java
+  public int getComponentWeight()
+  ```
+
+  - 
+
+Total: 4
+
+## MainComponent - New
+
+- ```java
+  public String getComponentName()
+  ```
+
+  - CourseMgr
+    enterCourseWorkComponentWeightage(Course)
+
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+    updateStudentMarks(Mark)
+    backUpMarks(ArrayList<Mark>)
+
+  - Mark
+
+    setSubCourseWorkMarks(String, double)
+
+  - MarkMgr
+
+    setCourseWorkMark(boolean)
+    printCourseStatistics()
+
+- ```java
+  public int getComponentWeight()
+  ```
+
+  - CourseMgr
+    enterCourseWorkComponentWeightage(Course)
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+    updateStudentMarks(Mark)
+    backUpMarks(ArrayList<Mark>)
+  - Mark
+    setMainCourseWorkMarks(String, double)
+    setSubCourseWorkMarks(String, double)
+  - MarkMgr
+    setCourseWorkMark(boolean)
+    printCourseStatistics()
+    printStudentTranscript()
+
+  Total: 14(old) + 8 + 10 = 32
+
+- 
+
+  Total: 14 (old)
+
+## SubComponent - New
+
+- ```java
+  public String getComponentName()
+  ```
+
+  - CourseMgr
+    enterCourseWorkComponentWeightage(Course)
+
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+    updateStudentMarks(Mark)
+    backUpMarks(ArrayList<Mark>)
+
+  - Mark
+    setMainCourseWorkMarks(String, double)
+    setSubCourseWorkMarks(String, double)
+
+  - MarkMgr
+    setCourseWorkMark(boolean)
+
+    printStudentTranscript()
+    printCourseStatistics()
+
+- ```java
+  public int getComponentWeight()
+  ```
+  - CourseMgr
+    enterCourseWorkComponentWeightage(Course)
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+    updateStudentMarks(Mark)
+    backUpMarks(ArrayList<Mark>)
+  - MarkMgr
+    setCourseWorkMark(boolean)
+    printCourseStatistics()
+    printStudentTranscript()
+
+Total: 3 (old) + 10+8=21
+
+## Group - New
+
+- ```java
+  public Group(String groupName, int availableVacancies, int totalSeats)
+  ```
+
+  - LabGroup
+    LabGroup(String, int, int)
+  - LectureGroup
+    LectureGroup(String, int, int)
+  - TutorialGroup
+    TutorialGroup(String, int, int)
+
+- ```java
+  public String getGroupName() 
+  ```
+
+  - HelpInfoMgr
+    printGroupWithVacancyInfo(String, ArrayList<Group>)
+
+- ```java
+  public int getAvailableVacancies()
+  ```
+
+  - HelpInfoMgr
+    printGroupWithVacancyInfo(String, ArrayList<Group>)
+
+- ```java
+  public void enrolledIn()
+  ```
+
+  - HelpInfoMgr
+    printGroupWithVacancyInfo(String, ArrayList<Group>)
+
+  Total: 6
+
+## LectureGroup - New
+
+- ```java
+  public String getGroupName() 
+  ```
+
+  - CourseMgr
+    addCourse()
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getAvailableVacancies()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getTotalSeats()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+Total: 2(old) + 10 = 12
+
+## TutorialGroup - New
+
+- ```java
+  public String getGroupName() 
+  ```
+  - CourseMgr
+    addCourse()
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getAvailableVacancies()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getTotalSeats()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+Total: 2(old) + 10 = 12
+
+## LabGroup - New
+
+- ```java
+  public String getGroupName() 
+  ```
+
+  - CourseMgr
+    addCourse()
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getAvailableVacancies()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+- ```java
+  public int getTotalSeats()
+  ```
+
+  - CourseMgr
+    checkAvailableSlots()
+  - FILEMgr
+    writeCourseIntoFile(Course)
+    backUpCourse(ArrayList<Course>)
+
+  Total: 2(old) + 10 = 12
