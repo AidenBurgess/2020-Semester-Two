@@ -118,3 +118,47 @@ Write: 4
 6. This assumption clarifies assumption (5), as we only need one write per inode update. **Unsure why several changes can be made with one write is important**
 7. Some file systems use clusters of blocks, which may affect our read calculations. As this cluster information is not provided, it is best to make this assumption.
 
+## Question 2
+
+## Question 3
+
+## Question 4
+
+## Question 5
+
+## Question 6
+
+## Question 7
+
+*Parameters:*
+
+- Normal instruction: 1ns
+- Page fault: 2,000,000ns
+- Program runtime: 60s
+- \# Page faults: 20,000
+
+$$
+20,000\times2ms + NormalInstructionTime = 60s
+$$
+
+$$
+40s+NormalInstructionTime = 60s
+$$
+
+$$
+NormalInstructionTime = 20s
+$$
+
+Assume 10,000 page faults as we double the amount of memory
+$$
+Runtime=20s+10,000\times2ms
+$$
+
+$$
+Runtime = 40s
+$$
+
+
+
+## Question 8
+
