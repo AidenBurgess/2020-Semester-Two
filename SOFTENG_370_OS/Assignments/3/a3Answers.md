@@ -10,14 +10,78 @@ Number of ptrs/block = 4KB/4 = 1024 ptrs/block
 
 Assume that we can use blocks defined in previous questions
 
-### a) 16 * 4KB = 64 KB
+### a) 
 
-### b) 64KB + 1024 * 4KB = 4,160 KB
+16 * 4KB = 65,536 B
 
-### c) 4160KB + 1024^2 * 4KB = 4,198,464 KB
+### b)
 
-### d) 4,198,464 + 1024^3 * 4KB = 4,299,165,760 KB
+65,536 + 1024 * 4KB = 4,259,840 B
 
-### e) 6 levels (1024^5 * 4KB = 1024^6 * 4B)
+### c) 
+
+4,259,840 + 1024^2 * 4KB = 4,299,227,136 B
+
+### d) 
+
+4,299,227,136 + 1024^3 * 4KB = 4,402,345,738,240 B
+
+### e) 
+
+6 levels (1024^5 * 4KB = 1024^6 * 4B)
 
 ### f)
+
+Read: 1
+
+### g)
+
+1 Direct block read 4,259,820 -> 4,259,840
+
+1 Read in Indirect block @ 4,259,840
+
+1 Indirect block read 4,259,840 -> 4,259,920
+
+Read: 3
+
+Write: 0
+
+### h)
+
+1 Read in Indirect block @ 4,259,840
+
+1 Indirect block read  4,263,900 -> 4,263,936
+
+1 Indirect block read  4,263,936-> 4,264,000 
+
+Read: 3
+
+Write: 0
+
+### i)
+
+1 Direct block read 4,259,820 -> 4,259,840
+
+1 Direct block write 4,259,820 -> 4,259,840
+
+1 Read in Indirect block @ 4,259,840
+
+1 Indirect block read @ 4,259,840 -> 4,259,920 
+
+1 Indirect block write @ 4,259,840 -> 4,259,920 
+
+Read: 3
+
+Write: 2
+
+### j)
+
+1 Direct block read 4,259,820 -> 4,259,840
+
+1 Direct block write 4,259,820 -> 4,259,840
+
+
+
+
+
+ALL MY WORKING IS WRONG BECAUSE I MESSED UP THE LEVELS BY 1
