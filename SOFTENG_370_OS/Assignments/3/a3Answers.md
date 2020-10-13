@@ -32,17 +32,25 @@ Assume that we can use blocks defined in previous questions
 
 ### f)
 
+Direct block read 4,050-> 4,150
+
 Read: 1
+
+Write: 0
 
 ### g)
 
-1 Direct block read 4,259,820 -> 4,259,840
+Read in single indirect block
 
-1 Read in Indirect block @ 4,259,840
+Block read 4,259,820 -> 4,259,840
 
-1 Indirect block read 4,259,840 -> 4,259,920
+Read in double indirect block
 
-Read: 3
+Read in 2nd layer double indirect block
+
+Block read 4,259,840 -> 4,259,920
+
+Read: 5
 
 Write: 0
 
