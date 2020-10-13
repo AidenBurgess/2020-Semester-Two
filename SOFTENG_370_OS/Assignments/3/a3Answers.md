@@ -88,12 +88,19 @@ Write: 2
 
 ### j)
 
-1 Direct block read 4,259,820 -> 4,259,840
+Read in single indirect block
 
-1 Direct block write 4,259,820 -> 4,259,840
+Write 4,259,820 -> 4,259,840
 
+Read in double indirect block @ 4,259,840
 
+Assign and Write 2nd layer double indirect block @ 4,259,840 to 1st layer
 
+Assign and Write 2nd layer double indirect block @ 4,259,840 new block
 
+Write 4,259,820 -> 4,259,840
 
-ALL MY WORKING IS WRONG BECAUSE I MESSED UP THE LEVELS BY 1
+Read: 2
+
+Write: 3
+
