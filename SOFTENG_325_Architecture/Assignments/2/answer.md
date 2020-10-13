@@ -58,36 +58,19 @@ UPI: abur970
 
 ### 5. Interoperability
 
-| Portion of Scenario | Concrete Value                         |
-| ------------------- | -------------------------------------- |
-| Source              | Random event                           |
-| Stimulus            | Single processor failure               |
-| Artifact            | Server                                 |
-| Environment         | Normal working conditions              |
-| Response            | Notify operator                        |
-| Response Measure    | No loss of service (100% availability) |
-|                     |                                        |
+| Portion of Scenario | Concrete Value                                          |
+| ------------------- | ------------------------------------------------------- |
+| Source              | UoA login service                                       |
+| Stimulus            | User attempting login with university account           |
+| Artifact            | Login system of server                                  |
+| Environment         | System wishing to interoperate known prior to runtime   |
+| Response            | Request is appropriately accepted and user is logged in |
+| Response Measure    | Percentage of successful logins with UoA login service  |
+|                     |                                                         |
 
-### 6. Maintainability
+## Architecture Design
 
-| Portion of Scenario | Concrete Value                         |
-| ------------------- | -------------------------------------- |
-| Source              | Random event                           |
-| Stimulus            | Single processor failure               |
-| Artifact            | Server                                 |
-| Environment         | Normal working conditions              |
-| Response            | Notify operator                        |
-| Response Measure    | No loss of service (100% availability) |
-|                     |                                        |
+3 tier architecture
 
-### 7. Reliability
+Serverless for scalability
 
-| Portion of Scenario | Concrete Value                         |
-| ------------------- | -------------------------------------- |
-| Source              | Random event                           |
-| Stimulus            | Single processor failure               |
-| Artifact            | Server                                 |
-| Environment         | Normal working conditions              |
-| Response            | Notify operator                        |
-| Response Measure    | No loss of service (100% availability) |
-|                     |                                        |
