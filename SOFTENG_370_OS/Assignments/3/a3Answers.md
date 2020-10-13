@@ -48,7 +48,7 @@ Read in double indirect block
 
 Read in 2nd layer double indirect block
 
-Block read 4,259,840 -> 4,259,920
+Read 4,259,840 -> 4,259,920
 
 Read: 5
 
@@ -56,27 +56,31 @@ Write: 0
 
 ### h)
 
-1 Read in Indirect block @ 4,259,840
+Read in double indirect block @ 4,259,840
 
-1 Indirect block read  4,263,900 -> 4,263,936
+Read 2nd layer double indirect block @ 4,259,840
 
-1 Indirect block read  4,263,936-> 4,264,000 
+Read 4,263,900 -> 4,263,936
 
-Read: 3
+Read 2nd layer double indirect block @ 4,263,936
+
+Read 4,263,936-> 4,264,000 
+
+Read: 5
 
 Write: 0
 
 ### i)
 
-1 Direct block read 4,259,820 -> 4,259,840
+Read in single indirect block
 
-1 Direct block write 4,259,820 -> 4,259,840
+Write 4,259,820 -> 4,259,840
 
-1 Read in Indirect block @ 4,259,840
+Read in double indirect block @ 4,259,840
 
-1 Indirect block read @ 4,259,840 -> 4,259,920 
+Read 2nd layer double indirect block @ 4,259,840
 
-1 Indirect block write @ 4,259,840 -> 4,259,920 
+Write @ 4,259,840 -> 4,259,920 
 
 Read: 3
 
