@@ -82,9 +82,11 @@ Read 2nd layer double indirect block @ 4,259,840
 
 Write @ 4,259,840 -> 4,259,920 
 
+Write on disk inode update
+
 Read: 3
 
-Write: 2
+Write: 3
 
 ### j)
 
@@ -100,7 +102,19 @@ Assign and Write 2nd layer double indirect block @ 4,259,840 new block
 
 Write 4,259,820 -> 4,259,840
 
+Write on disk inode update
+
 Read: 2
 
-Write: 3
+Write: 4
+
+### k)
+
+1. The inode itself is a block on disk, so if we did not have this assumption, then there would at least be an extra read for each  operation.
+2. If the blocks are already in memory at the start, then there is no need to read them in from disk in the operations. **Unsure why the second part is needed**
+3. File access time writing would add at least one extra write to each operation, and this is not integral to the main task of reading/writing from/to the disk
+4. This assumption is made due to j), which requires new blocks to be assigned. Without this assumption, there would be an extra read.
+5. **Unsure why this assumption needs to be made**
+6. This assumption clarifies assumption (5), as we only need one write per inode update. **Unsure why several changes can be made with one write is important**
+7. Some file systems use clusters of blocks, which may affect our read calculations. As this cluster information is not provided, it is best to make this assumption.
 
