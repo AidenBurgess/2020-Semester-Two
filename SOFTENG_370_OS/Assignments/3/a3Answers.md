@@ -126,6 +126,20 @@ Write: 4
 
 ## Question 5
 
+$$
+EAT=2\beta - \alpha\beta + \epsilon
+$$
+
+$$
+EAT = 2\times50ns - 0.99\times50ns + 1ns
+$$
+
+$$
+EAT = 51.5ns
+$$
+
+**Pretty sure this is real wrong**
+
 ## Question 6
 
 ## Question 7
@@ -161,4 +175,6 @@ $$
 
 
 ## Question 8
+
+
 
