@@ -161,20 +161,20 @@ This is not realistic as it is unlikely all process would use the entire address
 ## Question 5
 
 $$
-EAT=2\beta - \alpha\beta + \epsilon
+EAT=2\beta - \alpha\beta + \epsilon + page\_fault\_time
 $$
 
 $$
-EAT = 2\times50ns - 0.99\times50ns + 1ns
+EAT = 2\times50ns - 0.99\times50ns + 1ns + 0.0001\times5ms
 $$
 
 $$
-EAT = 51.5ns
+EAT = 551.5ns
 $$
-
-**Pretty sure this is real wrong**
 
 ## Question 6
+
+
 
 ## Question 7
 
@@ -198,6 +198,15 @@ NormalInstructionTime = 20s
 $$
 
 Assume 10,000 page faults as we double the amount of memory
+$$
+\#Normal_instr.1ns + 20,000.2ms = 60s
+$$
+
+$$
+Normal_instr.1ns + 20,000.2ms = 60s
+$$
+
+
 $$
 Runtime=20s+10,000\times2ms
 $$
