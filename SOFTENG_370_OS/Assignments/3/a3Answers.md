@@ -151,6 +151,12 @@ $$
 Space=8B\times1,048,576=8MB
 $$
 
+#### Extents version
+
+Extent-based systems have collections of contiguous allocation. As there is only ever 1 frame in a row, the extent based system would look the same as the linked list system.
+
+However, there would probably be a higher overhead with the extent-based system as it has to store starting VCN, starting LCN and cluster count for each free frame, which is probably higher than the 64 bits used per frame with the linked list system.
+
 ## Question 4
 
 $$
