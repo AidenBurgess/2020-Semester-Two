@@ -122,7 +122,7 @@ Write: 4
 
 Current Intel and AMD CPUs are compatible with both 32 and 64 bit code.
 
-Moving to 64 bits increases the address space
+Moving to 64 bits increases the address space, and data values are also 64 bits each. Programs can compute larger calculations in the same amount of time as more information is held in each data value.
 
 ## Question 3
 
@@ -151,8 +151,11 @@ $$
 Space=8B\times1,048,576=8MB
 $$
 
-
 ## Question 4
+
+$$
+2^{32}\ bits\ per\ processor
+$$
 
 Each process can potentially use the entire virtual address space, which is 512MB per processor and 512GB overall
 
