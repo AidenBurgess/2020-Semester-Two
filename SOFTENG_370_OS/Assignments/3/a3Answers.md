@@ -120,9 +120,43 @@ Write: 4
 
 ## Question 2
 
+Current Intel and AMD CPUs are compatible with both 32 and 64 bit code.
+
+Moving to 64 bits increases the address space
+
 ## Question 3
 
+$$
+\#Frames = \frac{16GB}{8KB}
+$$
+
+$$
+\#Frames = 2,097,152
+$$
+
+$$
+\#Free\_frames=1,048,576
+$$
+
+
+
+#### Space requirements for bitmap
+
+1 bit for each frame, so 2,097,152 bits or 25KB
+
+#### Space requirements for linked list
+
+64 bits per free frame, so 
+$$
+Space=8B\times1,048,576=8MB
+$$
+
+
 ## Question 4
+
+Each process can potentially use the entire virtual address space, which is 512MB per processor and 512GB overall
+
+This is not realistic as it is unlikely all process would use the entire address space at the same time.
 
 ## Question 5
 
