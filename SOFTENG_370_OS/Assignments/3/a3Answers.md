@@ -28,13 +28,15 @@ Assume that we can use blocks defined in previous questions
 
 ### e) 
 
-6 levels (1024^5 * 4KB = 1024^6 * 4B)
+5 levels (1024^5 * 4KB = 1024^6 * 4B)
 
 ### f)
 
-Direct block read 4,050-> 4,150
+Direct block read 4,050-> 4,096
 
-Read: 1
+Direct block read 4,096-> 4,150
+
+Read: 2
 
 Write: 0
 
