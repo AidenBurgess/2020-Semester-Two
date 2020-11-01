@@ -18,8 +18,6 @@ UPI: abur970
 | Response Measure    | No loss of service (100% availability) |
 |                     |                                        |
 
-
-
 ### 2. Security
 
 | Portion of Scenario | Concrete Value                                |
@@ -41,20 +39,20 @@ UPI: abur970
 | Artifact            | Login page of website                                        |
 | Environment         | Online website at runtime                                    |
 | Response            | Login page should make it clear where to input username and password |
-| Response Measure    | #Successful Logins/#Attempts                                 |
+| Response Measure    | #Successful Logins/#Attempts is 99%                          |
 |                     |                                                              |
 
 ### 4. Performance
 
-| Portion of Scenario | Concrete Value                    |
-| ------------------- | --------------------------------- |
-| Source              | Student                           |
-| Stimulus            | Watching live session             |
-| Artifact            | Server and Website                |
-| Environment         | Normal working conditions         |
-| Response            | Stream video and audio to student |
-| Response Measure    | Average latency of connection     |
-|                     |                                   |
+| Portion of Scenario | Concrete Value                                     |
+| ------------------- | -------------------------------------------------- |
+| Source              | Student                                            |
+| Stimulus            | Watching live session                              |
+| Artifact            | Server and Website                                 |
+| Environment         | Normal working conditions                          |
+| Response            | Stream video and audio to student                  |
+| Response Measure    | Average latency of connection is less than 300msec |
+|                     |                                                    |
 
 ### 5. Interoperability
 
@@ -73,4 +71,12 @@ UPI: abur970
 3 tier architecture
 
 Serverless for scalability
+
+![image-20201101232030794](C:\Users\aiden\AppData\Roaming\Typora\typora-user-images\image-20201101232030794.png)
+
+
+
+Router/Firewall for security
+
+Separated system components for performance
 
