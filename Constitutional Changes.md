@@ -10,7 +10,7 @@ or vote as many times as you like
 
 ### Paper/Online Votes
 
-Easier to count votes and can accomodate different voting systems
+Easier to count votes and can accommodate different voting systems
 
 ## Extend general exec part III req to n/2 -2 means 2 part III students
 

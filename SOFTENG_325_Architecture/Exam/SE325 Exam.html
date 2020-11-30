@@ -1,0 +1,704 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>SE325 Exam</title><link href='https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext' rel='stylesheet' type='text/css' /><link href='https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+@include-when-export url(https://fonts.loli.net/css?family=Merriweather:900,900italic,300,300italic&subset=latin-ext);
+@include-when-export url(https://fonts.loli.net/css?family=Lato:900,300&subset=latin-ext);
+
+:root {
+	--control-text-color: #777;
+}
+
+/**
+ * forked from pixyll.com
+ * MIT license
+ */
+
+h1,
+.h1,
+.f1 {
+	font-size: 2rem;
+	line-height: 2.5rem;
+}
+h2,
+.h2,
+.f2 {
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+h3,
+.h3,
+.f3 {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+p,
+.p,
+.f4,
+h4,
+h5,
+h6,
+dl,
+ol,
+ul,
+pre[cid],
+div[cid],
+#typora-source {
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+}
+
+h4 {
+	font-size: 1.13rem;
+}
+/*
+ Pixyll
+ A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff.
+ Best served with BASSCSS (http://jxnblk.github.io/basscss)
+ Crafted with <3 by John Otander (@4lpine) - ©2015 John Otander MIT License http://opensource.org/licenses/MIT
+
+*/
+
+body {
+	font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", "STSong", Serif;
+	line-height: 1.5rem;
+	font-weight: 400;
+}
+
+#write {
+	max-width: 914px;
+	color: #333;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1100px;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+img {
+	width: auto;
+	max-width: 100%;
+}
+body {
+	font-size: 1.5rem;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+.ty-table-edit {
+	background: #ededed;
+}
+
+table {
+	width: 100%;
+	font-size: 1.125rem;
+}
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td,
+table > tfoot > tr > th,
+table > tfoot > tr > td {
+	padding: 12px;
+	line-height: 1.2;
+	vertical-align: top;
+	border-top: 1px solid #333;
+}
+table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid #333;
+}
+table > caption + thead > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > th,
+table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+table > tbody + tbody {
+	border-top: 2px solid #333;
+}
+p {
+	font-weight: 300;
+	line-height: 1.5;
+}
+abbr {
+	border-bottom: 1px black dotted;
+	cursor: help;
+}
+pre,
+code {
+	font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+code,
+.md-fences  {
+	color: #7a7a7a;
+}
+
+.md-fences {
+	padding: 1.125em;
+	margin-bottom: 0.88em;
+	font-size: 1rem;
+	border: 1px solid #7a7a7a;
+	padding-bottom: 0.5rem;
+	padding-top: 0.5rem;
+}
+
+blockquote {
+	padding: 1.33em;
+	font-style: italic;
+	border-left: 5px solid #7a7a7a;
+	color: #555;
+}
+blockquote em {
+	color: #000;
+}
+blockquote footer {
+	font-size: .85rem;
+	font-style: normal;
+	background-color: #fff;
+	color: #7a7a7a;
+	border-color: transparent;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family: "Lato", 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 1em 0 0.5em;
+}
+@media screen and (min-width: 48em) {
+	.h1,
+	h1 {
+		font-size: 3.250rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.298rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.625rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+	#write>h4.md-focus:before,
+	#write>h5.md-focus:before,
+	#write>h6.md-focus:before{
+		top: 1px;
+	}
+	.p,
+	p,
+	li {
+		font-size: 1.25rem;
+		line-height: 1.8;
+	}
+	table {
+		font-size: 1.25rem;
+	}
+}
+@media (max-width: 48em) {
+	blockquote {
+		margin-left: 1rem;
+		margin-right: 0;
+		padding: 0.5em;
+	}
+	.h1,
+	h1 {
+		font-size: 2.827rem;
+	}
+	.h2,
+	h2 {
+		font-size: 1.999rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.413rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.3rem;
+	}
+}
+@media screen and (min-width: 64em) {
+	.h1,
+	h1 {
+		font-size: 4.498rem;
+	}
+	.h2,
+	h2 {
+		font-size: 2.29rem;
+	}
+	.h3,
+	h3 {
+		font-size: 1.9rem;
+	}
+	.h4,
+	h4 {
+		font-size: 1.591rem;
+	}
+	#write>h4.md-focus:before{
+		top:4px;
+	}
+}
+a {
+	color: #463F5C;
+	text-decoration: underline;
+}
+
+#write {
+	padding-top: 2rem;
+}
+
+#write pre.md-meta-block {
+	min-height: 35px;
+	padding: 0.5em 1em;
+	white-space: pre;
+	border: 0px;
+
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
+	width: 100vw;
+	max-width: calc(100% + 60px);
+
+	margin-left: -30px;
+	margin-bottom: 2em;
+	margin-top: -2010px;
+	padding-top: 2000px;
+	padding-bottom: 10px;
+	line-height: 1.5em;
+	color: #7a7a7a;
+	background-color: #fafafa;
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+	font-weight: 300;
+	clear: both;
+	padding-left: 0;
+	font-size:1.125rem;
+}
+.md-image>.md-meta {
+	color: #463F5C
+}
+.footnotes {
+	font-size:1.1rem;
+}
+.md-tag {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+}
+.code-tooltip {
+	background: white;
+}
+.code-tooltip-content {
+	font-size: 1.1rem;
+}
+
+.task-list{
+	padding-left: 0;
+}
+
+.md-task-list-item {
+	padding-left:34px;
+}
+
+.md-task-list-item > input{
+	width: 1.25rem;
+	height: 1.25rem;
+	display: block;
+	-webkit-appearance: initial;
+	top: -0.2rem;
+	margin-left: -1.6em;
+	margin-top: calc(1rem - 7px);
+	border: none;
+}
+
+.md-task-list-item > input:focus{
+	outline: none;
+	box-shadow: none;
+}
+
+.md-task-list-item > input:before{
+	border: 1px solid #555;
+	border-radius: 1.5rem;
+	width: 1.5rem;
+	height: 1.5rem;
+	background: #fff;
+	content: ' ';
+	transition: background-color 200ms ease-in-out;
+	display: block;
+}
+
+.md-task-list-item > input:checked:before,
+.md-task-list-item > input[checked]:before{
+	background: #333;
+	border-width: 2px;
+	display:inline-block;
+	transition: background-color 200ms ease-in-out;
+}
+
+.md-task-list-item > input:checked:after,
+.md-task-list-item > input[checked]:after {
+	opacity: 1;
+}
+
+.md-task-list-item > input:after {
+	opacity: 1;
+	-webkit-transition: opacity 0.05s ease-in-out;
+	-moz-transition: opacity 0.05s ease-in-out;
+	transition: opacity 0.05s ease-in-out;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 0.4375rem;
+	left: 0.28125rem;
+	width: 0.9375rem;
+	height: 0.5rem;
+	border: 3px solid #fff;
+	border-top: 0;
+	border-right: 0;
+	content: ' ';
+	opacity: 0;
+}
+
+.md-tag {
+	color:inherit;
+}
+
+.md-toc:focus .md-toc-content{
+	margin-top: 19px;
+}
+
+#typora-sidebar {
+	font-size:1rem !important;
+}
+
+.html-for-mac #typora-sidebar {
+	background-color:white;
+}
+
+.outline-content li, .outline-content ul {
+	font-size:1rem !important;
+}
+
+.outline-title {
+	line-height: inherit;
+	margin-top: 10px;
+}
+
+.outline-expander {
+	width: 18px;
+}
+
+.outline-expander:before {
+ 	content: "+";
+	font-family: inherit;
+	color: rgb(108, 108, 108); 
+  	font-size: 1.5rem;
+ 	top: 0.1rem;
+}
+
+.outline-expander:hover:before {
+	content: "+";
+}
+
+.outline-item-open>.outline-item>.outline-expander:before{
+	content: "-";
+}
+
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
+}
+
+.os-windows #typora-source {
+	font-family: inherit;
+}
+
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
+}
+
+.md-diagram-panel {
+	margin-top: 24px;
+	margin-left: -1.2em;
+}
+
+.md-mathjax-midline {
+	background: #fafafa;
+}
+
+.enable-diagrams pre.md-fences[lang="sequence"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="flow"] .code-tooltip,
+.enable-diagrams pre.md-fences[lang="mermaid"] .code-tooltip {
+    bottom: -3.4em;
+}
+
+.dropdown-menu .divider {
+	border-color: #e5e5e5;
+}
+
+
+</style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write'  class=''><h1><a name="se325-exam" class="md-header-anchor"></a><span>SE325 Exam</span></h1><h2><a name="aiden-burgess---abur970---600280511" class="md-header-anchor"></a><span>Aiden Burgess - abur970 - 600280511</span></h2><h3><a name="1" class="md-header-anchor"></a><span>1.</span></h3><h4><a name="a" class="md-header-anchor"></a><span>a)</span></h4><p><span>Caching  can be used between the server and client, as well as between the server and the database. Caching improves scalability by storing requests, so that repeated requests can be executed faster and without putting additional load on the server. Therefore, the DB and service can acoomodate more users, which increases scalability.</span></p><h4><a name="b" class="md-header-anchor"></a><span>b)</span></h4><p><span>A DTO is an object which is used to transport data between different entities. An appropriate use of a DTO is to convert a database object into an object with is able to be used to send to a client over the network (e.g. Concert Service). The reason why the DB object can not be sent directly is that it is not serializable, and may contain irrelevant information that the client does not use.</span></p><h4><a name="c" class="md-header-anchor"></a><span>c)</span></h4><p><span>An open specification is a clear and detailed description of a system and its attributes, without specifying the exact implementation details. This allows for modifiability and portability, as different implementations can be used to substitute for each other, while having different characteristics.</span></p><h3><a name="2" class="md-header-anchor"></a><span>2.</span></h3><h4><a name="a-n330" class="md-header-anchor"></a><span>a)</span></h4><p><img src="C:\Users\aiden\AppData\Roaming\Typora\typora-user-images\image-20201117092253534.png" referrerpolicy="no-referrer" alt="image-20201117092253534"></p><p><span>If two transactions, A and B, were running concurrently as shown in the image, and both transactions wished to book the same seat. Both A and B would find that the seat is not currently booked, and set themselves as the User who has booked that seat. However, as B commits last, and there is no concurrency control, the seat would be booked by B even though A tried to book first. This is a conflict as the user&#39;s A and B both believe they have the seat booked. This conflict is known as last commit wins. </span></p><h4><a name="b-n358" class="md-header-anchor"></a><span>b)</span></h4><p><span>To introduce optimistic concurrency control, there must be a version field for the object being locked.</span></p><p><span>Insert into Seat (fig 1.) above line 7:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Version</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">private</span> <span class="cm-variable-3">long</span> <span class="cm-variable">version</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 42px;"></div><div class="CodeMirror-gutters" style="display: none; height: 42px;"></div></div></div></pre><p><span>The behaviour of fig 2. would change as follows:</span></p><ul><li><span>The transaction which commits first would have their changes saved to the DB and the version number for Seat would increment by 1.</span></li><li><span>The transaction which commits second would try and commit, but would encounter a OptimisticLockException, as the version number on the Seat object has changed from the local copy being worked on.</span></li><li><span>The second client could choose to try again, where they would find that the seat is booked and then abort the seat booking.</span></li><li><span>Therefore, there are no consistency issues or conflicts in the DB.</span></li></ul><p>&nbsp;</p><h4><a name="c-n379" class="md-header-anchor"></a><span>c)</span></h4><p><span>Pessimistic concurrency control works by utilising DB level locks on rows of the DB.</span></p><p><span>Therefore, at the start of the query, the Seat object being changed should be locked with a write lock..</span></p><p><span>Replace line 7 (fig 2.) with the following:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Seat</span> <span class="cm-variable">seat</span> <span class="cm-operator">=</span> <span class="cm-variable">em</span>.<span class="cm-variable">find</span>(<span class="cm-variable">Seat</span>.<span class="cm-keyword">class</span>, <span class="cm-variable">seatId</span>, <span class="cm-variable">LockModeType</span>.<span class="cm-variable">PESSIMISTIC_WRITE</span>);</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 21px;"></div><div class="CodeMirror-gutters" style="display: none; height: 21px;"></div></div></div></pre><p><span>The behaviour of fig 2. would change as follows:</span></p><ul><li><span>The transaction which executes line 7 (fig 2.) first would obtain the write lock on that DB row. Then, it would book that Seat and commit. At the commit(), the lock on that Seat is released.</span></li><li><span>The transaction which goes to execute line 7 (fig 2.) would have to wait (blocked) until the lock obtained by the first transaction is released before obtaining the write lock on the Seat. Therefore, by the time it obtains the write lock, the seat is booked, so on line 9 (fig 2.) it would find that the seat is already booked and not book it. </span></li><li><span>If the write lock takes too long for the second transaction to obtain, a PessimisticLockException</span></li><li><span>Therefore, there are no consistency issues or conflicts in the DB.</span></li></ul><h4><a name="d" class="md-header-anchor"></a><span>d)</span></h4><p><img src="C:\Users\aiden\AppData\Roaming\Typora\typora-user-images\image-20201117123812470.png" referrerpolicy="no-referrer" alt="image-20201117123812470"></p><p><span>Although the Venue entity has optimistic concurrent control through the @Version annotation, the Concerts do not. Assume there are transactions A (fig 4.) and B (fig 5.). If A were to move around a Concert from one venue to another (lines 8-9 fig 4.) and commit() at the same time as B was performing its transaction, it is possible for a venue to be listed twice. The version number for Venue does not change for this transaction so there would be no OptimisticLockException thrown. This is a conflict as the information retrieved by B is not accurate to the actual DB state. This conflict is known as an phantom read.</span></p><h4><a name="e" class="md-header-anchor"></a><span>e)</span></h4><p><span>In order to make sure that changes are detected in Concert by fig 5., there must be a forced version increment when performing the transaction in fig 4.</span></p><p><span>Therefore, replace lines 4-5 (fig 4.) with:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Venue</span> <span class="cm-variable">venue1</span> <span class="cm-operator">=</span> <span class="cm-variable">em</span>.<span class="cm-variable">find</span>(<span class="cm-variable">Venue</span>.<span class="cm-keyword">class</span>, <span class="cm-number">123</span>, <span class="cm-variable">LockModeType</span>.<span class="cm-variable">OPTIMISTIC_FORCE_INCREMENT</span>);</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Venue</span> <span class="cm-variable">venue2</span> <span class="cm-operator">=</span> <span class="cm-variable">em</span>.<span class="cm-variable">find</span>(<span class="cm-variable">Venue</span>.<span class="cm-keyword">class</span>, <span class="cm-number">456</span>, <span class="cm-variable">LockModeType</span>.<span class="cm-variable">OPTIMISTIC_FORCE_INCREMENT</span>);</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 42px;"></div><div class="CodeMirror-gutters" style="display: none; height: 42px;"></div></div></div></pre><p><span>The behaviour of fig 4. would change as follows:</span></p><ul><li><span>When the commit() occurs on line 11 (fig 4.), the version number of Venue 123 and Venue 456 would be  incremented.</span></li></ul><p><span>The behaviour of fig 5. would change as follows:</span></p><ul><li><span>When the commit() occurs on line 25 (fig 5.), a difference in the Venue version numbers for Venue 123 and Venue 456 would be detected between the DB and the local copy. Therefore, an OptimisticLockException would be thrown. This would stop the transaction and make sure that the inaccurate information is not recorded.</span></li><li><span>The transaction can then be performed again to retrieve the information required.</span></li></ul><p><span>This removes the conflict as the information obtained by the transaction in fig 5. is accurate to the DB, as it would be aborted if transaction 4 committed changes concurrently.</span></p><h3><a name="3" class="md-header-anchor"></a><span>3.</span></h3><h4><a name="a-n501" class="md-header-anchor"></a><span>a) </span></h4><p><span>An asynchronous communication protocol would be beneficial for a notification option, e.g. app notifications, as the client does not have to constantly poll the server asking for new updates, which would reduce performance of the server, as it must use an extra thread for each of these requests.</span></p><h4><a name="b-n503" class="md-header-anchor"></a><span>b)</span></h4><p><span>The AsyncResponse interface arranges for a response to be sent back to the client using a responder thread. The resume() call takes in a result to be passed back to the client. When the resume() method is called, the result being sent back is handled by a responder thread and sent back to the client using an HTTP response message.</span></p><h4><a name="c-n506" class="md-header-anchor"></a><span>c)</span></h4><p><span>Asynchronous web methods require a single request/response pair. The AsyncResponse object is completed after resume() is called. So after each response, the client needs to resubscribe. This is a drawback as clients can miss methods by subscribing too late.</span></p><h3><a name="4" class="md-header-anchor"></a><span>4.</span></h3><h4><a name="a-n555" class="md-header-anchor"></a><span>a)</span></h4><h4><a name="" class="md-header-anchor"></a></h4><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="java" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="java"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 4px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Entity</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Inheritance</span>(<span class="cm-variable">strategy</span> <span class="cm-operator">=</span> <span class="cm-variable">InheritanceType</span>.<span class="cm-variable">SINGLE_TABLE</span>)</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@DiscriminatorColumn</span>(<span class="cm-variable">name</span> <span class="cm-operator">=</span> <span class="cm-string">"VTYPE"</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">abstract</span> <span class="cm-keyword">class</span> <span class="cm-def">Vehicle</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Id</span> </span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@GeneratedValue</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">long</span> <span class="cm-variable">id</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">int</span> <span class="cm-variable">year</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">String</span> <span class="cm-variable">make</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">String</span> <span class="cm-variable">model</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">long</span> <span class="cm-variable">registrationNumber</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">int</span> <span class="cm-variable">dailyPriceToRent</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@ManyToOne</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable">Caryard</span> <span class="cm-variable">caryard</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Entity</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@DiscriminatorValue</span>(<span class="cm-string">"CR"</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">Car</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Vehicle</span> {</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">boolean</span> <span class="cm-variable">hasTowBar</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Entity</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@DiscriminatorValue</span>(<span class="cm-string">"TK"</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">Truck</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Vehicle</span> {</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">cargoCapacity</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Entity</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">Caryard</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Id</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@GeneratedValue</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">long</span> <span class="cm-variable">id</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Column</span>(<span class="cm-variable">nullable</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">String</span> <span class="cm-variable">name</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Column</span>(<span class="cm-variable">nullable</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">String</span> <span class="cm-variable">address</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@OneToMany</span> (<span class="cm-variable">mappedBy</span> <span class="cm-operator">=</span> <span class="cm-string">"caryard"</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Set</span><span class="cm-operator">&lt;</span><span class="cm-variable">Vehicle</span><span class="cm-operator">&gt;</span> <span class="cm-variable">vehicles</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Entity</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Inheritance</span>(<span class="cm-variable">strategy</span> <span class="cm-operator">=</span> <span class="cm-variable">InheritanceType</span>.<span class="cm-variable">JOINED</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">abstract</span> <span class="cm-keyword">class</span> <span class="cm-def">Person</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Id</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@GeneratedValue</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">long</span> <span class="cm-variable">id</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Column</span>(<span class="cm-variable">nullable</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">String</span> <span class="cm-variable">name</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Column</span>(<span class="cm-variable">nullable</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">String</span> <span class="cm-variable">username</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Column</span>(<span class="cm-variable">nullable</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">protected</span> <span class="cm-variable-3">String</span> <span class="cm-variable">password</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Entity</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">Customer</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Person</span> {</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">String</span> <span class="cm-variable">address</span>;</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">String</span> <span class="cm-variable">DOB</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">String</span> <span class="cm-variable">licenseNo</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Entity</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">Employee</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Person</span> {</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-meta">@Entity</span></span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-def">RentalAgreement</span> {</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Id</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@ManyToOne</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Column</span>(<span class="cm-variable">nullable</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Vehicle</span> <span class="cm-variable">vehicle</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Id</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Column</span>(<span class="cm-variable">nullable</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">LocalDateTime</span> <span class="cm-variable">startDate</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-meta">@Id</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Column</span>(<span class="cm-variable">nullable</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>)</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">LocalDateTime</span> <span class="cm-variable">endDate</span>;</span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@ManyToOne</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Caryard</span> <span class="cm-variable">returnCaryard</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">int</span> <span class="cm-variable">rentalCost</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-meta">@ManyToOne</span></span></pre><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-meta">@Column</span>(<span class="cm-variable">nullable</span> <span class="cm-operator">=</span> <span class="cm-atom">false</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Customer</span> <span class="cm-variable">customer</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-tab" role="presentation" cm-text="	">    </span><span class="cm-meta">@ManyToOne</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable">Employee</span> <span class="cm-variable">employee</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">private</span> <span class="cm-variable-3">boolean</span> <span class="cm-variable">vehicleReturned</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 1872px;"></div><div class="CodeMirror-gutters" style="display: none; height: 1872px;"></div></div></div></pre><p><strong><span>Assumptions</span></strong></p><p><span>A person must have a name, username, and password.</span></p><p><span>A caryard must have a name and address.</span></p><p><span>A customer does not need to have a address, DOB, and licenseNo.</span></p><p><span>A renrtal agreement must at least have a vehicle, start date, end date, and customer.</span></p><p><span>When a rental agreement is constructed, vehicle returned is initialised as false</span></p><p><strong><span>Justification for Vehicle hierarchy</span></strong></p><p><span>Table per class hierarchy</span></p><p><span>Good fit as majority of fields are in Vehicle, rather than spread across the inheritance hierarchy. Data integrity drawback exists, but is not a major issue. The registrationNo field would ideally be non nullable, although this is the tradeoff between </span></p><p><strong><span>Justification for Person hierarchy</span></strong></p><p><span>Table per class w/ joins</span></p><p><span>Only two subtypes, so performance hit from joining is not too impactful. Data structure is normalised so can enforce data integrity and non null columns</span></p><h4><a name="b-n552" class="md-header-anchor"></a><span>b)</span></h4><figure><table><thead><tr><th><span>HTTP Method</span></th><th><span>Resource</span></th><th><span>Required path, query, cookie params</span></th><th><span>Possible HTTP response status codes</span></th><th><span>Required HTTP request payload</span></th><th><span>Expected HTTP response payload</span></th><th><span>Other response data</span></th></tr></thead><tbody><tr><td><span>POST</span></td><td><span>/users</span></td><td>&nbsp;</td><td><span>201 - Created new resource</span><br><span>400 - Bad request (invalid username/password)</span></td><td><span>Username, password, name</span></td><td>&nbsp;</td><td><span>Auth Cookie</span></td></tr><tr><td><span>POST </span></td><td><span>/signin</span></td><td>&nbsp;</td><td><span>200 - OK</span><br><span>401 - Unauthorized</span></td><td><span>Username and password</span></td><td>&nbsp;</td><td><span>Auth Cookie</span></td></tr><tr><td><span>GET</span></td><td><span>/vehicles</span></td><td><span>Auth cookie (Customer)</span></td><td><span>200 - OK</span><br><span>204 - No Content</span></td><td><span>search term</span><br><span>caryard</span><br><span>start date</span><br><span>end date</span><br><span>sort type</span><br><span>sort direction</span></td><td><span>Vehicle array based on the search parameters, sorted based on sort type and sort direction</span></td><td>&nbsp;</td></tr><tr><td><span>POST</span></td><td><span>/rentals</span></td><td><span>Auth cookie (Customer)</span></td><td><span>201 - Created new resource</span><br><span>401 - Unauthorized</span><br><br></td><td><span>vehicle id</span><br><span>start date</span><br><span>end date</span></td><td><span>Link to rental agreement created</span></td><td>&nbsp;</td></tr><tr><td><span>GET</span></td><td><span>/rentals</span></td><td><span>Auth cookie (Employee)</span></td><td><span>200 - OK</span><br><span>204 - No Content</span><br><span>401  - Unauthorized</span></td><td><span>customer&#39;s username</span><br><span>start date</span></td><td><span>Array of rental agreements based on the search critera</span></td><td>&nbsp;</td></tr><tr><td><span>PUT</span></td><td><span>/rentals</span></td><td><span>Auth cookie (Employee)</span></td><td><span>200 - OK</span><br><span>401  - Unauthorized</span></td><td><span>property to be updated and the value to assign</span></td><td><span>Link to rental agreement modified</span></td><td>&nbsp;</td></tr><tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><h3><a name="5" class="md-header-anchor"></a><span>5.</span></h3><p><span>No, a single picture is not enough to explain the architecture of even a very simple software system. Although the system is very simple, it still can not be fully described with just one picture. There are always at least two views: how the code is organised, and how the system looks when executed. These are shown through the static/module structures, and the runtime/component-and-connector structures. </span></p><p><span>The module structure is a code-based view of the system, and documents how the system is structured as a set of code or data units. This view can show modifiability, dependencies and functionality of the system.</span></p><p><span>The runtime  view shows the security of the system at runtime through data flows. It also shows concurrency by showing the executing components at runtime.</span></p><p><span>Furthermore, there are also allocation structures, which can show elements of the system which are not software, such as hardware, development teams, and file systems. Even a very simple software system may have a team with each person having different responsibilities. If the team only had one person, it is still useful to document responsibilities so in the future these can be delegated or analysed. </span></p><p><span>So as can be seen, even for a simple system, a single picture does not show the entire architecture. For a complete view of the architecture, we need to know at least what the class structure is like, the runtime structure, the team and their responsibilities, the hardware that the system would be run on. These aspects can not be captured in a single picture.</span></p><h3><a name="6" class="md-header-anchor"></a><span>6.</span></h3><p><span>Overall, this depends </span><strong><span>heavily</span></strong><span> on the client and the system itself. Without knowing what the client wants, the quality attributes that are most important for software architecture are unknown. For example, when working with a bank, security and testability may be the most important quality attributes.</span></p><p><span>Therefore, the following discussion will be in </span><strong><span>general terms</span></strong><span>, as generally some quality attributes which have a large impact than others. These attributes are availability, performance, and security. </span></p><h4><a name="availability" class="md-header-anchor"></a><span>Availability</span></h4><p><span>For most systems, the stability and availability is a significant design decision. If availability needs to be high, then a cloud or replica architecture would be useful. If availability is not important, then a single machine can be used to host the system.</span></p><p><span>Usually availability has a tradeoff with performance, as to increase availability, redundancy needs to be introduced.</span></p><h4><a name="performance" class="md-header-anchor"></a><span>Performance</span></h4><p><span>To achieve other quality attributes, performance is usually sacrificed. For example, to increase security, extra layers may be introduced into the architecture which delay network traffic. Therefore, if a client needs performance to be high, then this would have a high impact on the system, as other attributes would need to be traded off. Furthermore, for the system to be usable, there is usually a baseline performance metric that must be met, so performance would be important to most clients. Therefore, performance is generally one of the most important attributes in choosing software architecture.</span></p><h4><a name="security" class="md-header-anchor"></a><strong><span>Security</span></strong></h4><p><span>Systems generally have security requirements, and there are many aspects of security which may be required by a client. A system usually needs to be safe from unauthorized access - whether that be internal or external. Although this is heavily dependent on whether there is sensitive information being used by the system. For example, a high frequency trading company is greatly dependent on external actors having access to their information. Security has a tradeoff with performance, as to increase security, the data being passed must be authorized and checked, which increases latency. </span></p><p><span>If the security requirements are low, this would also have a large impact on the system as the architecture could be greatly simplified. A simple personal desktop application could avoid the use of authorization and data protection.</span></p><h3><a name="7" class="md-header-anchor"></a><span>7. </span></h3><h4><a name="which-quality-attribute-scenarios" class="md-header-anchor"></a><span>Which quality attribute scenarios</span></h4><p><span>There would be interviews performed with the client to discover which aspects are most important to them (such as &quot;Does the speed of the system matter as much as the uptime?&quot;). However, even if one of the attributes is not a focus for the client, it should still be considered in the architecture design. For example, if the client is using the system personally and does not require any security, this should be noted as it may affect the design.</span></p><p><span>As the system is large, testability is likely to be important, as many different aspects are interacting with each other, it is important to ensure that no one change breaks the entire system.</span></p><h4><a name="how-to-identify-exact-scenarios" class="md-header-anchor"></a><span>How to identify exact scenarios</span></h4><p><span>To identify scenarios for these quality requirements, the client/s should be communicated with to understand their expectations for the system. While discussing with the clients, common language should be used, instead of jargon. From this we can identify the general scenarios which the clients are interested in, and their basic expectations. </span></p><p><span>Then, these scenarios need to be precisely defined so that they can be measured. A concrete scenario should include: source, stimulus, artifact, environment, response, and response measure. By specifying these attributes, the architecture can be designed to meet these   scenarios.</span></p><p><span>For example, a client may inform us: &quot;The system should be able to handle many users, and we expect that the number of users could grow 100% within a day.&quot; This would be converted into a concrete scenario, and design decisions would be made to achieve this target. To meet this target, our architecture may be hosted on the cloud, to allow this scalability requirement.</span></p><h3><a name="8" class="md-header-anchor"></a><span>8. </span></h3><h4><a name="proscons-of-broadcasting" class="md-header-anchor"></a><span>Pros/Cons of Broadcasting</span></h4><p><span>Client will not notice if a server goes down.. If multiple servers go down, the client would still not notice as long as one server was still running.  Therefore, degree of availability would depends on the number of servers (horizontal scaling). This means that there is very high availability.</span></p><p><span>Has high overhead, as each server communicates with each client. This leads to a scalability issue, where each client added would need to be handled by all servers simultaneously. Therefore, to increase performance and the number of users the system can handle, the system would need to be vertically scaled by continuously upgrading servers to have higher performance. However, this has a limit as hardware does not scale up in performance forever. </span></p><h4><a name="proscons-of-dedicated-server" class="md-header-anchor"></a><span>Pros/Cons of Dedicated Server</span></h4><p><span>Can increase capacity for number of clients just by increasing number of servers (horizontal scaling). This increases scalability, as it is easier to increase the number of servers rather than increasing the performance of each individual server.</span></p><p><span>However, if each client is connected to a single server, then availability would be decreased. If the server crashes, then the client would immediately notice this downtime and would be negatively affected.</span></p><p><span>Given the same servers for broadcasting and dedicated server, we would expect that the dedicated server would have higher performance as the requests are not distributed to every server.</span></p><h4><a name="circumstances" class="md-header-anchor"></a><span>Circumstances</span></h4><p><span>If a system requires high availability, such as critical infrastructure then broadcasting should be chosen. However, this would make the system difficult to scale. e.g. Stock Exchange or Bank</span></p><p><span>If a system does not require high availability, then a dedicated server would be preferable. This would increase the scalability greatly. So it should also be used if a high number of users is needed. e.g. Website Server</span></p><p><span>Another option is to combine the two to provide a hybrid approach which tries to balance the advantages of both approaches. For example, a client could connect to n servers at a time, where n can be adjusted for availability. It should be noted that this approach would require a load balancer to ensure that all servers are being utilised efficiently.</span></p></div>
+</body>
+</html>
